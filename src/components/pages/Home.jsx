@@ -50,14 +50,14 @@ export default function Home() {
 
       {/* App Promo Section */}
       
-      {/* <section className="bg-gradient-to-br from-primary to-primary/70 text-white py-16 px-4 text-center">
+      <section className="bg-gradient-to-br from-primary to-primary/70 text-white py-16 px-4 text-center">
         <h2 className="text-3xl font-bold mb-4">Download the Laava App</h2>
         <p className="text-gray-600 mb-6">Experience investment on the go with our mobile app.</p>
         <div className="flex justify-center gap-4">
           <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Play Store" className="w-40" />
           <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" className="w-40" />
         </div>
-      </section> */}
+      </section>
 
       {/* Testimonials Slider (Example Only) */}
       
