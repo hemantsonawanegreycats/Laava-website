@@ -5,7 +5,7 @@ export default function Header() {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className='w-1/12'>
-          <img src='/src/assets/images/Laava-logo.png'></img>
+          <img src='/assets/images/Laava-logo.png'></img>
         </Link>
         <nav className="space-x-6 hidden md:flex">
           <Link to="/" className="text-gray-700 hover:text-indigo-600">Home</Link>

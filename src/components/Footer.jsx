@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-black mt-10">
       <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <img src='/src/assets/images/Laava-logo.png' className='w-1/2'></img>
+          <img src='/assets/images/Laava-logo.png' className='w-1/2'></img>
           <p className="text-gray text-sm">Invest wisely. Grow confidently.</p>
           <br></br>
           <div className="flex justify-between gap-4">

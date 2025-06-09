@@ -1,11 +1,11 @@
 // src/pages/Home.jsx
 import React from 'react';
-import HeroSection from '../HeroSection';
-import InvestingSection from '../InvestingSection';
-import FaqSection from '../FaqSection';
-import MainBanner from '../MainBanner';
-import TestimonialCarousel from '../TestimonialCarousel';
-import DownloadSection from '../DownloadSection';
+import HeroSection from '../HomePage/HeroSection';
+import InvestingSection from '../HomePage/InvestingSection';
+import FaqSection from '../HomePage/FaqSection';
+import MainBanner from '../HomePage/MainBanner';
+import TestimonialCarousel from '../HomePage/TestimonialCarousel';
+import DownloadSection from '../HomePage/DownloadSection';
 
 export default function Home() {
   return (
