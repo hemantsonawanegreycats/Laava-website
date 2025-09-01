@@ -3,7 +3,8 @@ import { FaStar } from "react-icons/fa";
 
 const MainBanner = () => {
   return (
-    <section className="bg-primary text-white py-16 px-4">
+    <section className="text-white py-16 px-4">
+      
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
           Welcome to <br />
@@ -15,20 +16,20 @@ const MainBanner = () => {
 
         {/* Stats Row */}
         <div className="flex justify-center gap-8 flex-wrap text-sm md:text-base mb-8">
-          <div>
+          {/* <div>
             <p className="font-bold">40 Lac+</p>
             <p className="text-gray-300">Active users</p>
           </div>
-          <div className="border-l border-gray-500 h-6 self-center"></div>
-          <div>
+          <div className="border-l border-gray-500 h-6 self-center"></div> */}
+          <div className="abyssBlue px-3 py-3 rounded-md">
             <p className="font-bold">SEBI Reg.</p>
             <p className="text-gray-300">Research analysts</p>
           </div>
-          <div className="border-l border-gray-500 h-6 self-center"></div>
+          {/* <div className="border-l border-gray-500 h-6 self-center"></div>
           <div>
             <p className="font-bold">Instant</p>
             <p className="text-gray-300">Trade execution</p>
-          </div>
+          </div> */}
         </div>
 
         {/* Input Box */}
@@ -47,7 +48,7 @@ const MainBanner = () => {
         </div> */}
 
         {/* Logos and Awards Row */}
-        <div className="flex justify-center flex-wrap gap-6 items-center text-sm text-center text-gray-300">
+        {/* <div className="flex justify-center flex-wrap gap-6 items-center text-sm text-center text-gray-300">
           <div>
             <p className="font-semibold text-white">Google</p>
             <p>For Startup Accelerator 2024</p>
@@ -67,7 +68,7 @@ const MainBanner = () => {
             </div>
             <p>Trusted by 40 Lakh+ Indians</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

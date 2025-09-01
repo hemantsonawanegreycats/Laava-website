@@ -76,9 +76,9 @@ const testimonials = [
 
 const TestimonialCarousel = () => {
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-16 px-4 bg-black">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-10">
+        <h2 className="text-4xl font-bold text-center mb-10 text-white">
           What our user says
         </h2>
 
@@ -94,7 +94,7 @@ const TestimonialCarousel = () => {
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white border rounded-2xl p-6 shadow-md h-full">
+              <div className="abyssBlue text-white border rounded-2xl p-6 shadow-md h-full">
                 <h3 className="text-lg font-semibold text-blue-700 mb-2">
                   {item.title}
                 </h3>
@@ -120,16 +120,16 @@ const TestimonialCarousel = () => {
 
         {/* App Rating Section */}
         <div className="mt-12 flex flex-wrap justify-center gap-8 items-center text-center text-sm">
-          <div className="font-bold text-black">Download Laava app</div>
-          <div className="flex items-center gap-1">
+          <div className="font-bold text-white">Download Laava app</div>
+          <div className="flex items-center gap-1 text-white">
             <img src="/icons/apple.svg" alt="Apple" className="h-5" />
-            RATED <span className="text-black font-bold">4.5</span> ⭐
+            RATED <span className="text-white font-bold">4.5</span> ⭐
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 text-white">
             <img src="/icons/playstore.svg" alt="Playstore" className="h-5" />
-            RATED <span className="text-black font-bold">4.6</span> ⭐
+            RATED <span className="text-white font-bold">4.6</span> ⭐
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 text-white">
             <img
               src="/icons/users.png"
               alt="users"

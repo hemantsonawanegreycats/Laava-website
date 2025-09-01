@@ -2,7 +2,7 @@ import FooterLinksSection from "./FooterLinkSection";
 
 export default function Footer() {
   return (
-    <footer className="bg-black mt-10">
+    <footer className="bg-black border-t-white">
       <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <img src='/assets/images/Laava-logo.png' className='w-1/2'></img>
@@ -41,7 +41,7 @@ export default function Footer() {
           <ul className="space-y-1 text-sm text-gray">
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/advisory">Advisory</a></li>
+            {/* <li><a href="/advisory">Advisory</a></li> */}
             <li><a href="/insights">Insights</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
@@ -49,10 +49,10 @@ export default function Footer() {
         <div>
           <h5 className="text-md font-semibold text-white mb-2">Support</h5>
           <ul className="space-y-1 text-sm text-gray">
-            <li><a href="#">FAQ's</a></li>
-            <li><a href="#">Grievance Policy</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
+            {/* <li><a href="#">FAQ's</a></li> */}
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><a href="/terms-of-use">Terms of Use</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
           </ul>
         </div>
         <div>

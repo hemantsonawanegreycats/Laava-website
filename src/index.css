@@ -2,18 +2,36 @@
 
 @theme {
   --color-*: initial;
-  --color-primary: #6CBB44;
-  --color-secondary: #db3333;
+  --color-primary: #197dffff;
+  --color-secondary: #151718;
   --color-white: #fff;
   --color-black: #000;
   --color-gray: #f2f2f2;
   --color-darkgray: #333;
 }
 
-.btn {
-  @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 transition;
+.royalwave {
+  background: linear-gradient(to right, #0d1a33, #153b66, #197dff);
 }
-
+.midnightRoyal {
+  background: linear-gradient(to right, #010b19, #0b1d3a, #1a3c66);
+}
+.deepMatte {
+  background: linear-gradient(to right, #151718, #0c0908, #030911);
+}
+.abyssCurrent {
+  background: linear-gradient(to right, #03080F, #0D1A28, #197dff);
+}
+.abyssBlue {
+  background: linear-gradient(135deg, #040A12 0%, #122B44 50%, #197dff 100%);
+  border: 1px solid #197dffff;
+}
+.btn {
+  @apply bg-[linear-gradient(135deg,#040A12_0%,#122B44_50%,#197dff_100%)] border border-[#197dff] text-white px-4 py-2 rounded-md;
+}
+* {
+  font-family: Rubik;
+}
 
 
 /* :root {

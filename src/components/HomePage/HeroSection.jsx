@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function HeroSection() {
   return (
-    <section className="bg-gradient-to-br from-primary to-primary/70 text-white px-4 py-20 md:py-32 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-midnightRoyal to-deepMatte/70 text-white px-4 py-20 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <div>
-          <span className="bg-black text-white px-3 py-1 rounded-full text-sm font-semibold inline-block mb-4">
+          <span className="bg-black text-primary px-3 py-1 rounded-full text-sm font-semibold inline-block mb-4">
             Laava Pro
           </span>
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
@@ -18,15 +18,15 @@ export default function HeroSection() {
 
           {/* Highlight Info Box */}
           <div className="flex gap-4 flex-wrap mb-8 text-center text-sm">
-            <div className="bg-black px-6 py-4 rounded-xl">
+            <div className="abyssBlue px-6 py-4 rounded-xl">
               <strong className="block text-lg">1553+</strong>
               Closed Trades
             </div>
-            <div className="bg-black px-6 py-4 rounded-xl">
+            <div className="abyssBlue px-6 py-4 rounded-xl">
               <strong className="block text-lg">Instant</strong>
               Buy/sell alert
             </div>
-            <div className="bg-black px-6 py-4 rounded-xl">
+            <div className="abyssBlue px-6 py-4 rounded-xl">
               <strong className="block text-lg">₹233* / mo</strong>
               Low cost plans
             </div>
@@ -50,7 +50,7 @@ export default function HeroSection() {
 
         {/* Right Image Placeholder */}
         <div className="relative flex justify-center">
-          <div className="bg-white rounded-3xl shadow-lg p-6 w-full max-w-md text-black">
+          <div className="abyssBlue rounded-3xl shadow-lg p-6 w-full max-w-md text-white">
             <h3 className="font-semibold text-lg mb-3">Hey! Grab your best purchase…</h3>
             <div className="space-y-2 mb-4">
               {/* Example Call Cards */}
@@ -66,11 +66,11 @@ export default function HeroSection() {
             </div>
 
             <h4 className="font-bold text-md mb-2">🔴 LIVE Calls</h4>
-            <div className="grid grid-cols-2 gap-4 text-center text-sm">
-              <div className="bg-gray-100 p-3 rounded-lg">📈 Stocks</div>
-              <div className="bg-gray-100 p-3 rounded-lg">📉 Futures</div>
-              <div className="bg-gray-100 p-3 rounded-lg">📊 Options</div>
-              <div className="bg-gray-100 p-3 rounded-lg">💰 Commodity</div>
+            <div className="grid grid-cols-2 gap-4 text-center text-sm text-white">
+              <div className="abyssBlue p-3 rounded-lg">📈 Stocks</div>
+              <div className="abyssBlue p-3 rounded-lg">📉 Futures</div>
+              <div className="abyssBlue p-3 rounded-lg">📊 Options</div>
+              <div className="abyssBlue p-3 rounded-lg">💰 Commodity</div>
             </div>
           </div>
         </div>

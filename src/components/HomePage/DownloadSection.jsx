@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const DownloadSection = () => {
   return (
-    <section className="bg-primary text-white py-16 px-4 relative overflow-hidden">
+    <section className="abyssBlue text-white py-16 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
         {/* Left Side */}
         <div className="w-full lg:w-1/2">
