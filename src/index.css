@@ -29,10 +29,6 @@
 .btn {
   @apply bg-[linear-gradient(135deg,#040A12_0%,#122B44_50%,#197dff_100%)] border border-[#197dff] text-white px-4 py-2 rounded-md;
 }
-* {
-  font-family: Rubik;
-}
-
 
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

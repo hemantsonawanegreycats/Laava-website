@@ -58,7 +58,7 @@ export default function Home() {
         </div>
 
         {/* Text Section */}
-        <div className="order-1 md:order-2 text-gray-800">
+        <div className="order-1 md:order-2 text-gray-800 px-2">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">About Laava</h2>
           <p className="text-base leading-relaxed mb-6 text-white">
             At LAAVA, we are reimagining how investors discover, analyze, and act on stock market opportunities. Traditional research is often slow, biased, and limited by human bandwidth. We believe the future of wealth creation lies in AI-powered intelligence that works at the speed of markets.
