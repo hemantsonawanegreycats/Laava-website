@@ -58,7 +58,7 @@ export default function Home() {
         <div className="order-1 md:order-2 text-gray-800 px-2">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">About Laava</h2>
           <p className="text-base leading-relaxed mb-6 text-white">
-           At LAAVA, we are reimagining how investors discover, analyze, and act on stock market opportunities. Traditional research is often slow, biased, and limited by human bandwidth. We believe the future of wealth creation lies in AI-powered intelligence that works at the speed of markets.<br />
+           At LAAVA, we are reimagining how investors discover, analyze, and act on stock market opportunities. Traditional research is often slow, biased, and limited by human bandwidth. We believe the future of wealth creation lies in AI-powered intelligence that works at the speed of markets.<br /><br />
            Our platform combines the expertise of seasoned research analysts with cutting-edge artificial intelligence, machine learning, and data science to deliver insights that are:
           </p>
           
@@ -66,34 +66,6 @@ export default function Home() {
       </div>
 
 
-         <section className="relative w-full bg-[linear-gradient(135deg,#040A12_0%,#122B44_50%,#197dff_100%)] text-white py-16">
-      <div className="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-12">
-        {/* Left Section */}
-        <div className="lg:w-1/2">
-          <h2 className="text-4xl font-bold mb-4">WHY <br /> CHOOSE US</h2>
-          <p className="text-lg text-white">
-            We bring the best of artificial intelligence and human insight to deliver results you can trust.
-          </p>
-        </div>
-
-        {/* Right Section */}
-        <div className="lg:w-1/2 flex flex-col gap-8">
-          {items.map((item, i) => (
-            <div key={i} className="flex items-start gap-4">
-              <div
-                className={`w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-r ${item.color} shadow-lg`}
-              >
-                {item.icon}
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
-                <p className="text-gray-700">{item.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
         
 
         <section className="py-16 px-5">
@@ -157,16 +129,68 @@ export default function Home() {
         </div>
       </div>
     </section>
-      <HeroSection />
+
+
+    <section className="relative w-full bg-[linear-gradient(135deg,#040A12_0%,#122B44_50%,#197dff_100%)] text-white py-16">
+         <div className="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-12">
+        {/* Left Section */}
+        <div className="lg:w-1/2">
+          <h2 className="text-3xl font-bold mb-4">WHY <br /> CHOOSE US</h2>
+          <p className="text-lg text-white">
+            We bring the best of artificial intelligence and human insight to deliver results you can trust.
+          </p>
+        </div>
+
+        {/* Right Section */}
+        <div className="lg:w-1/2 flex flex-col gap-8">
+          {items.map((item, i) => (
+            <div key={i} className="flex items-start gap-4">
+              <div
+                className={`w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-r ${item.color} shadow-lg`}
+              >
+                {item.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
+                <p className="text-gray-700">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+     <div className="mt-16">
+      <p className="font-semibold text-white">At LAAVA, we don’t just provide research. We provide clarity in complexity, confidence in decisions, and conviction in action.</p>
+      <p className="font-semibold text-white">For grievances, please contact us at <a href="mailto:care@laavafin.com" className="text-primary underline">care@laavafin.com</a></p>
+        </div>
       <Contactmain />
 
-      <section className="abyssBlue text-white py-16 px-4 text-center">
+    <section className="abyssBlue text-white py-16 px-4 text-center mt-5 mb-15">
+  <h2 className="text-3xl font-bold mb-4">Start your financial journey with Laava</h2>
+  <p className="mb-6 text-lg">Smart insights, expert advisory, and secure investing — all in one place.</p>
+
+  <a href="#" className="inline-block">
+    <img
+      src="/assets/images/google.png" 
+      alt="Join Now with Laava"
+      className="mx-auto w-30 hover:scale-105 transition-transform duration-300"
+    />
+  </a>
+
+  <a href="#" className="inline-block">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" className="mx-auto hover:scale-105 transition-transform duration-300 w-30" />
+            </a>
+</section>
+
+
+      {/* <section className="abyssBlue text-white py-16 px-4 text-center">
         <h2 className="text-3xl font-bold mb-4">Start your financial journey with Laava</h2>
         <p className="mb-6 text-lg">Smart insights, expert advisory, and secure investing — all in one place.</p>
         <a href="#" className="btn">
           Join Now
         </a>
-      </section>
+      </section> */}
 
     </section>
     </main>
