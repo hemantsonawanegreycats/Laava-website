@@ -6,12 +6,12 @@ import { Link } from "react-router";
 export default function Footer() {
   return (
     <footer className="bg-black border-t-white">
-      <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row md:justify-evenly items-center md:items-start gap-10 text-center md:text-left">
+      <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row md:justify-space-between md:items-start gap-10 text-center md:text-left">
         
         <div className="flex-1">
           <img src='/assets/images/Laava-logo.png' className='w-1/2 mx-auto md:mx-0' />
           <p className="text-gray text-sm mt-2">Invest wisely. Grow confidently.</p>
-          <div className="flex justify-center md:justify-start gap-6 mt-6 flex-wrap">
+          <div className="flex justify-center md:justify-between gap-6 mt-6 flex-wrap">
             <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-facebook-f text-2xl"></i></a>
             <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-linkedin-in text-2xl"></i></a>
             <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-instagram text-2xl"></i></a>
@@ -25,8 +25,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex-1">
-          <h5 className="text-md font-semibold text-white mb-2">Support</h5>
+        <div className="flex-1 justify-items-center">
+          <h5 className="text-md align-middle font-semibold text-white mb-2">Legal Links</h5>
           <ul className="space-y-5 text-sm text-gray">
             <li><Link to="/disclaimer">Disclaimer</Link></li>
             <li><Link to="/terms-of-use">Terms of Use</Link></li>
@@ -35,9 +35,9 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="flex-1">
-          <h5 className="text-md font-semibold text-white mb-2">Download App</h5>
-          <div className="flex flex-col space-y-5 items-center md:items-start">
+        <div className=" flex-1 justify-items-center">
+          <h5 className="text-md  font-semibold text-white mb-2">Download App</h5>
+          <div className="flex flex-col space-y-5  md:items-center">
             <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Play Store" className="w-32" /></a>
             <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" className="w-32" /></a>
           </div>
