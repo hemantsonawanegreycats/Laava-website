@@ -36,7 +36,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const Contactmain = () => {
     return (
-        <div className="bg-black mt-15 mb-15 px-4 md:px-20">
+        <div className="bg-black mt-20 mb-20 px-4 md:px-20">
             <h2 className="text-center text-3xl font-bold pb-5 text-white">Contact Us</h2>
             <p className="text-center text-white">
                 Have questions? Want to know more about how we can help you invest and trade smarter?

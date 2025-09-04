@@ -48,16 +48,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* <div>
-          <h5 className="text-md font-semibold text-white mb-2">Support</h5>
-          <ul className="space-y-1 text-sm text-gray">
-            {/* <li><a href="#">FAQ's</a></li> */}
-            {/* <li><a href="/disclaimer">Disclaimer</a></li>
-            <li><a href="/terms-of-use">Terms of Use</a></li>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/cookies">Cookies Policy</a></li>
-          </ul>
-        </div> */} 
 
         <div>
           <h5 className="text-md font-semibold text-white mb-2">Support</h5>
@@ -86,7 +76,7 @@ export default function Footer() {
       <div className="text-center text-sm text-white py-4 border-t mt-4">
         Copyright © {new Date().getFullYear()} <a href="/">Laava</a>. <a href="https://greycats.tech/" target="_blank">Powered By Greycats</a>.
       </div>
-      <FooterLinksSection />
+      {/* <FooterLinksSection /> */}
     </footer>
 
   );
