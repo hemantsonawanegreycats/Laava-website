@@ -1,4 +1,5 @@
 import FooterLinksSection from "./FooterLinkSection";
+import { Link } from "react-router";
 
 export default function Footer() {
   return (
@@ -46,15 +47,30 @@ export default function Footer() {
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
-        <div>
+
+        {/* <div>
           <h5 className="text-md font-semibold text-white mb-2">Support</h5>
           <ul className="space-y-1 text-sm text-gray">
             {/* <li><a href="#">FAQ's</a></li> */}
-            <li><a href="/disclaimer">Disclaimer</a></li>
+            {/* <li><a href="/disclaimer">Disclaimer</a></li>
             <li><a href="/terms-of-use">Terms of Use</a></li>
             <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/cookies">Cookies Policy</a></li>
+          </ul>
+        </div> */} 
+
+        <div>
+          <h5 className="text-md font-semibold text-white mb-2">Support</h5>
+          <ul className="space-y-1 text-sm text-gray">
+            {/* <li><Link to="#">FAQ's</Link></li> */}
+            <li><Link to="/disclaimer">Disclaimer</Link></li>
+            <li><Link to="/terms-of-use">Terms of Use</Link></li>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link to="/cookies">Cookies Policy</Link></li>
           </ul>
         </div>
+
+
         <div>
           <h5 className="text-md font-semibold text-white mb-2">Download App</h5>
           <div className="flex flex-col space-y-2">
@@ -72,6 +88,6 @@ export default function Footer() {
       </div>
       <FooterLinksSection />
     </footer>
-    
+
   );
 }

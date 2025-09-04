@@ -19,7 +19,6 @@ const FirstBanner = () => {
       {/* Content */}
       <div className="relative z-10 w-full max-w-3xl px-6">
         
-
         <div className="max-w-6xl text-white mx-auto text-center">
         <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
           Welcome to <br />
@@ -30,16 +29,12 @@ const FirstBanner = () => {
         </p>
 
         <div className="flex justify-center gap-8 flex-wrap text-sm md:text-base mb-8">
-          
           <div className="abyssBlue px-3 py-3 rounded-md">
             <p className="font-bold">SEBI Reg.</p>
-            <p className="text-gray-300">Research analysts</p>
+            <p className="text-gray-300">Research Analysts</p>
           </div>
-    
         </div>
       </div>
-
-        
       </div>
     </section>
     );

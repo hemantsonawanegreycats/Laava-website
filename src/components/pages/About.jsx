@@ -186,6 +186,8 @@ const AboutUs = () => {
         </div>
       </div>
     </section>
+
+    
       {/* <section className="py-16 px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Why Choose Us</h2>
         <p className="text-base leading-relaxed mb-6 text-center text-white">

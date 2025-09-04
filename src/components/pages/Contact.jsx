@@ -27,7 +27,7 @@ const Contact = () => {
           {/* Address */}
           <a href="#">
           <div className="abyssBlue border border-primary p-6 rounded-lg shadow-sm">
-            <h4 className="text-lg font-semibold text-white mb-2"><FaLocationDot /> Address</h4>
+            <h4 className="text-lg font-semibold text-white"><FaLocationDot /> Address</h4>
             <p className="text-white">
               India: Laava, Andheri West, Mumbai - 400053.
             </p>
@@ -67,7 +67,6 @@ const Contact = () => {
           </button>
         </form>
       </div>
-
 
     </div>
   );

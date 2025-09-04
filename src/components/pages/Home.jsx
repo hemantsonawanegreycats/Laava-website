@@ -6,6 +6,7 @@ import FaqSection from '../HomePage/FaqSection';
 import MainBanner from '../HomePage/MainBanner';
 import DownloadSection from '../HomePage/DownloadSection';
 import FirstBanner from '../HomePage/FirstBanner';
+import Contactmain from './Contactmain';
 
 
 
@@ -76,6 +77,7 @@ export default function Home() {
       <HeroSection />
       <FaqSection />
       <InvestingSection />
+      <Contactmain />
 
       {/* App Promo Section */}
       {/* <section className="bg-gradient-to-br from-primary to-primary/70 text-white py-16 px-4 text-center">

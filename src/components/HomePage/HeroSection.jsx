@@ -9,7 +9,7 @@ export default function HeroSection() {
           <span className="bg-black text-primary px-3 py-1 rounded-full text-sm font-semibold inline-block mb-4">
             Laava Pro
           </span>
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
             Trade Ideas <br /> By SEBI Reg RA
           </h1>
           <p className="text-lg mb-6">
