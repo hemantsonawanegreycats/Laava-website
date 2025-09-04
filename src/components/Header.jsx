@@ -7,13 +7,12 @@ export default function Header() {
         <Link to="/" className='w-1/12'>
           <img src='/assets/images/Laava-logo.png'></img>
         </Link>
-        <nav className="space-x-6 hidden md:flex">
+        {/* <nav className="space-x-6 hidden md:flex">
           <Link to="/" className="text-white hover:text-indigo-600">Home</Link>
-          {/* <Link to="/advisory" className="text-white hover:text-indigo-600">Advisory</Link> */}
           <Link to="/insights" className="text-white hover:text-indigo-600">Insights</Link>
           <Link to="/about" className="text-white hover:text-indigo-600">About</Link>
           <Link to="/contact" className="text-white hover:text-indigo-600">Contact</Link>
-        </nav>
+        </nav> */}
         <a
           href="#"
           className="btn"
