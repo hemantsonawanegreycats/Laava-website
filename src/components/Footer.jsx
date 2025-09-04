@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
 
         <div className="flex-1 justify-items-center">
-          <h5 className="text-md align-middle font-semibold text-white mb-2">Legal Links</h5>
+          <h5 className="text-md align-middle font-semibold text-white mb-2">Policy Links</h5>
           <ul className="space-y-5 text-sm text-gray">
             <li><Link to="/disclaimer">Disclaimer</Link></li>
             <li><Link to="/terms-of-use">Terms of Use</Link></li>
@@ -38,8 +38,8 @@ export default function Footer() {
         <div className=" flex-1 justify-items-center">
           <h5 className="text-md  font-semibold text-white mb-2">Download App</h5>
           <div className="flex flex-col space-y-5  md:items-center">
-            <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Play Store" className="w-32" /></a>
-            <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" className="w-32" /></a>
+            <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Play Store" className="w-30" /></a>
+            <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" className="w-30" /></a>
           </div>
         </div>
       </div>
