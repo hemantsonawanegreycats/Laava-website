@@ -8,6 +8,7 @@
   --color-black: #000;
   --color-gray: #f2f2f2;
   --color-darkgray: #333;
+  --color-transparent : #000;
 }
 
 .royalwave {
@@ -17,7 +18,7 @@
   background: linear-gradient(to right, #010b19, #0b1d3a, #1a3c66);
 }
 .deepMatte {
-  background: linear-gradient(to right, #151718, #0c0908, #030911);
+  background: linear-gradient(to right, #151718, #0c0908, #030911);   
 }
 .abyssCurrent {
   background: linear-gradient(to right, #03080F, #0D1A28, #197dff);

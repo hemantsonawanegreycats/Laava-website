@@ -36,7 +36,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const Contactmain = () => {
     return (
-        <div className="bg-black mt-20 mb-20 px-4 md:px-20">
+        <div className="max-w-7xl bg-black mt-20 mb-20">
             <h2 className="text-center text-3xl font-bold pb-5 text-white">Contact Us</h2>
             <p className="text-center text-white">
                 Have questions? Want to know more about how we can help you invest and trade smarter?
@@ -48,7 +48,7 @@ const Contactmain = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Email */}
                     <a href="mailto:care@laavafin.com">
-                        <div className="abyssBlue border border-primary p-6 rounded-lg shadow-sm">
+                        <div className="abyssBlue border border-primary p-6 shadow-sm">
                             <h4 className="text-lg font-semibold text-white mb-2"><MdEmail /> Email</h4>
                             <p className="text-white">
                                 care@laavafin.com
@@ -58,7 +58,7 @@ const Contactmain = () => {
 
                     {/* Address */}
                     <a href="#">
-                        <div className="abyssBlue border border-primary p-6 rounded-lg shadow-sm">
+                        <div className="abyssBlue border border-primary p-6 shadow-sm">
                             <h4 className="text-lg font-semibold text-white mb-2"><FaLocationDot /> Address</h4>
                             <p className="text-white">
                                 India: Laava, Andheri West, Mumbai - 400053.
@@ -67,7 +67,6 @@ const Contactmain = () => {
                     </a>
                 </div>
             </div>
-
         </div>
     );
 };

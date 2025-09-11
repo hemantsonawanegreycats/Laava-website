@@ -1,13 +1,12 @@
 
 // Mypage
 import React from 'react';
-import HeroSection from '../HomePage/HeroSection';
-import InvestingSection from '../HomePage/InvestingSection';
-import FaqSection from '../HomePage/FaqSection';
-import DownloadSection from '../HomePage/DownloadSection';
 import FirstBanner from '../HomePage/FirstBanner';
 import Contactmain from './Contactmain';
 import { BarChart3, Diamond, Eye, Lightbulb, Target, Users } from 'lucide-react';
+import HeaderBg from './HeaderAnimated';
+import { useEffect, useRef } from "react";
+import gsap from 'gsap';
 
 
 const items = [
@@ -38,69 +37,95 @@ const items = [
   ];
 
 
-export default function Home() {
+
+
+export default function Mainhome() {
+
+
+  const missionRef = useRef(null);
+  const visionRef = useRef(null);
+
+  useEffect(() => {
+    gsap.from(missionRef.current, {
+      x: -120,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    });
+    gsap.from(visionRef.current, {
+      x: 120,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+      delay: 0.3,
+    });
+  }, []);
+
   return (
+
+   
     <main className="bg-black">
-      
+       
       <FirstBanner />
 
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Image Section */}
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="order-2 md:order-1">
           <img
-            src="../../assets/images/Laava-logo.png"
+            src="assets/images/Aboutsection.png"
             alt="About Laava"
             className="rounded-3xl w-full shadow-xl"
           />
         </div>
 
-        {/* Text Section */}
         <div className="order-1 md:order-2 text-gray-800 px-2">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">About Laava</h2>
           <p className="text-base leading-relaxed mb-6 text-white">
            At LAAVA, we are reimagining how investors discover, analyze, and act on stock market opportunities. Traditional research is often slow, biased, and limited by human bandwidth. We believe the future of wealth creation lies in AI-powered intelligence that works at the speed of markets.<br /><br />
            Our platform combines the expertise of seasoned research analysts with cutting-edge artificial intelligence, machine learning, and data science to deliver insights that are:
           </p>
-          
         </div>
       </div>
 
-        <section className="px-5">
+        <section className="max-w-7xl mx-auto items-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Future-Ready Insights</h2>
         <p className="text-base leading-relaxed mb-6 text-center text-white">
           Our platform combines the expertise of seasoned research analysts with cutting-edge<br /> artificial intelligence, machine learning, and data science to deliver insights that are:
         </p>
 
+        <div className="max-w-7xl mt-12 grid md:grid-cols-4 gap-10 items-center text-center">
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center">
           <div className="abyssBlue px-2 py-2 rounded-md">
-            <h3 className="text-xl font-semibold mb-2 text-white">Faster</h3>
-            <p className="text-white">Real-time analysis of market trends, corporate actions, and global events.</p>
+            <h3 className="text-2xl font-bold mb-4 mt-4 text-white">Faster</h3>
+            <p className="text-white pb-5 ">Real-time analysis of market trends, corporate actions, and global events. </p>
           </div>
+
           <div className="abyssBlue px-2 py-2 rounded-md">
-            <h3 className="text-xl font-semibold mb-2 text-white">Smarter</h3>
+            <h3 className="text-2xl font-bold mb-4 mt-4 text-white">Smarter</h3>
             <p className="text-white">AI models trained on years of financial data to identify patterns invisible to the human eye.</p>
           </div>
+
           <div className="abyssBlue px-2 py-2 rounded-md">
-            <h3 className="text-xl font-semibold mb-2 text-white">Personalized</h3>
+            <h3 className="text-2xl font-bold mb-4 mt-4 text-white">Personalized</h3>
             <p className="text-white">Research tailored to individual investor profiles, goals, and risk appetite.</p>
           </div>
+
           <div className="abyssBlue px-2 py-2 rounded-md">
-            <h3 className="text-xl font-semibold mb-2 text-white">Actionable</h3>
+            <h3 className="text-2xl font-bold mb-4 mt-4 text-white">Actionable</h3>
             <p className="text-white">Clear, concise, and timely recommendations designed to maximize returns.</p>
           </div>
         </div>
 
        <section className="py-16 bg-black text-white">
+
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-12">Our Mission & Vision</h2>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Mission */}
+        {/* <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-center">
             <div className="abyssBlue p-6 rounded-full shadow-lg mb-6">
               <Target className="w-12 h-12 text-white" />
             </div>
+
             <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
             <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
               To democratize access to high-quality research and empower
@@ -109,7 +134,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Vision */}
           <div className="flex flex-col items-center">
             <div className="abyssBlue p-6 rounded-full shadow-lg mb-6">
               <Eye className="w-12 h-12 text-white" />
@@ -121,22 +145,201 @@ export default function Home() {
               wealth-building insights.
             </p>
           </div>
+        </div> */}
+      </div>
+
+      <section className="bg-black py-20">
+      {/* <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl font-bold text-center mb-4">
+          Our Mission & Vision
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-green-500 via-black to-green-500 mx-auto mb-16"></div>
+
+        <div
+          ref={missionRef}
+          className="flex flex-col md:flex-row items-center bg-gray-100 rounded-lg shadow-md mb-12 overflow-hidden"
+        >
+          <div className="w-48 h-48 rounded-full overflow-hidden m-6 flex-shrink-0">
+            <img
+              src="/assets/images/dot-background.jpg"
+              alt="Mission"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="p-6 text-center md:text-left">
+            <h3 className="text-2xl font-semibold mb-3">Mission</h3>
+            <p className="text-gray-600 max-w-lg">
+              To democratize access to high-quality research and empower
+              investors of all sizes to make informed, profitable, and confident
+              investment decisions.
+            </p>
+          </div>
         </div>
+
+        <div
+          ref={visionRef}
+          className="flex flex-col md:flex-row-reverse items-center bg-gray-100 rounded-lg shadow-md overflow-hidden"
+        >
+          <div className="w-48 h-48 rounded-full overflow-hidden m-6 flex-shrink-0">
+            <img
+              src="/assets/images/dot-background.jpg"
+              alt="Vision"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="p-6 text-center md:text-right">
+            <h3 className="text-2xl font-semibold mb-3">Vision</h3>
+            <p className="text-gray-600 max-w-lg">
+              To become the most trusted AI-first research partner for retail
+              and institutional investors, transforming data into wealth-building
+              insights.
+            </p>
+          </div>
+        </div>
+      </div> */}
+
+
+      {/* <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl font-bold text-center mb-4">
+          Our Mission & Vision
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-green-500 via-black to-green-500 mx-auto mb-16"></div>
+
+        <div
+          ref={missionRef}
+          className="grid md:grid-cols-2 items-center rounded-lg shadow-md mb-12"
+        >
+          <div className="flex justify-center md:justify-end p-6">
+            <div className="w-48 h-48 rounded-full overflow-hidden">
+              <img
+                src="/assets/images/dot-background.jpg"
+                alt="Mission"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div className="p-6 text-center md:text-left">
+            <h3 className="text-2xl font-semibold mb-2">Mission</h3>
+            <p className="text-gray-700 text-base leading-relaxed max-w-md">
+              To democratize access to high-quality research and empower
+              investors of all sizes to make informed, profitable, and confident
+              investment decisions.
+            </p>
+          </div>
+        </div>
+
+        <div
+          ref={visionRef}
+          className="grid md:grid-cols-2 items-center bg-gray-100 rounded-lg shadow-md"
+        >
+          <div className="p-6 text-center md:text-right order-2 md:order-1">
+            <h3 className="text-2xl font-semibold t
+             mb-2">Vision</h3>
+            <p className="text-gray-700 text-base leading-relaxed max-w-md ml-auto">
+              To become the most trusted AI-first research partner for retail
+              and institutional investors, transforming data into wealth-building
+              insights.
+            </p>
+          </div>
+
+     
+        </div>
+      </div> */}
+
+      {/* <section className="max-w-5xl mx-auto px-6 py-16">
+      <div className="grid md:grid-cols-2 gap-12 items-start">
+        
+        <div className="flex flex-col space-y-4">
+          <h3 className="text-xl font-semibold relative">
+            Mission
+            <span className="absolute left-full top-1/2 transform -translate-y-1/2 ml-4 w-20 border-t border-gray-400"></span>
+          </h3>
+        </div>
+        <div>
+          <p className="text-gray-700 leading-relaxed">
+            A one-sentence statement outlining what your company does, why it does it, 
+            and how it gets it done.
+          </p>
+        </div>
+
+        <div className="flex flex-col space-y-4">
+          <h3 className="text-xl font-semibold relative">
+            Vision
+            <span className="absolute left-full top-1/2 transform -translate-y-1/2 ml-4 w-20 border-t border-gray-400"></span>
+          </h3>
+        </div>
+        <div>
+          <p className="text-gray-700 leading-relaxed">
+            An aspirational statement that describes a company's goals for the future 
+            and the impact it aims to make on the world.
+          </p>
+        </div>
+
+      </div>
+    </section> */}
+
+
+    <section className="max-w-5xl mx-auto px-6 py-16">
+      <div className="space-y-12">
+        
+        {/* Mission */}
+        <div className="grid md:grid-cols-[150px_1fr] gap-6 items-center">
+          {/* Left side */}
+          <h3 className="text-lg md:text-xl font-semibold text-white md:text-right">
+            Mission
+          </h3>
+
+          {/* Right side */}
+          <div className="flex flex-col md:flex-row items-start md:items-center">
+            {/* Line */}
+            <span className="hidden md:block w-16 border-t border-gray-400"></span>
+            
+            {/* Content */}
+            <p className="md:ml-4 text-gray-300 text-sm md:text-base leading-relaxed">
+              A one-sentence statement outlining what your company does, 
+              why it does it, and how it gets it done.
+            </p>
+          </div>
+        </div>
+
+        {/* Vision */}
+        <div className="grid md:grid-cols-[150px_1fr] gap-6 items-center">
+          {/* Left side */}
+          <h3 className="text-lg md:text-xl font-semibold text-white md:text-right">
+            Vision
+          </h3>
+
+          {/* Right side */}
+          <div className="flex flex-col md:flex-row items-start md:items-center">
+            {/* Line */}
+            <span className="hidden md:block w-16 border-t border-gray-400"></span>
+            
+            {/* Content */}
+            <p className="md:ml-4 text-gray-300 text-sm md:text-base leading-relaxed">
+              An aspirational statement that describes a company's goals 
+              for the future and the impact it aims to make on the world.
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
+    </section>
 
+      {/* <div className="max-w-7xl mx-auto px-6 py-20">
+  
+</div> */}
+
+    </section>
 
     <section className="relative w-full bg-[linear-gradient(135deg,#040A12_0%,#122B44_50%,#197dff_100%)] text-white py-16">
          <div className="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-12">
-        {/* Left Section */}
         <div className="lg:w-1/2">
           <h2 className="text-3xl font-bold mb-4">WHY <br /> CHOOSE US</h2>
           <p className="text-lg text-white">
             We bring the best of artificial intelligence and human insight to deliver results you can trust.
           </p>
         </div>
-
-        {/* Right Section */}
         <div className="lg:w-1/2 flex flex-col gap-8">
           {items.map((item, i) => (
             <div key={i} className="flex items-start gap-4">
@@ -155,9 +358,42 @@ export default function Home() {
       </div>
     </section>
 
+    {/* <section className="relative w-full bg-[linear-gradient(135deg,#040A12_0%,#122B44_50%,#197dff_100%)] text-white py-20">
+  <div className="flex flex-col lg:flex-row items-center gap-12 px-6 lg:px-20">
+    <div className="lg:w-1/2">
+      <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-snug">
+        WHY <br /> CHOOSE US
+      </h2>
+      <p className="text-lg md:text-xl text-gray-200 max-w-lg">
+        We bring the best of artificial intelligence and human insight to deliver
+        results you can trust.
+      </p>
+    </div>
+    <div className="lg:w-1/2 flex flex-col gap-10">
+      {items.map((item, i) => (
+        <div
+          key={i}
+          className="flex items-start gap-5 bg-black/20 p-5 rounded-xl hover:bg-black/30 transition duration-300"
+        >
+          <div
+            className={`w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-r ${item.color} shadow-lg`}
+          >
+            {item.icon}
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+            <p className="text-gray-300">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section> */}
+
+
      <div className="mt-16">
-      <p className="font-semibold text-white">At LAAVA, we don’t just provide research. We provide clarity in complexity, confidence in decisions, and conviction in action.</p>
-      <p className="font-semibold text-white">For grievances, please contact us at <a href="mailto:care@laavafin.com" className="text-primary underline">care@laavafin.com</a></p>
+      <p className="font-semibold text-white text-center">At LAAVA, we don’t just provide research. We provide clarity in complexity, confidence in decisions, and conviction in action.</p>
+      <p className="font-semibold text-white text-center">For grievances, please contact us at <a href="mailto:care@laavafin.com" className="text-primary underline">care@laavafin.com</a></p>
         </div>
       <Contactmain />
 
@@ -182,8 +418,6 @@ export default function Home() {
     </main>
   );
 }
-
-
 
 
 // // import FirstBanner from "../HomePage/FirstBanner";

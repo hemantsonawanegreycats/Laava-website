@@ -10,8 +10,10 @@ import Insights from './components/pages/Insights'
 import Disclaimer from './components/pages/Disclaimer'
 import TermsOfUse from './components/pages/TermsOfUse'
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
-import Mainhome from './components/pages/Mainhome'
 import CookiesPolicy from './components/pages/CookiesPolicy'
+import Mainhome from './components/pages/mainhome'
+import HeaderAnimated from './components/pages/HeaderAnimated'
+
 
 function App() {
 
@@ -29,8 +31,10 @@ function App() {
         <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        {/* <Route path="/mainhome" element={<Mainhome/>} /> */}
         <Route path="/" element={<Mainhome/>} />
         <Route path="/cookies" element={<CookiesPolicy/>} />
+        <Route path="/headeranimeted" element={<HeaderAnimated/>} />
 
       </Route>
     </Routes>
