@@ -68,7 +68,7 @@ export default function Mainhome() {
        
       <FirstBanner />
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center pt-16">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center pt-16 px-10">
         <div className="order-2 md:order-1">
           <img
             src="assets/images/Aboutsection.png"
@@ -86,7 +86,7 @@ export default function Mainhome() {
         </div>
       </div>
 
-        <section className="max-w-7xl mx-auto items-center pt-16">
+        <section className="max-w-7xl mx-auto items-center pt-16 px-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Future-Ready Insights</h2>
         <p className="text-base leading-relaxed mb-6 text-center text-white">
           Our platform combines the expertise of seasoned research analysts with cutting-edge<br /> artificial intelligence, machine learning, and data science to deliver insights that are:
@@ -101,17 +101,17 @@ export default function Mainhome() {
 
           <div className="abyssBlue px-2 py-2 rounded-md">
             <h3 className="text-2xl font-bold mb-4 mt-4 text-white">Smarter</h3>
-            <p className="text-white">AI models trained on years of financial data to identify patterns invisible to the human eye.</p>
+            <p className="text-white pb-5 ">AI models trained on years of financial data to identify patterns invisible to the human eye.</p>
           </div>
 
           <div className="abyssBlue px-2 py-2 rounded-md">
             <h3 className="text-2xl font-bold mb-4 mt-4 text-white">Personalized</h3>
-            <p className="text-white">Research tailored to individual investor profiles, goals, and risk appetite.</p>
+            <p className="text-white pb-5 ">Research tailored to individual investor profiles, goals, and risk appetite.</p>
           </div>
 
           <div className="abyssBlue px-2 py-2 rounded-md">
             <h3 className="text-2xl font-bold mb-4 mt-4 text-white">Actionable</h3>
-            <p className="text-white">Clear, concise, and timely recommendations designed to maximize returns.</p>
+            <p className="text-white pb-5 ">Clear, concise, and timely recommendations designed to maximize returns.</p>
           </div>
         </div>
 
@@ -124,102 +124,7 @@ export default function Mainhome() {
       </div>
 
       <section className="bg-black">
-      {/* <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-4">
-          Our Mission & Vision
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-green-500 via-black to-green-500 mx-auto mb-16"></div>
-
-        <div
-          ref={missionRef}
-          className="flex flex-col md:flex-row items-center bg-gray-100 rounded-lg shadow-md mb-12 overflow-hidden"
-        >
-          <div className="w-48 h-48 rounded-full overflow-hidden m-6 flex-shrink-0">
-            <img
-              src="/assets/images/dot-background.jpg"
-              alt="Mission"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="p-6 text-center md:text-left">
-            <h3 className="text-2xl font-semibold mb-3">Mission</h3>
-            <p className="text-gray-600 max-w-lg">
-              To democratize access to high-quality research and empower
-              investors of all sizes to make informed, profitable, and confident
-              investment decisions.
-            </p>
-          </div>
-        </div>
-
-        <div
-          ref={visionRef}
-          className="flex flex-col md:flex-row-reverse items-center bg-gray-100 rounded-lg shadow-md overflow-hidden"
-        >
-          <div className="w-48 h-48 rounded-full overflow-hidden m-6 flex-shrink-0">
-            <img
-              src="/assets/images/dot-background.jpg"
-              alt="Vision"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="p-6 text-center md:text-right">
-            <h3 className="text-2xl font-semibold mb-3">Vision</h3>
-            <p className="text-gray-600 max-w-lg">
-              To become the most trusted AI-first research partner for retail
-              and institutional investors, transforming data into wealth-building
-              insights.
-            </p>
-          </div>
-        </div>
-      </div> */}
-
-
-      {/* <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-4">
-          Our Mission & Vision
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-green-500 via-black to-green-500 mx-auto mb-16"></div>
-
-        <div
-          ref={missionRef}
-          className="grid md:grid-cols-2 items-center rounded-lg shadow-md mb-12"
-        >
-          <div className="flex justify-center md:justify-end p-6">
-            <div className="w-48 h-48 rounded-full overflow-hidden">
-              <img
-                src="/assets/images/dot-background.jpg"
-                alt="Mission"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="p-6 text-center md:text-left">
-            <h3 className="text-2xl font-semibold mb-2">Mission</h3>
-            <p className="text-gray-700 text-base leading-relaxed max-w-md">
-              To democratize access to high-quality research and empower
-              investors of all sizes to make informed, profitable, and confident
-              investment decisions.
-            </p>
-          </div>
-        </div>
-
-        <div
-          ref={visionRef}
-          className="grid md:grid-cols-2 items-center bg-gray-100 rounded-lg shadow-md"
-        >
-          <div className="p-6 text-center md:text-right order-2 md:order-1">
-            <h3 className="text-2xl font-semibold t
-             mb-2">Vision</h3>
-            <p className="text-gray-700 text-base leading-relaxed max-w-md ml-auto">
-              To become the most trusted AI-first research partner for retail
-              and institutional investors, transforming data into wealth-building
-              insights.
-            </p>
-          </div>
-
-     
-        </div>
-      </div> */}
+      
 
 
     <section className="max-w-5xl mx-auto px-6">
@@ -261,10 +166,6 @@ export default function Mainhome() {
     </section>
     </section>
 
-      {/* <div className="max-w-7xl mx-auto px-6 py-20">
-  
-</div> */}
-
     </section>
 
     <section className="relative w-full bg-[linear-gradient(135deg,#040A12_0%,#122B44_50%,#197dff_100%)] text-white py-16">
@@ -292,38 +193,6 @@ export default function Mainhome() {
         </div>
       </div>
     </section>
-
-    {/* <section className="relative w-full bg-[linear-gradient(135deg,#040A12_0%,#122B44_50%,#197dff_100%)] text-white py-20">
-  <div className="flex flex-col lg:flex-row items-center gap-12 px-6 lg:px-20">
-    <div className="lg:w-1/2">
-      <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-snug">
-        WHY <br /> CHOOSE US
-      </h2>
-      <p className="text-lg md:text-xl text-gray-200 max-w-lg">
-        We bring the best of artificial intelligence and human insight to deliver
-        results you can trust.
-      </p>
-    </div>
-    <div className="lg:w-1/2 flex flex-col gap-10">
-      {items.map((item, i) => (
-        <div
-          key={i}
-          className="flex items-start gap-5 bg-black/20 p-5 rounded-xl hover:bg-black/30 transition duration-300"
-        >
-          <div
-            className={`w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-r ${item.color} shadow-lg`}
-          >
-            {item.icon}
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-            <p className="text-gray-300">{item.desc}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section> */}
 
 
      <div className="mt-16">
@@ -355,124 +224,9 @@ export default function Mainhome() {
 }
 
 
-// // import FirstBanner from "../HomePage/FirstBanner";
-// // import AboutUs from "./About";
-// // import Contactmain from "./Contactmain";
-
-// // export default function Mainhome() {
-// //     return (
-// //         <div>
-
-// //             <FirstBanner />
-
-// //             <Contactmain />
-// //         </div>
-
-// //     );
-// // }
-
-
-// // src/pages/Home.jsx
-// import React from 'react';
-// import HeroSection from '../HomePage/HeroSection';
-// import InvestingSection from '../HomePage/InvestingSection';
-// import FaqSection from '../HomePage/FaqSection';
-// import DownloadSection from '../HomePage/DownloadSection';
-// import FirstBanner from '../HomePage/FirstBanner';
-// import Contactmain from './Contactmain';
 
 
 
-// export default function Home() {
-//   return (
-//     <main className="bg-black">
-     
-//       <FirstBanner />
-//       {/* <MainBanner /> */}
-
-//       {/* Features Section */}
-//       <section className="py-16 px-4">
-//         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center">
-//           <div className="abyssBlue px-3 py-3 rounded-md">
-//             <h3 className="text-xl font-semibold mb-2 text-white">Real-Time Insights</h3>
-//             <p className="text-white">Stay updated with live data and market trends tailored to your goals.</p>
-//           </div>
-//           <div className="abyssBlue px-3 py-3 rounded-md">
-//             <h3 className="text-xl font-semibold mb-2 text-white">Smart Advisory</h3>
-//             <p className="text-white">Expert-curated investment plans and personalized strategies.</p>
-//           </div>
-//           <div className="abyssBlue px-3 py-3 rounded-md">
-//             <h3 className="text-xl font-semibold mb-2 text-white">Secure Transactions</h3>
-//             <p className="text-white">Encrypted data handling and secure financial operations.</p>
-//           </div>
-//         </div>
-//       </section>
-
-//         {/* About Section */}
-//       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-//         {/* Image Section */}
-//         <div className="order-2 md:order-1">
-//           <img
-//             src="../../assets/images/Laava-logo.png"
-//             alt="About Laava"
-//             className="rounded-3xl w-full shadow-xl"
-//           />
-//         </div>
-
-//         {/* Text Section */}
-//         <div className="order-1 md:order-2 text-gray-800 px-2">
-//           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">About Laava</h2>
-//           <p className="text-base leading-relaxed mb-6 text-white">
-//             At LAAVA, we are reimagining how investors discover, analyze, and act on stock market opportunities. Traditional research is often slow, biased, and limited by human bandwidth. We believe the future of wealth creation lies in AI-powered intelligence that works at the speed of markets.
-//           </p>
-//           <p className="text-base leading-relaxed mb-6 text-white">
-//             With Laava, you gain access to proven stock market advisory, offering expert trade ideas for stocks, futures, options, and commodities. Our one-click trade execution feature eliminates slippage, ensuring instant execution through our advisory-first brokerage. Smart portfolio management allows you to identify underperforming stocks, optimize your investments, and receive real-time alerts.
-//           </p>
-//           <p className="text-base leading-relaxed mb-6 text-white">
-//             Additionally, Laava provides seamless investment opportunities beyond stocks, including mutual funds, bonds, fixed deposits, and insurance (coming soon). Join over 40 lakh active investors who trust Laava to make informed and profitable trading decisions. Start investing smarter today! 🚀
-//           </p>
-//         </div>
-//       </div>
-
-//       <HeroSection />
-//       <FaqSection />
-//       <InvestingSection />
-//       <Contactmain />
-
-//       <h2 className="text-center text-3xl font-bold text-white mb-2">Contact Us</h2>
-//             <p className="text-center text-white mb-10">
-//               Have questions? Want to know more about how we can help you invest and trade smarter?
-//               We’d love to hear from you. 
-//             </p>
-      
-//             <div className="mb-12 pt-10">
-//               {/* <h3 className="text-2xl font-semibold text-white mb-6">Global Offices</h3> */}
-//               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//                 {/* Email */}
-//                 <a href="mailto:care@laavafin.com">
-//                 <div className="abyssBlue border border-primary p-6 rounded-lg shadow-sm">
-//                   <h4 className="text-lg font-semibold text-white mb-2"><MdEmail /> Email</h4>
-//                   <p className="text-white">
-//                     care@laavafin.com 
-//                   </p>
-//                 </div>
-//                 </a>
-      
-//                 {/* Address */}
-//                 <a href="#">
-//                 <div className="abyssBlue border border-primary p-6 rounded-lg shadow-sm">
-//                   <h4 className="text-lg font-semibold text-white mb-2"><FaLocationDot /> Address</h4>
-//                   <p className="text-white">
-//                     India: Laava, Andheri West, Mumbai - 400053.
-//                   </p>
-//                 </div>
-//                 </a>
-//               </div>
-//             </div>
-
-//     </main>
-//   );
-// }
 
 
 
