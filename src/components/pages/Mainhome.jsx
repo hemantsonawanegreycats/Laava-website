@@ -86,7 +86,7 @@ export default function Mainhome() {
         </div>
       </div>
 
-        <section className="max-w-7xl mx-auto items-center">
+        <section className="max-w-7xl mx-auto items-center pt-25">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Future-Ready Insights</h2>
         <p className="text-base leading-relaxed mb-6 text-center text-white">
           Our platform combines the expertise of seasoned research analysts with cutting-edge<br /> artificial intelligence, machine learning, and data science to deliver insights that are:
@@ -120,35 +120,10 @@ export default function Mainhome() {
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-12">Our Mission & Vision</h2>
 
-        {/* <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col items-center">
-            <div className="abyssBlue p-6 rounded-full shadow-lg mb-6">
-              <Target className="w-12 h-12 text-white" />
-            </div>
-
-            <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
-            <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
-              To democratize access to high-quality research and empower
-              investors of all sizes to make informed, profitable, and
-              confident investment decisions.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <div className="abyssBlue p-6 rounded-full shadow-lg mb-6">
-              <Eye className="w-12 h-12 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Our Vision</h3>
-            <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
-              To become the most trusted AI-first research partner for retail
-              and institutional investors, transforming data into
-              wealth-building insights.
-            </p>
-          </div>
-        </div> */}
+        
       </div>
 
-      <section className="bg-black py-20">
+      <section className="bg-black">
       {/* <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-4">
           Our Mission & Vision
@@ -246,78 +221,38 @@ export default function Mainhome() {
         </div>
       </div> */}
 
-      {/* <section className="max-w-5xl mx-auto px-6 py-16">
-      <div className="grid md:grid-cols-2 gap-12 items-start">
-        
-        <div className="flex flex-col space-y-4">
-          <h3 className="text-xl font-semibold relative">
-            Mission
-            <span className="absolute left-full top-1/2 transform -translate-y-1/2 ml-4 w-20 border-t border-gray-400"></span>
-          </h3>
-        </div>
-        <div>
-          <p className="text-gray-700 leading-relaxed">
-            A one-sentence statement outlining what your company does, why it does it, 
-            and how it gets it done.
-          </p>
-        </div>
 
-        <div className="flex flex-col space-y-4">
-          <h3 className="text-xl font-semibold relative">
-            Vision
-            <span className="absolute left-full top-1/2 transform -translate-y-1/2 ml-4 w-20 border-t border-gray-400"></span>
-          </h3>
-        </div>
-        <div>
-          <p className="text-gray-700 leading-relaxed">
-            An aspirational statement that describes a company's goals for the future 
-            and the impact it aims to make on the world.
-          </p>
-        </div>
-
-      </div>
-    </section> */}
-
-
-    <section className="max-w-5xl mx-auto px-6 py-16">
+    <section className="max-w-5xl mx-auto px-6">
       <div className="space-y-12">
         
-        {/* Mission */}
         <div className="grid md:grid-cols-[150px_1fr] gap-6 items-center">
-          {/* Left side */}
           <h3 className="text-lg md:text-xl font-semibold text-white md:text-right">
             Mission
           </h3>
 
-          {/* Right side */}
           <div className="flex flex-col md:flex-row items-start md:items-center">
-            {/* Line */}
             <span className="hidden md:block w-16 border-t border-gray-400"></span>
             
-            {/* Content */}
             <p className="md:ml-4 text-gray-300 text-sm md:text-base leading-relaxed">
-              A one-sentence statement outlining what your company does, 
-              why it does it, and how it gets it done.
+              To democratize access to high-quality research and empower
+              investors of all sizes to make informed, profitable, and confident
+              investment decisions.
             </p>
           </div>
         </div>
 
-        {/* Vision */}
         <div className="grid md:grid-cols-[150px_1fr] gap-6 items-center">
-          {/* Left side */}
           <h3 className="text-lg md:text-xl font-semibold text-white md:text-right">
             Vision
           </h3>
 
-          {/* Right side */}
           <div className="flex flex-col md:flex-row items-start md:items-center">
-            {/* Line */}
             <span className="hidden md:block w-16 border-t border-gray-400"></span>
             
-            {/* Content */}
             <p className="md:ml-4 text-gray-300 text-sm md:text-base leading-relaxed">
-              An aspirational statement that describes a company's goals 
-              for the future and the impact it aims to make on the world.
+              To become the most trusted AI-first research partner for retail
+              and institutional investors, transforming data into wealth-building
+              insights.
             </p>
           </div>
         </div>
