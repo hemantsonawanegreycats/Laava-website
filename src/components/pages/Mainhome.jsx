@@ -68,7 +68,7 @@ export default function Mainhome() {
        
       <FirstBanner />
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center pt-16">
         <div className="order-2 md:order-1">
           <img
             src="assets/images/Aboutsection.png"
@@ -86,7 +86,7 @@ export default function Mainhome() {
         </div>
       </div>
 
-        <section className="max-w-7xl mx-auto items-center pt-25">
+        <section className="max-w-7xl mx-auto items-center pt-16">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Future-Ready Insights</h2>
         <p className="text-base leading-relaxed mb-6 text-center text-white">
           Our platform combines the expertise of seasoned research analysts with cutting-edge<br /> artificial intelligence, machine learning, and data science to deliver insights that are:

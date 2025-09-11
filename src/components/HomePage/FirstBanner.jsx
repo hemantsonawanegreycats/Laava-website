@@ -45,8 +45,8 @@ const FirstBanner = () => {
     <section className="h-screen relative py-16 md:py-28 flex items-center justify-center text-center overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute bg-cover bg-center"
-        style={{ backgroundImage: "url('src/assets/images/Herobanner.png')" }}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/assets/images/Herobanner.png')" }}
       ></div>
 
       {/* Gradient Overlays */}

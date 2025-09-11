@@ -11,17 +11,17 @@ export default function Footer() {
         <div className="flex-1">
           <img src='/assets/images/Laava-logo.png' className='w-1/2 mx-auto md:mx-0' />
           <p className="text-gray text-sm mt-2">Invest wisely. Grow confidently.</p>
-          <div className="flex justify-center md:justify-between gap-6 mt-6 flex-wrap">
+          <div className="flex justify-center md:justify-start gap-6 mt-6 flex-wrap">
             <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-facebook-f text-2xl"></i></a>
             <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-linkedin-in text-2xl"></i></a>
             <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-instagram text-2xl"></i></a>
-            <a href="#" className="hover:scale-110 transition-transform" aria-label="X (formerly Twitter)">
+            {/* <a href="#" className="hover:scale-110 transition-transform" aria-label="X (formerly Twitter)">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6 text-white">
                 <path d="M21.5 2h-3.73L12 9.5 6.23 2H2l7.95 10.36L2 22h3.73L12 14.5 17.77 22H22l-7.95-10.36L21.5 2z" />
               </svg>
             </a>
             <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-youtube text-2xl"></i></a>
-            <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-telegram-plane text-2xl"></i></a>
+            <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-telegram-plane text-2xl"></i></a> */}
           </div>
         </div>
 
