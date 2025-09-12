@@ -11,6 +11,10 @@
   --color-transparent : #000;
 }
 
+body {
+  font-family: "Rubik", sans-serif;
+}
+
 .royalwave {
   background: linear-gradient(to right, #0d1a33, #153b66, #197dff);
 }
