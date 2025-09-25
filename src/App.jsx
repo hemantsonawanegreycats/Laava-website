@@ -12,8 +12,6 @@ import TermsOfUse from './components/pages/TermsOfUse'
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import CookiesPolicy from './components/pages/CookiesPolicy'
 import Mainhome from './components/pages/Mainhome'
-import HeaderAnimated from './components/pages/HeaderAnimated'
-
 
 function App() {
 
@@ -33,7 +31,6 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/" element={<Mainhome/>} />
         <Route path="/cookies" element={<CookiesPolicy/>} />
-        <Route path="/headeranimeted" element={<HeaderAnimated/>} />
 
       </Route>
     </Routes>
