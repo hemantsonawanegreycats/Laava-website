@@ -6,7 +6,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         
         {/* Logo */}
-        <Link to="/" className="w-32 sm:w-36 md:w-34 lg:w-3">
+        <Link to="/" className="w-32 sm:w-34 md:w-32 lg:w-32">
           <img 
             src="/assets/images/Laava-logo.png" 
             alt="Laava Logo" 

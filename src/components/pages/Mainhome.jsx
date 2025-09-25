@@ -170,7 +170,7 @@ export default function Mainhome() {
 
     </section>
 
-    <section className="relative w-full bg-[linear-gradient(135deg,#040A12_0%,#122B44_50%,#197dff_100%)] text-white py-16">
+    <section className="relative w-full abyssBlue text-white py-16 rounded-lg">
          <div className="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-12">
         <div className="lg:w-1/2">
           <h2 className="text-3xl font-bold mb-4">WHY <br /> CHOOSE US</h2>

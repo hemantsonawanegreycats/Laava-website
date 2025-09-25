@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
 
         <div className="flex-1 justify-items-center">
-          <h5 className="text-md align-middle font-semibold text-white mb-2">Policy Links</h5>
+          <h5 className="text-md align-middle font-semibold text-white mb-5">Policy Links</h5>
           <ul className="space-y-5 text-sm text-gray">
             <li><Link to="/disclaimer">Disclaimer</Link></li>
             <li><Link to="/terms-of-use">Terms of Use</Link></li>
