@@ -1,52 +1,29 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
 
 const faqData = {
-  "Getting Started": [
+ "Investor Charter": [
     {
-      question: "What is Laava?",
-      answer:
-        "Laava is an independent advisory platform, licensed by SEBI in India...",
+      name: "Investor Charter - September 2025",
+      link: "/files/investor-charter-sept-2025.pdf",
     },
     {
-      question: "Why invest through Laava?",
-      answer:
-        "Access diverse portfolios including N100 Index, Factors, Global Trends...",
+      name: "Investor Charter - August 2025",
+      link: "/files/investor-charter-aug-2025.pdf",
     },
   ],
-  Trades: [
+  "Most Important Terms and Conditions (MITC)": [
     {
-      question: "How do I place a trade?",
-      answer: "You can place trades directly via the Laava app...",
-    },
-    {
-      question: "Are trades free?",
-      answer: "No commissions. Flat transparent pricing.",
+      name: "MITC - September 2025",
+      link: "/files/mitc-sept-2025.pdf",
     },
   ],
-  Academy: [
+  "Investor Grievance": [
     {
-      question: "Does Laava have resources for beginners?",
-      answer: "YES. Articles, blogs, and a research library are available.",
-    },
-    {
-      question: "Are there live training sessions?",
-      answer: "Yes, through webinars and investor connects.",
+      name: "Investor Grievance - September 2025",
+      link: "/files/investor-grievance-sept-2025.pdf",
     },
   ],
-  "Wealth Baskets": [
-    {
-      question: "What are Wealth Baskets?",
-      answer:
-        "Curated ETF and Mutual Fund baskets designed by our experts.",
-    },
-  ],
-  Payments: [
-    {
-      question: "What payment methods are supported?",
-      answer: "UPI, NetBanking, Debit/Credit Cards are supported.",
-    },
-  ],
+
 };
 
 const FaqSection = () => {
@@ -58,12 +35,11 @@ const FaqSection = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
   
-
-  return (
+   return (
     <section className="py-16 bg-black text-white">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-10">
-          Frequently Asked Questions <span className="text-primary">(FAQs)</span>
+          Information Center <span className="text-primary">(Documents)</span>
         </h2>
 
         {/* Tabs */}
@@ -71,11 +47,8 @@ const FaqSection = () => {
           {tabs.map((tab) => (
             <button
               key={tab}
-              onClick={() => {
-                setActiveTab(tab);
-                setOpenIndex(null); // reset accordion
-              }}
-              className={`btn cursor-pointer px-5 py-2 rounded-lg font-medium transition ${
+              onClick={() => setActiveTab(tab)}
+              className={`cursor-pointer px-5 py-2 rounded-lg font-medium transition ${
                 activeTab === tab
                   ? "bg-gradient-to-r from-pink-500 to-orange-500 text-white"
                   : "text-gray-400 hover:text-white"
@@ -86,27 +59,21 @@ const FaqSection = () => {
           ))}
         </div>
 
-        {/* Accordion */}
+        {/* Tab Content */}
         <div className="space-y-4">
-          {faqData[activeTab].map((faq, index) => (
+          {faqData[activeTab].map((file, index) => (
             <div
               key={index}
-              className="bg-[#111] border border-gray-700 rounded-lg"
+              className="bg-[#111] border border-gray-700 rounded-lg p-4"
             >
-              <button
-                onClick={() => toggleAccordion(index)}
-                className="btn cursor-pointer flex justify-between items-center w-full p-4 text-left"
+              <a
+                href={file.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-400 hover:underline font-medium"
               >
-                <span className="font-semibold">{faq.question}</span>
-                {openIndex === index ? (
-                  <ChevronUp className="w-5 h-5 text-orange-400" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-orange-400" />
-                )}
-              </button>
-              {openIndex === index && (
-                <div className="px-4 py-4 text-gray-300">{faq.answer}</div>
-              )}
+                {file.name}
+              </a>
             </div>
           ))}
         </div>
@@ -114,5 +81,4 @@ const FaqSection = () => {
     </section>
   );
 };
-
 export default FaqSection;

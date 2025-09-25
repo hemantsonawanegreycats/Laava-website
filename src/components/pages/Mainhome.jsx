@@ -2,11 +2,12 @@
 // Mypage
 import React from 'react';
 import FirstBanner from '../HomePage/FirstBanner';
-import Contactmain from './Contactmain';
+// import Contactmain from './Contactmain';
 import { BarChart3, Diamond, Eye, Lightbulb, Target, Users } from 'lucide-react';
 import HeaderBg from './HeaderAnimated';
 import { useEffect, useRef } from "react";
 import gsap from 'gsap';
+import FaqSection from '../HomePage/FaqSection';
 
 
 const items = [
@@ -35,9 +36,6 @@ const items = [
       color: "from-green-500 to-emerald-600",
     },
   ];
-
-
-
 
 export default function Mainhome() {
 
@@ -80,13 +78,18 @@ export default function Mainhome() {
         <div className="order-1 md:order-2 text-gray-800 px-2">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">About Laava</h2>
           <p className="text-base leading-relaxed mb-6 text-white">
-           At LAAVA, we are reimagining how investors discover, analyze, and act on stock market opportunities. Traditional research is often slow, biased, and limited by human bandwidth. We believe the future of wealth creation lies in AI-powered intelligence that works at the speed of markets.<br /><br />
-           Our platform combines the expertise of seasoned research analysts with cutting-edge artificial intelligence, machine learning, and data science to deliver insights that are:
+           At LAAVA, we are redefining the way investors discover, analyse, and act on stock market opportunities. Traditional equity research is often slow, subjective, and constrained by human bandwidth. We believe the future of wealth creation lies in AI-powered intelligence that operates at the speed of markets.<br /><br />
+           Our platform seamlessly integrates the expertise of seasoned research analysts with advanced artificial intelligence, machine learning, and data science. This unique combination enables us to deliver insights that are timely, comprehensive, and precise. <br /><br />
+           Every research calls on LAAVA is carefully hand-picked by experienced professionals and supported by AI-driven insights, ensuring that investors have access to high-quality, objective, and actionable intelligence.<br />
+           By bridging human judgment with data-driven analysis, we are establishing a new standard for equity research—smarter, faster, and more transparent.
+
+
           </p>
         </div>
       </div>
 
         <section className="max-w-7xl mx-auto items-center pt-16 px-10">
+          <FaqSection />
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Future-Ready Insights</h2>
         <p className="text-base leading-relaxed mb-6 text-center text-white">
           Our platform combines the expertise of seasoned research analysts with cutting-edge<br /> artificial intelligence, machine learning, and data science to deliver insights that are:
@@ -199,7 +202,7 @@ export default function Mainhome() {
       <p className="font-semibold text-white text-center">At LAAVA, we don’t just provide research. We provide clarity in complexity, confidence in decisions, and conviction in action.</p>
       <p className="font-semibold text-white text-center">For grievances, please contact us at <a href="mailto:care@laavafin.com" className="text-primary underline">care@laavafin.com</a></p>
         </div>
-      <Contactmain />
+      {/* <Contactmain /> */}
 
     <section className="abyssBlue text-white py-16 px-4 text-center mt-10">
   <h2 className="text-3xl font-bold mb-4">Start your financial journey with Laava</h2>

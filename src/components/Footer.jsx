@@ -10,7 +10,7 @@ export default function Footer() {
         
         <div className="flex-1">
           <img src='/assets/images/Laava-logo.png' className='w-1/2 mx-auto md:mx-0' />
-          <p className="text-gray text-sm mt-2">Invest wisely. Grow confidently.</p>
+          <p className="text-gray text-sm mt-2">Smarter Decisions, Profitable Research</p>
           <div className="flex justify-center md:justify-start gap-6 mt-6 flex-wrap">
             <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-facebook-f text-2xl"></i></a>
             <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-linkedin-in text-2xl"></i></a>

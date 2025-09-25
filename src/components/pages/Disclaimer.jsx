@@ -7,11 +7,8 @@ const Disclaimer = () => {
                 <h1 className="text-3xl md:text-4xl font-bold mb-6">Disclaimer</h1>
 
                 <p className="mb-8">
-                    The domain name <strong>www.laavafin.com</strong> is owned by Laava
-                    Financial Technologies Private Limited (hereafter referred to as
-                    ‘LAAVA’). LAAVA is a company incorporated in Mumbai, Maharashtra and has
-                    received in principal approval from SEBI to commence Research Analyst
-                    Business.
+                    The domain name www.laavafin.com is owned by Laava Financial Technologies Private Limited (hereafter referred to as ‘LAAVA’). LAAVA is a company incorporated in Mumbai, Maharashtra and is a SEBI registered Research Analyst (INH000023171)
+
                 </p>
 
                 <p className="mb-8">

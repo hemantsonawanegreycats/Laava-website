@@ -9,7 +9,8 @@ const PrivacyPolicy = () => {
                     Privacy Policy
                 </h1>
                 <p className="mb-8">
-                    The domain name www.laavafin.com is owned by Laava Financial Technologies Private Limited (hereafter referred to as ‘LAAVA’). LAAVA is a company incorporated in Mumbai, Maharashtra and has applied for registration and licenses with regulators for entering into capital markets.
+                    The domain name www.laavafin.com is owned by Laava Financial Technologies Private Limited (hereafter referred to as ‘LAAVA’). LAAVA is a company incorporated in Mumbai, Maharashtra and is a SEBI registered Research Analyst (INH000023171)
+
                 </p>
 
                 <p className="mb-8">

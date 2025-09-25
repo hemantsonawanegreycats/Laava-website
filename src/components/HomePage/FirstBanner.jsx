@@ -42,7 +42,8 @@ import React from 'react';
 
 const FirstBanner = () => {
   return (
-    <section className="h-screen relative py-16 md:py-28 flex items-center justify-center text-center overflow-hidden">
+    <section className="h-screen relative py-16 md:py-28 flex items-center justify-center 
+    text-center overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -62,13 +63,13 @@ const FirstBanner = () => {
             Welcome to Laava
           </h1>
           <p className="text-base sm:text-lg md:text-xl font-medium mb-6">
-            Research • Invest • Grow
+            Smarter Decisions • Profitable Research
           </p>
 
           <div className="flex justify-center gap-4 md:gap-8 flex-wrap text-xs sm:text-sm md:text-base mb-8">
             <div className="abyssBlue px-4 py-3 rounded-md">
-              <p className="font-bold">SEBI Reg.</p>
-              <p className="text-gray-300">Research Analysts</p>
+              <p className="font-bold">SEBI Registered</p>
+              <p className="text-gray-300">Research Analyst- INH000023171</p>
             </div>
           </div>
         </div>
