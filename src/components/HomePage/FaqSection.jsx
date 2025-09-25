@@ -63,7 +63,7 @@ const FaqSection = () => {
               key={index}
               className="bg-[#111] border border-gray-700 rounded-lg p-4"
             >
-              <h3 className="text-lg font-semibold mb-2">{group.title}</h3>
+              <h3 className="text-lg font-semibold mb-2 text-center">{group.title}</h3>
               <ul className="space-y-2">
                 {group.files.map((file, idx) => (
                   <li key={idx}>
@@ -73,7 +73,7 @@ const FaqSection = () => {
                       rel="noopener noreferrer"
                       className="text-orange-400 hover:underline font-medium"
                     >
-                      {file.name}
+                      {file.name} <span className="ml-2">→</span>
                     </a>
                   </li>
                 ))}

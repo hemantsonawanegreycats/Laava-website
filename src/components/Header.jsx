@@ -4,15 +4,24 @@ export default function Header() {
   return (
     <header className="bg-black shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link to="/" className='w-1/12'>
-          <img src='/assets/images/Laava-logo.png'></img>
+        
+        {/* Logo */}
+        <Link to="/" className="w-34 sm:w-36 md:w-38 lg:w-40">
+          <img 
+            src="/assets/images/Laava-logo.png" 
+            alt="Laava Logo" 
+            className="w-full h-auto"
+          />
         </Link>
-        <a href="#" className="btn"> Download App </a>
+
+        {/* Button */}
+        <Link href="#" className="btn">
+          Download App
+        </Link>
       </div>
     </header>
   );
 }
-
 
    {/* <nav className="space-x-6 hidden md:flex">
           <Link to="/" className="text-white hover:text-indigo-600">Home</Link>

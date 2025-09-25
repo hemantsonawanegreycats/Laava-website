@@ -7,7 +7,7 @@ import { BarChart3, Diamond, Eye, Lightbulb, Target, Users } from 'lucide-react'
 import HeaderBg from './HeaderAnimated';
 import { useEffect, useRef } from "react";
 import gsap from 'gsap';
-import FaqSection from '../HomePage/FaqSection';
+import Documents from '../HomePage/Documents';
 
 
 const items = [
@@ -89,7 +89,7 @@ export default function Mainhome() {
       </div>
 
         <section className="max-w-7xl mx-auto items-center pt-16 px-10">
-          <FaqSection />
+          <Documents />
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Future-Ready Insights</h2>
         <p className="text-base leading-relaxed mb-6 text-center text-white">
           Our platform combines the expertise of seasoned research analysts with cutting-edge<br /> artificial intelligence, machine learning, and data science to deliver insights that are:
@@ -204,7 +204,7 @@ export default function Mainhome() {
         </div>
       {/* <Contactmain /> */}
 
-    <section className="abyssBlue text-white py-16 px-4 text-center mt-10">
+    {/* <section className="abyssBlue text-white py-16 px-4 text-center mt-10">
   <h2 className="text-3xl font-bold mb-4">Start your financial journey with Laava</h2>
   <p className="mb-6 text-lg">Smart insights, expert advisory, and secure investing — all in one place.</p>
 
@@ -219,7 +219,7 @@ export default function Mainhome() {
   <a href="#" className="inline-block">
               <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" className="mx-auto hover:scale-105 transition-transform duration-300 w-30" />
             </a>
-</section>
+</section> */}
 
     </section>
     </main>
