@@ -5,8 +5,8 @@ const faqData = {
     {
       title: "Investor Charter",
       files: [
-        { name: "September 2025", link: "/files/investor-charter-sept-2025.pdf" },
-        { name: "August 2025", link: "/files/investor-charter-aug-2025.pdf" },
+        { name: "September 2025", link:"assets\pdf\InverstorCharter\Investor_Charter_Sep_2025.pdf" },
+        { name: "August 2025", link: "assets\pdf\InverstorCharter\Investor_Charter_Sep_2025.pdf" },
       ],
     },
   ],
@@ -24,7 +24,7 @@ const faqData = {
     {
       title: "Most Important Terms and Conditions (MITC)",
       files: [
-        { name: "September 2025", link: "/files/mitc-sept-2025.pdf" },
+        { name: "September 2025", link: "assets\pdf\MITC\MITDC_Sep_2025.pdf" },
       ],
     },
   ],
