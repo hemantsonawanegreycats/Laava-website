@@ -4,7 +4,6 @@ import React from 'react';
 import FirstBanner from '../HomePage/FirstBanner';
 // import Contactmain from './Contactmain';
 import { BarChart3, Diamond, Eye, Lightbulb, Target, Users } from 'lucide-react';
-import HeaderBg from './HeaderAnimated';
 import { useEffect, useRef } from "react";
 import gsap from 'gsap';
 import Documents from '../HomePage/Documents';
