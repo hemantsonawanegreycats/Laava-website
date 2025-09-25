@@ -69,7 +69,7 @@ const FirstBanner = () => {
           <div className="flex justify-center gap-4 md:gap-8 flex-wrap text-xs sm:text-sm md:text-base mb-8">
             <div className="abyssBlue px-4 py-3 rounded-md">
               <p className="font-bold">SEBI Registered</p>
-              <p className="text-gray-300">Research Analyst- INH000023171</p>
+              <p className="text-gray-300">Research Analyst - INH000023171</p>
             </div>
           </div>
         </div>

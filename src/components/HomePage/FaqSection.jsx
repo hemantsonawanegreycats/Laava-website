@@ -5,26 +5,15 @@ const faqData = {
     {
       title: "Investor Charter",
       files: [
-        { name: "September 2025", link:"assets\pdf\InverstorCharter\Investor_Charter_Sep_2025.pdf" },
-        { name: "August 2025", link: "assets\pdf\InverstorCharter\Investor_Charter_Sep_2025.pdf" },
+        { name: "September 2025", link:"assets/pdf/InverstorCharter/Investor_Charter_Sep_2025.pdf" },
       ],
     },
   ],
-//  "Investor Charter": [
-//     {
-//       name: "Investor Charter - September 2025",
-//       link: "/files/investor-charter-sept-2025.pdf",
-//     },
-//     {
-//       name: "Investor Charter - August 2025",
-//       link: "/files/investor-charter-aug-2025.pdf",
-//     },
-//   ],
   "Most Important Terms and Conditions (MITC)": [
     {
       title: "Most Important Terms and Conditions (MITC)",
       files: [
-        { name: "September 2025", link: "assets\pdf\MITC\MITDC_Sep_2025.pdf" },
+        { name: "September 2025", link: "assets/pdf/MITC/MITC_Sep_2025.pdf" },
       ],
     },
   ],
@@ -32,7 +21,7 @@ const faqData = {
     {
       title: "Investor Grievance",
       files: [
-        { name: "September 2025", link: "/files/investor-grievance-sept-2025.pdf" },
+        { name: "September 2025", link: "#" },
       ],
     },
   ],
@@ -47,7 +36,7 @@ const FaqSection = () => {
     <section className="py-16 bg-black text-white">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-10">
-          Information Center <span className="text-primary">(Documents)</span>
+          Regulatory Documents
         </h2>
 
         {/* Tabs */}
