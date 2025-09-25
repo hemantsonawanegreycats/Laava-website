@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet, useLocation } from 'react-router'
 import Header from './Header'
-import HeaderAnimated from './pages/HeaderAnimated'
+import HeaderAnimated from './HeaderAnimated'
 import Footer from './Footer'
 
 export default function RootLayout() {

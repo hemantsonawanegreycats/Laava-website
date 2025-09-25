@@ -23,12 +23,18 @@ export default function HeaderAnimated() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="w-1/12">
-          <img src="/assets/images/Laava-logo.png" alt="Laava Logo" />
+       <Link to="/" className="w-32 sm:w-36 md:w-34 lg:w-32">
+          <img 
+            src="/assets/images/Laava-logo.png" 
+            alt="Laava Logo" 
+            className="w-full h-auto"
+          />
         </Link>
-        <a href="#" className="btn">
+
+        {/* Button */}
+        <Link href="#" className="btn">
           Download App
-        </a>
+        </Link>
       </div>
     </header>
 
