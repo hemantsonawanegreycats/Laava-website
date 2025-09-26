@@ -6,7 +6,7 @@ import FirstBanner from '../HomePage/FirstBanner';
 import { BarChart3, Diamond, Eye, Lightbulb, Target, Users } from 'lucide-react';
 import { useEffect, useRef } from "react";
 import gsap from 'gsap';
-import Documents from '../HomePage/Documents';
+// import Documents from '../HomePage/Documents';
 
 
 const items = [
@@ -88,7 +88,7 @@ export default function Mainhome() {
       </div>
 
         <section className="max-w-7xl mx-auto items-center pt-16 px-10">
-          <Documents />
+          {/* <Documents /> */}
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Future-Ready Insights</h2>
         <p className="text-base leading-relaxed mb-6 text-center text-white">
           Our platform combines the expertise of seasoned research analysts with cutting-edge<br /> artificial intelligence, machine learning, and data science to deliver insights that are:
