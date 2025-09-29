@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row md:justify-space-between md:items-start gap-10 text-center md:text-left">
 
         <div className="flex-1">
-          <img src='/assets/images/Laava-logo.png' className='w-1/2 mx-auto md:mx-0' />
+          <Link to="/" ><img src='/assets/images/Laava-logo.png' className='w-1/2 mx-auto md:mx-0' /></Link>
           <p className="text-gray text-sm mt-2">Smarter Decisions, Profitable Research</p>
           <div className="flex justify-center md:justify-start gap-6 mt-6 flex-wrap">
             <a href="#" className="text-white hover:scale-110 transition-transform"><i className="fab fa-facebook-f text-2xl"></i></a>
@@ -41,7 +41,7 @@ export default function Footer() {
 
             <li>
               <a
-                href="public\assets\pdf\InverstorCharter\Investor_Charter_Sep_2025.pdf"
+                href="/assets/pdf/InverstorCharter/Investor_Charter_Sep_2025.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -50,7 +50,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="public\assets\pdf\MITC\MITC_Sep_2025.pdf"
+                href="assets/pdf/MITC/MITC_Sep_2025.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
