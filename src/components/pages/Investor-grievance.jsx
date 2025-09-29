@@ -10,7 +10,7 @@ const docsData = {
 };
 
 const Investordocs = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0);
 
   const toggleAccordion = (idx) => {
     setOpenIndex(openIndex === idx ? null : idx);
@@ -23,7 +23,7 @@ const Investordocs = () => {
           Investor Grievance Data
         </h2>
 
-        <div className="hidden md:block space-y-4">
+        {/* <div className="hidden md:block space-y-4">
           {docsData["Investor Grievance"].map((group, index) => (
             <div
               key={index}
@@ -49,17 +49,17 @@ const Investordocs = () => {
               </ul>
             </div>
           ))}
-        </div>
+        </div> */}
 
-        <div className="md:hidden space-y-4">
+        <div className="space-y-4">
           <div className="border border-gray-700 rounded-lg">
-            {/* <button
+            <button
               onClick={() => toggleAccordion(0)}
               className="abyssBlue rounded-lg w-full flex justify-between items-center px-4 py-3 text-left font-semibold"
             >
               Investor Grievance
               <span className="ml-2">{openIndex === 0 ? "−" : "+"}</span>
-            </button> */}
+            </button>
 
             {openIndex === 0 && (
               <div className="px-4 pb-4">
