@@ -13,6 +13,8 @@ import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import CookiesPolicy from './components/pages/CookiesPolicy'
 import Mainhome from './components/pages/Mainhome'
 import Investordocs from './components/pages/Investor-grievance'
+import PaymentSuccess from './components/pages/PaymentSuccess'
+import PaymentFailed from './components/pages/PaymentFail'
 
 function App() {
 
@@ -33,8 +35,12 @@ function App() {
         <Route path="/" element={<Mainhome/>} />
         <Route path="/cookies" element={<CookiesPolicy/>} />
         <Route path="/investorgrievance" element={<Investordocs/>} />
-
+       
       </Route>
+
+       <Route path="/paymentsuccess" element={<PaymentSuccess/>} />
+        <Route path="/paymentfailed" element={<PaymentFailed/>} />
+
     </Routes>
     </>
   )
