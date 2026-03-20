@@ -15,7 +15,7 @@ export default function Header() {
         </Link>
 
         {/* Button */}
-        <Link href="https://play.google.com/store/apps/details?id=com.laava.app" className="btn">
+        <Link href="https://play.google.com/store/apps/details?id=com.laava.app" target="_blank" className="btn">
           Download App
         </Link>
       </div>

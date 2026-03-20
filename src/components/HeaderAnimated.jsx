@@ -32,7 +32,7 @@ export default function HeaderAnimated() {
         </Link>
 
         {/* Button */}
-        <Link href="#" className="btn">
+        <Link href="https://play.google.com/store/apps/details?id=com.laava.app" className="btn">
           Download App
         </Link>
       </div>
