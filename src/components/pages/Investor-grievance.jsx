@@ -4,7 +4,7 @@ const docsData = {
   "Investor Grievance": [
     {
       title: "Investor Grievance",
-      files: [{ name: "September 2025", link: "assets/pdf/Investor-Grievance-Sept-2025.pdf" }],
+      files: [{ name: "Not Available", link: "#" }],
     },
   ],
 };
