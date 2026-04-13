@@ -1,105 +1,225 @@
 @import "tailwindcss";
 
 @theme {
-  --color-*: initial;
-  --color-primary: #197dffff;
+  --font-inter: 'Inter', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --color-primary: var(--color-primary);
+  --color-primary-tint: var(--color-primary-tint);
+  --color-background: var(--color-background);
+  --color-card: var(--color-card);
+  --color-foreground: var(--color-text-foreground);
+  --color-muted: var(--color-text-muted);
+  --color-secondary: var(--color-secondary);
+  --color-border: var(--color-border);
+  --color-input: var(--color-input);
+
+  --color-success: var(--color-success);
+  --color-success-bg: var(--color-success-bg);
+  --color-warning: var(--color-warning);
+  --color-warning-bg: var(--color-warning-bg);
+  --color-danger: var(--color-danger);
+  --color-danger-bg: var(--color-danger-bg);
+  --color-info: var(--color-info);
+  --color-info-bg: var(--color-info-bg);
+
+  --radius-lg: 0.75rem;
+}
+
+:root {
+  /* Core Brand (Light Mode) */
+  --color-primary: #0B6CF4;
+  --color-primary-tint: #EFF5FF;
+  --color-background: #F5F6F8;
+  --color-card: #FFFFFF;
+  --color-text-foreground: #151A1E;
+  --color-text-muted: #666D78;
+  --color-secondary: #F0F1F4;
+  --color-border: #DDE0E6;
+  --color-input: #E8EAEE;
+
+  /* Semantic / Status (Light) */
+  --color-success: #22A756;
+  --color-success-bg: rgba(34,167,86,0.08);
+  --color-warning: #E8930C;
+  --color-warning-bg: rgba(232,147,12,0.08);
+  --color-danger: #D93636;
+  --color-danger-bg: rgba(217,54,54,0.08);
+  --color-info: #4B83D6;
+  --color-info-bg: rgba(75,131,214,0.10);
+
+  /* Set background and color on body naturally */
+  background-color: var(--color-background);
+  color: var(--color-text-foreground);
+}
+
+.dark {
+  /* Core Brand (Dark Mode) */
+  --color-background: #030911;
+  --color-card: #1E2021;
   --color-secondary: #151718;
-  --color-white: #fff;
-  --color-black: #000;
-  --color-gray: #f2f2f2;
-  --color-darkgray: #333;
-  --color-transparent : #000;
+  --color-border: #313131;
+  --color-text-foreground: #ECEDEE;
+  --color-primary: #197DFF;
+  --color-primary-tint: #122B44;
+  --color-input: #151718;
+
+  /* Semantic / Status (Dark) */
+  --color-success: #6CBB44;
+  --color-warning: #F5A623;
+  --color-danger: #DB3333;
+  --color-info: #5E8DD8;
+
+  /* Semantic BG (adjusting for dark mode subtly) */
+  --color-success-bg: rgba(108,187,68,0.1);
+  --color-warning-bg: rgba(245,166,35,0.1);
+  --color-danger-bg: rgba(219,51,51,0.1);
+  --color-info-bg: rgba(94,141,216,0.1);
 }
 
-body {
-  font-family: "Rubik", sans-serif;
-}
-
-.royalwave {
-  background: linear-gradient(to right, #0d1a33, #153b66, #197dff);
-}
-.midnightRoyal {
-  background: linear-gradient(to right, #010b19, #0b1d3a, #1a3c66);
-}
-.deepMatte {
-  background: linear-gradient(to right, #151718, #0c0908, #030911);   
-}
-.abyssCurrent {
-  background: linear-gradient(to right, #03080F, #0D1A28, #197dff);
-}
-.abyssBlue {
-  background: linear-gradient(135deg, #040A12 0%, #122B44 50%, #197dff 100%);
-  border: 1px solid #197dffff;
-}
-.btn {
-  @apply bg-[linear-gradient(135deg,#040A12_0%,#122B44_50%,#197dff_100%)] border border-[#197dff] text-white px-4 py-2 rounded-md;
-}
-
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-background);
+    color: var(--color-text-foreground);
   }
-  a:hover {
-    color: #747bff;
+}
+
+@layer utilities {
+  /* System Typography Utility Classes */
+  .text-h1 {
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.025em;
   }
-  button {
-    background-color: #f9f9f9;
+  .text-h2 {
+    font-size: 24px;
+    line-height: 1.33;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
-} */
+  .text-h3 {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+  .text-body-lg {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: -0.011em;
+  }
+  .text-body {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: -0.011em;
+  }
+  .text-caption {
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  .tabular-nums-text {
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+  .button-text {
+    letter-spacing: 0.5px;
+  }
+  .uppercase-text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Signature Gradients */
+  .bg-arctic-fade {
+    background: linear-gradient(to right, #003366, #0055B3, #0B6CF4);
+  }
+  .bg-frost-glow {
+    background: linear-gradient(to right, #E8F2FF, #C4DDFF, #A4CCFF);
+  }
+  .bg-midnight-tide {
+    background: linear-gradient(to right, #030911, #0B1B2A, #122F40);
+  }
+  .bg-oceanic-storm {
+    background: linear-gradient(to right, #030911, #0A2233, #197DFF);
+  }
+  .bg-app-banner {
+    background: linear-gradient(to right, #121417, #194375);
+  }
+
+  /* System Tokens */
+  .shadow-premium {
+    box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.06);
+  }
+  .glass {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+  .dark .glass {
+    background: rgba(30,32,33,0.75);
+    border: 1px solid rgba(49,49,49,0.5);
+  }
+
+  /* Keep Old Gradients as Aliases so we don't break everything instantly */
+  .royalwave {
+    background: linear-gradient(to right, #0d1a33, #153b66, #197dff);
+  }
+  .midnightRoyal {
+    background: linear-gradient(to right, #010b19, #0b1d3a, #1a3c66);
+  }
+  .deepMatte {
+    background: linear-gradient(to right, #151718, #0c0908, #030911);   
+  }
+  .abyssCurrent {
+    background: linear-gradient(to right, #03080F, #0D1A28, #197dff);
+  }
+  .abyssBlue {
+    background: linear-gradient(135deg, #040A12 0%, #122B44 50%, #197dff 100%);
+    border: 1px solid #197dffff;
+  }
+  .btn {
+    @apply bg-primary text-white border border-transparent hover:bg-primary/90 px-4 py-2 rounded-lg tracking-[0.5px];
+  }
+}
+
+/* Base Headings Setup so they automatically look better even without classes */
+@layer base {
+  h1 {
+    @apply text-[32px] leading-[1.25] font-semibold tracking-[-0.025em];
+  }
+  h2 {
+    @apply text-[24px] leading-[1.33] font-semibold tracking-[-0.02em];
+  }
+  h3 {
+    @apply text-[20px] leading-[1.4] font-semibold tracking-[-0.015em];
+  }
+  p {
+    @apply text-[14px] leading-[1.5] font-normal tracking-[-0.011em];
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
