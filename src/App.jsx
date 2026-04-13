@@ -162,11 +162,11 @@ const HeroSection = ({ canvasRef }) => (
                 <span className="hidden sm:inline tabular-nums font-bold text-white">INH000023171</span>
             </div>
 
-            <h1 className="text-[42px] sm:text-6xl md:text-8xl lg:text-[100px] font-bold text-white tracking-[-0.025em] leading-[1.05] mb-6 text-glow relative z-10">
+            <h1 className="text-[36px] sm:text-5xl md:text-7xl lg:text-[80px] xl:text-[100px] font-bold text-white tracking-[-0.025em] leading-[1.05] mb-6 text-glow relative z-10">
                 Welcome to <span className="bg-gradient-to-r from-[#E8F2FF] via-[#C4DDFF] to-[#A4CCFF] bg-clip-text text-transparent block md:inline">Laava</span>
             </h1>
             
-            <p className="mt-4 text-[18px] sm:text-[20px] md:text-[28px] text-[#ECEDEE]/80 font-medium tracking-[-0.02em] leading-[1.4] mb-10 md:mb-12 max-w-3xl mx-auto relative z-10">
+            <p className="mt-4 text-[16px] sm:text-[18px] md:text-[22px] lg:text-[28px] text-[#ECEDEE]/80 font-medium tracking-[-0.02em] leading-[1.4] mb-10 md:mb-12 max-w-3xl mx-auto relative z-10">
                 Smarter Decisions <span className="text-[#197DFF] mx-2 opacity-50 hidden sm:inline">•</span> <span className="block sm:inline">Profitable Research</span>
             </p>
 
@@ -233,7 +233,7 @@ const AboutSection = () => (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
                 <div className="relative group order-2 md:order-1 px-4 md:px-0">
                     <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">About Laava</h2>
-                    <h3 className="text-[32px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">Redefining how you discover, analyse, and act on stock market opportunities.</h3>
+                    <h3 className="text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">Redefining how you discover, analyse, and act on stock market opportunities.</h3>
                     
                     <div className="space-y-6 text-[16px] text-[#ECEDEE]/70 leading-[1.5] tracking-[-0.011em]">
                         <p>Traditional equity research is often slow, subjective, and constrained by human bandwidth. We believe the future of wealth creation lies in <strong className="text-[#ECEDEE] font-medium">AI-powered intelligence</strong> that operates at the speed of markets.</p>
@@ -329,7 +329,7 @@ const FeaturesSection = () => (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Future-Ready Insights</h2>
-                <h3 className="text-[32px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">Our platform combines the expertise of seasoned analysts with cutting-edge tech.</h3>
+                <h3 className="text-[26px] md:text-[32px] lg:text-[36px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">Our platform combines the expertise of seasoned analysts with cutting-edge tech.</h3>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -441,7 +441,7 @@ const WhyChooseUsSection = () => (
             <div className="flex flex-col md:flex-row gap-16 items-center">
                 <div className="w-full md:w-1/3">
                     <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Why Choose Us</h2>
-                    <h3 className="text-[32px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">We bring the best of AI & human insight.</h3>
+                    <h3 className="text-[26px] md:text-[32px] lg:text-[36px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">We bring the best of AI & human insight.</h3>
                     <p className="text-[16px] text-[#ECEDEE]/70 leading-[1.5] tracking-[-0.011em]">Deliver results you can trust. At LAAVA, we don’t just provide research. We provide clarity in complexity, confidence in decisions, and conviction in action.</p>
                 </div>
                 
@@ -487,7 +487,7 @@ const DownloadCTA = () => (
         <div className="absolute inset-0 bg-gradient-to-r from-[#121417] to-[#194375] opacity-80"></div>
 
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
-            <h2 className="text-[32px] md:text-[56px] font-bold text-white mb-6 tracking-[-0.035em] leading-[1.1]">Join the Future of Trading</h2>
+            <h2 className="text-[28px] md:text-[42px] lg:text-[56px] font-bold text-white mb-6 tracking-[-0.035em] leading-[1.1]">Join the Future of Trading</h2>
             <p className="text-[16px] md:text-[18px] text-white/80 leading-[1.6] tracking-[-0.011em] mb-10">Download the LAAVA app today for smarter decisions and profitable research.</p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
