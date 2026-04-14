@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row md:justify-space-between md:items-start gap-10 text-center md:text-left">
 
         <div className="flex-1">
-          <Link to="/" ><img src='/assets/images/Laava-logo.png' className='w-1/2 mx-auto md:mx-0' /></Link>
+          <Link to="/" ><img src='/assets/images/Laava-logo.png' className='w-[300px] md:w-[350px] mx-auto md:mx-0' /></Link>
           <p className="text-gray text-sm mt-2">Smarter Decisions, Profitable Research</p>
           <div className="flex justify-center md:justify-start gap-6 mt-6 flex-wrap">
             <a href="https://www.facebook.com/share/1At6RJDhK6/" target="_blank" className="text-white hover:scale-110 transition-transform"><i className="fab fa-facebook-f text-2xl"></i></a>

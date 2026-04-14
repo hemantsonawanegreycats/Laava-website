@@ -88,10 +88,10 @@ const Navbar = () => {
     return (
         <nav className="fixed w-full top-0 z-[100] glass-nav transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
+                <div className="flex justify-between items-center h-24 md:h-28">
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2 cursor-pointer z-[110]" onClick={() => setIsMenuOpen(false)}>
-                        <img src="/assets/images/Lavaa logo white.png" alt="Laava Logo" className="h-[60px] md:h-[72px] object-contain" />
+                        <img src="/assets/images/Lavaa logo white.png" alt="Laava Logo" className="h-[80px] md:h-[100px] object-contain" />
                     </Link>
                     
                     {/* Desktop Nav & CTA */}
@@ -126,7 +126,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Slide-down */}
-            <div className={`md:hidden absolute top-20 left-0 w-full bg-[#030911]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-500 ease-in-out origin-top ${isMenuOpen ? 'opacity-100 scale-y-100 visible' : 'opacity-0 scale-y-0 invisible'}`}>
+            <div className={`md:hidden absolute top-24 left-0 w-full bg-[#030911]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-500 ease-in-out origin-top ${isMenuOpen ? 'opacity-100 scale-y-100 visible' : 'opacity-0 scale-y-0 invisible'}`}>
                 <div className="px-6 py-8 space-y-6">
                     <div className="flex flex-col gap-4">
                         <div className="flex items-center gap-3 px-4 py-3 bg-[#1E2021] rounded-xl border border-white/5">
@@ -161,7 +161,7 @@ const Navbar = () => {
 
 // --- SECTION 3: HERO COMPONENT (Includes 3D Canvas) ---
 const HeroSection = ({ canvasRef }) => (
-    <section id="hero-section" className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#030911] border-b border-[#313131] pt-20">
+    <section id="hero-section" className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#030911] border-b border-[#313131] pt-28">
         
         {/* Smooth 3D Wave Canvas Background */}
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 opacity-100"></canvas>
@@ -195,7 +195,15 @@ const HeroSection = ({ canvasRef }) => (
                     <i className="fa-brands fa-google-play text-2xl group-hover:scale-110 transition-transform"></i>
                     Get the App
                 </a>
-                <a href="#about" className="w-full sm:w-auto bg-[#1E2021]/50 hover:bg-[#1E2021] text-white border border-white/10 px-10 py-4 rounded-[0.75rem] font-bold text-[16px] tracking-[0.5px] transition-all backdrop-blur-md flex items-center justify-center gap-2">
+                <a href="#discover" onClick={(e) => {
+                    e.preventDefault();
+                    if (window.lenis) {
+                        window.lenis.scrollTo('#discover', { offset: -80, duration: 1.2 });
+                    } else {
+                        const el = document.getElementById('discover');
+                        if(el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+                    }
+                }} className="w-full sm:w-auto bg-[#1E2021]/50 hover:bg-[#1E2021] text-white border border-white/10 px-10 py-4 rounded-[0.75rem] font-bold text-[16px] tracking-[0.5px] transition-all backdrop-blur-md flex items-center justify-center gap-2">
                     Discover More <i className="fa-solid fa-arrow-down text-[12px] opacity-70"></i>
                 </a>
             </div>
@@ -210,7 +218,7 @@ const HeroSection = ({ canvasRef }) => (
 
 // --- SECTION 4: TRUST BANNER COMPONENT ---
 const TrustBanner = () => (
-    <div className="bg-[#1E2021]/30 border-b border-[#313131] py-8 md:py-10 relative z-20 backdrop-blur-sm">
+    <div id="discover" className="bg-[#1E2021]/30 border-b border-[#313131] py-8 md:py-10 relative z-20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-[#313131]/50 text-center">
                 <div className="py-4 sm:py-0 sm:px-4 flex flex-col items-center justify-center">
@@ -735,7 +743,7 @@ const Footer = () => (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-12 mb-16 md:mb-12">
                 <div className="md:col-span-12 lg:col-span-5 mb-8 lg:mb-0">
                     <Link to="/" className="block mb-6">
-                        <img src="/assets/images/Lavaa logo white.png" alt="Laava Logo" className="h-8 object-contain" />
+                        <img src="/assets/images/Lavaa logo white.png" alt="Laava Logo" className="h-[60px] md:h-[80px] object-contain" />
                     </Link>
                     <p className="text-[14px] text-[#ECEDEE]/70 tracking-[-0.011em] mb-6">Smarter Decisions, Profitable Research</p>
                     
@@ -964,6 +972,8 @@ export default function App() {
                     touchMultiplier: 2,
                     infinite: false,
                 });
+                
+                window.lenis = lenisInstance;
 
                 const raf = (time) => {
                     lenisInstance.raf(time);
