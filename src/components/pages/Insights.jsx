@@ -15,10 +15,10 @@ const Insights = () => (
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Insights</h2>
-        <h1 className="text-4xl md:text-6xl font-bold text-white tracking-[-0.025em] mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-white tracking-[-0.025em] leading-[1.1] mb-6">
           Market <span className="bg-gradient-to-r from-[#E8F2FF] to-[#A4CCFF] bg-clip-text text-transparent">insights & updates</span>
         </h1>
-        <p className="text-[#ECEDEE]/70 text-lg max-w-2xl mx-auto">Expert analysis, IPO reviews, and market updates — all in one place.</p>
+        <p className="text-[#ECEDEE]/70 text-[14px] md:text-[15px] max-w-2xl mx-auto leading-relaxed">Expert analysis, IPO reviews, and market updates — all in one place.</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

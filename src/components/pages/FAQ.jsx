@@ -22,8 +22,8 @@ const FAQ = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">FAQ</h2>
-          <h1 className="text-4xl md:text-6xl font-bold text-white tracking-[-0.025em] mb-6">Frequently asked <span className="bg-gradient-to-r from-[#E8F2FF] to-[#A4CCFF] bg-clip-text text-transparent">questions</span></h1>
-          <p className="text-[#ECEDEE]/70 text-lg">Everything you need to know before you get started.</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white tracking-[-0.025em] leading-[1.1] mb-6">Frequently asked <span className="bg-gradient-to-r from-[#E8F2FF] to-[#A4CCFF] bg-clip-text text-transparent">questions</span></h1>
+          <p className="text-[#ECEDEE]/70 text-[14px] md:text-[15px] max-w-2xl mx-auto leading-relaxed">Everything you need to know before you get started.</p>
         </div>
 
         <div className="space-y-3">

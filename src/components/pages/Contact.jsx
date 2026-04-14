@@ -5,10 +5,10 @@ const Contact = () => (
     <div className="max-w-5xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Contact</h2>
-        <h1 className="text-4xl md:text-6xl font-bold text-white tracking-[-0.025em] mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-white tracking-[-0.025em] leading-[1.1] mb-6">
           Get in <span className="bg-gradient-to-r from-[#E8F2FF] to-[#A4CCFF] bg-clip-text text-transparent">touch</span>
         </h1>
-        <p className="text-[#ECEDEE]/70 text-lg max-w-2xl mx-auto">
+        <p className="text-[#ECEDEE]/70 text-[14px] md:text-[15px] max-w-2xl mx-auto leading-relaxed">
           Have questions about Laava? We’d love to hear from you.
         </p>
       </div>

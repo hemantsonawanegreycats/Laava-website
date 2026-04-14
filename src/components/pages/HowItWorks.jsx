@@ -14,8 +14,8 @@ const HowItWorks = () => (
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">How it works</h2>
-        <h1 className="text-4xl md:text-6xl font-bold text-white tracking-[-0.025em] mb-6">Start investing in <span className="bg-gradient-to-r from-[#E8F2FF] to-[#A4CCFF] bg-clip-text text-transparent">6 simple steps</span></h1>
-        <p className="text-[#ECEDEE]/70 text-lg max-w-2xl mx-auto">From download to your first expert call — in under 10 minutes.</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-white tracking-[-0.025em] leading-[1.1] mb-6">Start investing in <span className="bg-gradient-to-r from-[#E8F2FF] to-[#A4CCFF] bg-clip-text text-transparent">6 simple steps</span></h1>
+        <p className="text-[#ECEDEE]/70 text-[14px] md:text-[15px] max-w-2xl mx-auto leading-relaxed">From download to your first expert call — in under 10 minutes.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

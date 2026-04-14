@@ -18,8 +18,8 @@ const Features = () => (
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Features</h2>
-        <h1 className="text-4xl md:text-6xl font-bold text-white tracking-[-0.025em] mb-6">Everything you need to <span className="bg-gradient-to-r from-[#E8F2FF] to-[#A4CCFF] bg-clip-text text-transparent">trade smarter</span></h1>
-        <p className="text-[#ECEDEE]/70 text-lg max-w-2xl mx-auto">From equity research to F&O strategies — one app for every kind of investor.</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-white tracking-[-0.025em] leading-[1.1] mb-6">Everything you need to <span className="bg-gradient-to-r from-[#E8F2FF] to-[#A4CCFF] bg-clip-text text-transparent">trade smarter</span></h1>
+        <p className="text-[#ECEDEE]/70 text-[14px] md:text-[15px] max-w-2xl mx-auto leading-relaxed">From equity research to F&O strategies — one app for every kind of investor.</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
