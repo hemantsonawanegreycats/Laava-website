@@ -102,7 +102,7 @@ const Navbar = () => {
                             <Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link>
                             <Link to="/about" className="hover:text-white transition-colors">About</Link>
                             <Link to="/faq" className="hover:text-white transition-colors">FAQ</Link>
-                            <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
+                            {/* <Link to="/contact" className="hover:text-white transition-colors">Contact</Link> */}
                         </div>
                         <div className="hidden lg:flex xl:hidden items-center gap-2 px-3 py-1.5 bg-[#151718] rounded-full text-[12px] font-medium text-[#ECEDEE]/70 border border-[#313131]">
                             <i className="fa-solid fa-shield-halved text-[#22A756]"></i>
@@ -149,7 +149,7 @@ const Navbar = () => {
                         <Link to="/pricing" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Pricing</Link>
                         <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">About</Link>
                         <Link to="/faq" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">FAQ</Link>
-                        <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Contact</Link>
+                        {/* <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Contact</Link> */}
                         <Link to="/disclaimer" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Disclaimer</Link>
                         <Link to="/privacy-policy" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Privacy</Link>
                     </div>
@@ -1022,7 +1022,7 @@ export default function App() {
                     <Route path="/pricing" element={<Pricing />} />
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/insights" element={<Insights />} />
-                    <Route path="/contact" element={<Contact />} />
+                    {/* <Route path="/contact" element={<Contact />} /> */}
                 </Routes>
             </div>
             <Footer />
