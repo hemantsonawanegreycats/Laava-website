@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-inter: 'Inter', sans-serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-inter: 'Rubik', sans-serif;
+  --font-sans: 'Rubik', sans-serif;
 
   --color-primary: var(--color-primary);
   --color-primary-tint: var(--color-primary-tint);
@@ -79,7 +79,7 @@
 
 @layer base {
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

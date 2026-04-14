@@ -5,16 +5,24 @@ import TermsOfUse from './components/pages/TermsOfUse';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import CookiesPolicy from './components/pages/CookiesPolicy';
 import Investordocs from './components/pages/Investor-grievance';
+import About from './components/pages/About';
+import Contact from './components/pages/Contact';
+import Insights from './components/pages/Insights';
+import Features from './components/pages/Features';
+import HowItWorks from './components/pages/HowItWorks';
+import Pricing from './components/pages/Pricing';
+import FAQ from './components/pages/FAQ';
+import TestimonialCarousel from './components/HomePage/TestimonialCarousel';
 
 // --- SECTION 1: GLOBAL STYLES & DEPENDENCIES ---
 // This component injects the necessary fonts, icons, and custom CSS required for the exact look.
 const GlobalStyles = () => (
   <style dangerouslySetInnerHTML={{__html: `
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
     body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Rubik', sans-serif;
         font-feature-settings: "cv02", "cv03", "cv04", "cv11";
         -webkit-font-smoothing: antialiased;
         background-color: #030911;
@@ -88,7 +96,15 @@ const Navbar = () => {
                     
                     {/* Desktop Nav & CTA */}
                     <div className="hidden md:flex items-center gap-6">
-                        <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-[#151718] rounded-full text-[12px] font-medium text-[#ECEDEE]/70 border border-[#313131]">
+                        <div className="hidden xl:flex items-center gap-5 text-[14px] text-[#ECEDEE]/70 font-medium">
+                            <Link to="/features" className="hover:text-white transition-colors">Features</Link>
+                            <Link to="/how-it-works" className="hover:text-white transition-colors">How it Works</Link>
+                            <Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link>
+                            <Link to="/about" className="hover:text-white transition-colors">About</Link>
+                            <Link to="/faq" className="hover:text-white transition-colors">FAQ</Link>
+                            <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
+                        </div>
+                        <div className="hidden lg:flex xl:hidden items-center gap-2 px-3 py-1.5 bg-[#151718] rounded-full text-[12px] font-medium text-[#ECEDEE]/70 border border-[#313131]">
                             <i className="fa-solid fa-shield-halved text-[#22A756]"></i>
                             SEBI Reg: <span className="tabular-nums font-medium text-[#ECEDEE]">INH000023171</span>
                         </div>
@@ -128,10 +144,14 @@ const Navbar = () => {
                     </div>
                     
                     <div className="pt-4 border-t border-white/5 grid grid-cols-2 gap-4">
-                        <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">About</a>
-                        <a href="#download" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Download</a>
-                        <a href="/disclaimer" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Disclaimer</a>
-                        <a href="/privacy-policy" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Privacy</a>
+                        <Link to="/features" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Features</Link>
+                        <Link to="/how-it-works" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">How it Works</Link>
+                        <Link to="/pricing" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Pricing</Link>
+                        <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">About</Link>
+                        <Link to="/faq" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">FAQ</Link>
+                        <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Contact</Link>
+                        <Link to="/disclaimer" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Disclaimer</Link>
+                        <Link to="/privacy-policy" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Privacy</Link>
                     </div>
                 </div>
             </div>
@@ -331,7 +351,7 @@ const FeaturesSection = () => (
                 <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Future-Ready Insights</h2>
                 <h3 className="text-[26px] md:text-[32px] lg:text-[36px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">Our platform combines the expertise of seasoned analysts with cutting-edge tech.</h3>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="bg-[#1E2021] p-8 rounded-[0.75rem] border border-[#313131] shadow-[0_1px_2px_rgba(0,0,0,.04),_0_4px_16px_rgba(0,0,0,.06)] card-hover">
                     <div className="w-12 h-12 bg-[#4B83D6]/10 text-[#4B83D6] rounded-[0.75rem] flex items-center justify-center text-xl mb-6">
@@ -479,6 +499,211 @@ const WhyChooseUsSection = () => (
         </div>
     </section>
 );
+
+// --- WHY LAAVA — CLEAN VERTICAL TIMELINE WITH SCROLL HIGHLIGHT ---
+const WhyLaava = () => {
+    const pillars = [
+        { icon: 'fa-shield-halved', title: 'SEBI Registered', desc: 'Research Analyst INH000023171 — every call complies with SEBI guidelines.', color: '#22A756' },
+        { icon: 'fa-user-tie', title: 'Expert-Led Research', desc: 'Calls curated by seasoned analysts, not auto-generated signals.', color: '#197DFF' },
+        { icon: 'fa-eye', title: 'Full Transparency', desc: 'Every recommendation comes with rationale, target, and exit — no black box.', color: '#E8930C' },
+        { icon: 'fa-lock', title: 'Secure & Private', desc: 'Bank-grade encryption. Your data is never shared with third parties.', color: '#4B83D6' },
+    ];
+    const [activeIdx, setActiveIdx] = useState(0);
+    const itemRefs = useRef([]);
+
+    useEffect(() => {
+        const observers = itemRefs.current.map((el, i) => {
+            if (!el) return null;
+            const obs = new IntersectionObserver(
+                ([entry]) => { if (entry.isIntersecting) setActiveIdx(i); },
+                { threshold: 0.6, rootMargin: '-20% 0px -30% 0px' }
+            );
+            obs.observe(el);
+            return obs;
+        });
+        return () => observers.forEach((o) => o && o.disconnect());
+    }, []);
+
+    return (
+        <section className="py-24 md:py-32 bg-gradient-to-b from-[#030911] to-[#0a1220] border-y border-[#313131] relative overflow-hidden">
+            <div className="max-w-5xl mx-auto px-6 lg:px-8 relative">
+                <div className="text-center mb-20">
+                    <h2 className="text-[12px] font-semibold text-[#22A756] tracking-[1px] uppercase mb-3">Why Laava</h2>
+                    <h3 className="text-[32px] md:text-[48px] font-semibold text-white tracking-[-0.025em]">Built on trust, <span className="text-[#ECEDEE]/40">not hype</span></h3>
+                </div>
+
+                <div className="relative">
+                    {/* Mobile vertical line (left) */}
+                    <div className="md:hidden absolute left-[23px] top-2 bottom-2 w-px bg-[#313131]"></div>
+                    <div
+                        className="md:hidden absolute left-[23px] top-2 w-px bg-gradient-to-b from-[#197DFF] to-[#22A756] transition-all duration-500 ease-out"
+                        style={{ height: `${((activeIdx + 1) / pillars.length) * 100}%` }}
+                    ></div>
+
+                    {/* Desktop center line */}
+                    <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 bottom-2 w-px bg-[#313131]"></div>
+                    <div
+                        className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 w-px bg-gradient-to-b from-[#197DFF] to-[#22A756] transition-all duration-500 ease-out"
+                        style={{ height: `${((activeIdx + 1) / pillars.length) * 100}%` }}
+                    ></div>
+
+                    <div className="space-y-16 md:space-y-28">
+                        {pillars.map((p, i) => {
+                            const active = i <= activeIdx;
+                            const isLeft = i % 2 === 0;
+                            return (
+                                <div
+                                    key={i}
+                                    ref={(el) => (itemRefs.current[i] = el)}
+                                    className="relative transition-all duration-500 md:flex md:items-center"
+                                    style={{ opacity: active ? 1 : 0.4 }}
+                                >
+                                    {/* Mobile icon (left-aligned) */}
+                                    <div
+                                        className="md:hidden absolute left-0 top-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500"
+                                        style={{
+                                            backgroundColor: active ? p.color : '#1E2021',
+                                            boxShadow: active ? `0 0 32px ${p.color}60` : 'none',
+                                            border: active ? 'none' : '1px solid #313131',
+                                        }}
+                                    >
+                                        <i className={`fa-solid ${p.icon} text-[18px] transition-colors duration-500`} style={{ color: active ? '#fff' : '#ECEDEE80' }}></i>
+                                    </div>
+
+                                    {/* Desktop center icon */}
+                                    <div
+                                        className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full items-center justify-center transition-all duration-500 z-10"
+                                        style={{
+                                            backgroundColor: active ? p.color : '#1E2021',
+                                            boxShadow: active ? `0 0 32px ${p.color}60` : 'none',
+                                            border: active ? 'none' : '1px solid #313131',
+                                        }}
+                                    >
+                                        <i className={`fa-solid ${p.icon} text-[20px] transition-colors duration-500`} style={{ color: active ? '#fff' : '#ECEDEE80' }}></i>
+                                    </div>
+
+                                    {/* Content — mobile: left-pad, desktop: alternating halves */}
+                                    <div className={`pl-16 md:pl-0 md:w-1/2 ${isLeft ? 'md:pr-16 md:text-right' : 'md:ml-auto md:pl-16 md:text-left'}`}>
+                                        <h4 className="text-[24px] md:text-[30px] font-semibold text-white mb-3 tracking-[-0.02em]">{p.title}</h4>
+                                        <p className="text-[15px] md:text-[16px] text-[#ECEDEE]/70 leading-relaxed">{p.desc}</p>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+// --- HOW IT WORKS — CONNECTED HORIZONTAL TIMELINE ---
+const HowItWorksTeaser = () => {
+    const steps = [
+        { num: '1', icon: 'fa-download', title: 'Download', desc: 'Get the app free on Play Store' },
+        { num: '2', icon: 'fa-clipboard-check', title: 'Risk Profile', desc: 'Quick setup in under 5 mins' },
+        { num: '3', icon: 'fa-bell-concierge', title: 'Get Calls', desc: 'Expert recommendations in real-time' },
+    ];
+    return (
+        <section className="py-24 bg-[#151718]/30 border-y border-[#313131]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Get Started</h2>
+                    <h3 className="text-[26px] md:text-[32px] lg:text-[36px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">Three steps to smarter investing.</h3>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {steps.map((s, i) => (
+                        <div key={i} className="bg-[#1E2021] p-8 rounded-[0.75rem] border border-[#313131] shadow-[0_1px_2px_rgba(0,0,0,.04),_0_4px_16px_rgba(0,0,0,.06)] card-hover relative">
+                            <div className="w-12 h-12 bg-[#197DFF]/10 text-[#197DFF] rounded-[0.75rem] flex items-center justify-center text-xl mb-6">
+                                <i className={`fa-solid ${s.icon}`}></i>
+                            </div>
+                            <span className="absolute top-6 right-6 text-[14px] font-bold text-[#197DFF]/40">0{s.num}</span>
+                            <h4 className="text-[20px] font-semibold text-[#ECEDEE] leading-[1.4] tracking-[-0.015em] mb-3">{s.title}</h4>
+                            <p className="text-[14px] text-[#ECEDEE]/70 leading-[1.5] tracking-[-0.011em]">{s.desc}</p>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="text-center mt-12">
+                    <Link to="/how-it-works" className="inline-flex items-center gap-2 text-[#197DFF] hover:text-[#4B83D6] font-semibold transition-colors">
+                        See full onboarding flow <i className="fa-solid fa-arrow-right text-[12px]"></i>
+                    </Link>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+// --- TESTIMONIALS SECTION ---
+const TestimonialsSection = () => (
+    <section className="py-20 bg-[#0a1220] border-y border-[#313131]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-12">
+                <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Testimonials</h2>
+                <h3 className="text-[26px] md:text-[36px] font-semibold text-white tracking-[-0.025em]">Loved by thousands of investors</h3>
+            </div>
+            <TestimonialCarousel />
+        </div>
+    </section>
+);
+
+// --- PRICING TEASER ---
+const PricingTeaser = () => (
+    <section className="py-20 bg-[#0a1220] border-y border-[#313131]">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+            <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Pricing</h2>
+            <h3 className="text-[26px] md:text-[36px] font-semibold text-white tracking-[-0.025em] mb-4">Basic & Premium plans. <span className="text-[#22A756]">Free trial</span> available.</h3>
+            <p className="text-[#ECEDEE]/70 text-[16px] md:text-[18px] mb-10 max-w-2xl mx-auto">Current pricing and offers are shown live inside the app.</p>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+                {['Free Trial', 'Secure PayU Payments', 'Refer & Earn', 'SEBI Compliant'].map((t, i) => (
+                    <span key={i} className="px-5 py-2 bg-[#1E2021] border border-[#313131] rounded-full text-[13px] text-[#ECEDEE]/90 flex items-center gap-2">
+                        <i className="fa-solid fa-check text-[#22A756]"></i>{t}
+                    </span>
+                ))}
+            </div>
+            <Link to="/pricing" className="inline-flex items-center gap-3 bg-white hover:bg-gray-200 text-black px-10 py-4 rounded-[0.75rem] font-bold text-[16px] transition-all">
+                View All Plans <i className="fa-solid fa-arrow-right"></i>
+            </Link>
+        </div>
+    </section>
+);
+
+// --- FAQ TEASER ---
+const FAQTeaser = () => {
+    const [open, setOpen] = useState(-1);
+    const items = [
+        { q: 'Is Laava SEBI registered?', a: 'Yes — Laava is a SEBI-registered Research Analyst (INH000023171). All our research complies with SEBI guidelines.' },
+        { q: 'Is there a free trial?', a: 'Yes. New users get a free trial to experience the platform before subscribing.' },
+        { q: 'How do I get the calls?', a: 'All calls are delivered inside the Laava app with real-time push notifications for entry, target, and exit alerts.' },
+    ];
+    return (
+        <section className="py-20 bg-[#030911]">
+            <div className="max-w-4xl mx-auto px-6 lg:px-8">
+                <div className="text-center mb-12">
+                    <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">FAQ</h2>
+                    <h3 className="text-[26px] md:text-[36px] font-semibold text-white tracking-[-0.025em]">Common questions</h3>
+                </div>
+                <div className="space-y-3">
+                    {items.map((f, i) => (
+                        <div key={i} className="bg-[#1E2021]/50 border border-[#313131] rounded-2xl overflow-hidden backdrop-blur-sm">
+                            <button onClick={() => setOpen(open === i ? -1 : i)} className="w-full flex justify-between items-center text-left px-6 py-5 hover:bg-[#1E2021]/80 transition-all">
+                                <span className="text-white font-semibold text-[16px]">{f.q}</span>
+                                <i className={`fa-solid fa-chevron-down text-[#197DFF] transition-transform ${open === i ? 'rotate-180' : ''}`}></i>
+                            </button>
+                            {open === i && <div className="px-6 pb-5 text-[#ECEDEE]/70 leading-relaxed">{f.a}</div>}
+                        </div>
+                    ))}
+                </div>
+                <div className="text-center mt-10">
+                    <Link to="/faq" className="inline-flex items-center gap-2 text-[#197DFF] hover:text-[#4B83D6] font-semibold transition-colors">
+                        Read all FAQs <i className="fa-solid fa-arrow-right text-[12px]"></i>
+                    </Link>
+                </div>
+            </div>
+        </section>
+    );
+};
 
 // --- SECTION 9: DOWNLOAD CTA COMPONENT ---
 const DownloadCTA = () => (
@@ -693,10 +918,11 @@ const LandingPage = () => {
         <>
             <HeroSection canvasRef={canvasRef} />
             <TrustBanner />
-            <AboutSection />
             <FeaturesSection />
-            <MissionVisionSection />
-            <WhyChooseUsSection />
+            <WhyLaava />
+            <HowItWorksTeaser />
+            <PricingTeaser />
+            <FAQTeaser />
             <DownloadCTA />
         </>
     );
@@ -790,6 +1016,13 @@ export default function App() {
                     <Route path="/privacy-policy" element={<div className="pt-24"><PrivacyPolicy /></div>} />
                     <Route path="/cookies" element={<div className="pt-24"><CookiesPolicy /></div>} />
                     <Route path="/investorgrievance" element={<div className="pt-24"><Investordocs /></div>} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/features" element={<Features />} />
+                    <Route path="/how-it-works" element={<HowItWorks />} />
+                    <Route path="/pricing" element={<Pricing />} />
+                    <Route path="/faq" element={<FAQ />} />
+                    <Route path="/insights" element={<Insights />} />
+                    <Route path="/contact" element={<Contact />} />
                 </Routes>
             </div>
             <Footer />
