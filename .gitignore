@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+laava-web
+
+laava-app
+
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
