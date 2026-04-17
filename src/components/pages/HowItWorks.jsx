@@ -1,7 +1,9 @@
 import React from 'react';
 
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.laava.app';
+
 const steps = [
-  { num: '01', icon: 'fa-download', title: 'Download the App', desc: 'Get Laava free from the Play Store. Takes under a minute.' },
+  { num: '01', icon: 'fa-download', title: 'Download the App', desc: 'Get Laava free from the Play Store. Takes under a minute.', cta: { href: PLAY_STORE_URL, label: 'Get it on Play Store', icon: 'fa-brands fa-google-play' } },
   { num: '02', icon: 'fa-user-plus', title: 'Quick Signup', desc: 'Sign up with phone OTP or Google. Add your name and verify email.' },
   { num: '03', icon: 'fa-clipboard-check', title: 'Risk Profiling', desc: 'Answer a short questionnaire so we match calls to your risk appetite.' },
   { num: '04', icon: 'fa-id-card', title: 'Complete KYC', desc: 'Submit your PAN number and a PAN photo — verified in minutes.' },
@@ -27,12 +29,23 @@ const HowItWorks = () => (
             </div>
             <h3 className="text-2xl font-bold text-white mb-2 relative">{s.title}</h3>
             <p className="text-[#ECEDEE]/70 relative">{s.desc}</p>
+            {s.cta && (
+              <a
+                href={s.cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative mt-5 inline-flex items-center gap-2 bg-white hover:bg-gray-200 text-black px-5 py-2.5 rounded-[0.75rem] font-semibold text-[14px] transition-all"
+              >
+                <i className={`${s.cta.icon} text-lg`}></i>
+                {s.cta.label}
+              </a>
+            )}
           </div>
         ))}
       </div>
 
       <div className="text-center mt-16">
-        <a href="https://play.google.com/store/apps/details?id=com.laava.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-white hover:bg-gray-200 text-black px-10 py-4 rounded-[0.75rem] font-bold text-[16px] transition-all">
+        <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-white hover:bg-gray-200 text-black px-10 py-4 rounded-[0.75rem] font-bold text-[16px] transition-all">
           <i className="fa-brands fa-google-play text-2xl"></i>
           Get Started Now
         </a>

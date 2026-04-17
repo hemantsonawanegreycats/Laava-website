@@ -161,8 +161,8 @@ const Navbar = () => {
 
 // --- SECTION 3: HERO COMPONENT (Includes 3D Canvas) ---
 const HeroSection = ({ canvasRef }) => (
-    <section id="hero-section" className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#030911] border-b border-[#313131] pt-28">
-        
+    <section id="hero-section" className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#030911] border-b border-[#313131] pt-24 md:pt-28">
+
         {/* Smooth 3D Wave Canvas Background */}
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 opacity-100"></canvas>
 
@@ -170,28 +170,31 @@ const HeroSection = ({ canvasRef }) => (
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(25,125,255,0.05)_0%,_rgba(3,9,17,0.4)_60%,_rgba(3,9,17,1)_100%)] z-0 pointer-events-none"></div>
 
         {/* Main Content */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center mt-[20px] md:mt-[30px]">
-            <div className="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-[#1E2021]/50 border border-white/10 text-[11px] md:text-[12px] text-[#ECEDEE]/90 mb-6 md:mb-8 backdrop-blur-lg shadow-[0_1px_2px_rgba(0,0,0,.04),_0_4px_16px_rgba(0,0,0,.06)]">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 md:px-5 md:py-2.5 rounded-full bg-[#1E2021]/50 border border-white/10 text-[11px] md:text-[12px] text-[#ECEDEE]/90 mb-8 md:mb-8 backdrop-blur-lg shadow-[0_1px_2px_rgba(0,0,0,.04),_0_4px_16px_rgba(0,0,0,.06)]">
                 <span className="flex h-2 w-2 relative">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22A756] opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22A756]"></span>
                 </span>
                 <span className="hidden sm:inline">SEBI Registered Research Analyst</span>
-                <span className="sm:hidden font-bold">SEBI INH000023171</span>
-                <span className="hidden sm:inline text-white/30 mx-1">|</span> 
+                <span className="sm:hidden font-semibold tracking-[0.3px]">SEBI INH000023171</span>
+                <span className="hidden sm:inline text-white/30 mx-1">|</span>
                 <span className="hidden sm:inline tabular-nums font-bold text-white">INH000023171</span>
             </div>
 
-            <h1 className="text-[36px] sm:text-5xl md:text-7xl lg:text-[80px] xl:text-[100px] font-bold text-white tracking-[-0.025em] leading-[1.05] mb-6 text-glow relative z-10">
-                Welcome to <span className="bg-gradient-to-r from-[#E8F2FF] via-[#C4DDFF] to-[#A4CCFF] bg-clip-text text-transparent block md:inline">Laava</span>
+            <h1 className="font-bold text-white tracking-[-0.04em] leading-[1.05] md:leading-[1] mb-6 md:mb-8 text-glow relative z-10 flex flex-col items-center">
+                <span className="text-[24px] sm:text-5xl md:text-7xl lg:text-[80px] xl:text-[100px] text-white/90">Welcome to</span>
+                <span className="text-[58px] sm:text-5xl md:text-7xl lg:text-[80px] xl:text-[100px] bg-gradient-to-r from-[#B0D4FF] via-[#E8F2FF] to-[#B0D4FF] bg-clip-text text-transparent block md:inline leading-none">Laava</span>
             </h1>
-            
-            <p className="mt-4 text-[16px] sm:text-[18px] md:text-[22px] lg:text-[28px] text-[#ECEDEE]/80 font-medium tracking-[-0.02em] leading-[1.4] mb-10 md:mb-12 max-w-3xl mx-auto relative z-10">
-                Smarter Decisions <span className="text-[#197DFF] mx-2 opacity-50 hidden sm:inline">•</span> <span className="block sm:inline">Profitable Research</span>
+
+            <p className="mt-0 md:mt-4 text-[14px] sm:text-[18px] md:text-[22px] lg:text-[28px] text-[#ECEDEE]/60 font-normal sm:font-medium tracking-tight leading-[1.5] mb-10 md:mb-12 max-w-xs sm:max-w-3xl mx-auto relative z-10">
+                <span className="block sm:inline whitespace-nowrap">Smarter Decisions</span>
+                <span className="text-[#197DFF] mx-3 opacity-40 hidden sm:inline">•</span>
+                <span className="block sm:inline whitespace-nowrap">Profitable Research</span>
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center items-center w-full sm:w-auto relative z-20 px-4 md:px-0">
-                <a href="https://play.google.com/store/apps/details?id=com.laava.app" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-white hover:bg-gray-200 text-black px-10 py-4 rounded-[0.75rem] font-bold text-[16px] tracking-[0.5px] transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3 group">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-5 justify-center items-center w-full sm:w-auto relative z-20">
+                <a href="https://play.google.com/store/apps/details?id=com.laava.app" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-white hover:bg-gray-200 text-black px-10 py-3.5 md:py-4 rounded-[1rem] font-bold text-[16px] tracking-[0.5px] transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3 group">
                     <i className="fa-brands fa-google-play text-2xl group-hover:scale-110 transition-transform"></i>
                     Get the App
                 </a>
@@ -203,7 +206,7 @@ const HeroSection = ({ canvasRef }) => (
                         const el = document.getElementById('discover');
                         if(el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
                     }
-                }} className="w-full sm:w-auto bg-[#1E2021]/50 hover:bg-[#1E2021] text-white border border-white/10 px-10 py-4 rounded-[0.75rem] font-bold text-[16px] tracking-[0.5px] transition-all backdrop-blur-md flex items-center justify-center gap-2">
+                }} className="w-auto bg-transparent sm:bg-[#1E2021]/50 hover:bg-[#1E2021] text-white/70 hover:text-white sm:text-white border-0 sm:border sm:border-white/10 px-6 sm:px-10 py-2 sm:py-4 rounded-[0.75rem] font-medium sm:font-bold text-[14px] sm:text-[16px] tracking-[0.5px] transition-all sm:backdrop-blur-md flex items-center justify-center gap-2">
                     Discover More <i className="fa-solid fa-arrow-down text-[12px] opacity-70"></i>
                 </a>
             </div>

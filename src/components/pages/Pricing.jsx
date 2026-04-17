@@ -73,7 +73,7 @@ const Pricing = () => (
           <i className="fa-solid fa-users text-[#197DFF] text-xl mt-1"></i>
           <div>
             <h4 className="text-white font-semibold mb-1">Refer & Earn</h4>
-            <p className="text-[13px] text-[#ECEDEE]/70">Earn ₹250 (Basic) or ₹1,000 (Premium) per successful referral.</p>
+            <p className="text-[13px] text-[#ECEDEE]/70">Earn ₹250 per successful referral.</p>
           </div>
         </div>
         <div className="bg-[#1E2021]/40 border border-[#313131] rounded-xl p-5 flex items-start gap-3">
