@@ -17,6 +17,8 @@ import { Zap, Brain, User, Crosshair } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SEO from './components/SEO';
+import { analytics, logEvent } from './firebase';
+
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -1130,7 +1132,15 @@ export default function App() {
     // Scroll to top on route change
     useEffect(() => {
         window.scrollTo(0, 0);
+        
+        // Log page view to Firebase Analytics
+        if (analytics) {
+            logEvent(analytics, 'page_view', {
+                page_path: pathname,
+            });
+        }
     }, [pathname]);
+
 
     // Dynamic Script Loading for Smooth Scrolling
     useEffect(() => {
