@@ -12,7 +12,12 @@ const SEO = ({ title, description, image = '/assets/images/Herobanner.png', sche
       {description && <meta name="description" content={description} />}
       <link rel="canonical" href={url} />
 
+      {/* Favicon & Branding */}
+      <link rel="icon" type="image/png" href="/assets/images/Lavaa icon white.png" />
+      <link rel="apple-touch-icon" href="/assets/images/Lavaa icon white.png" />
+
       {/* Open Graph / Facebook */}
+
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       {title && <meta property="og:title" content={title} />}
