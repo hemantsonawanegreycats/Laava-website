@@ -13,6 +13,13 @@ import HowItWorks from './components/pages/HowItWorks';
 import Pricing from './components/pages/Pricing';
 import FAQ from './components/pages/FAQ';
 import TestimonialCarousel from './components/HomePage/TestimonialCarousel';
+import { Zap, Brain, User, Crosshair } from 'lucide-react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SEO from './components/SEO';
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 // --- SECTION 1: GLOBAL STYLES & DEPENDENCIES ---
 // This component injects the necessary fonts, icons, and custom CSS required for the exact look.
@@ -184,7 +191,7 @@ const HeroSection = ({ canvasRef }) => (
 
             <h1 className="font-bold text-white tracking-[-0.04em] leading-[1.05] md:leading-[1] mb-6 md:mb-8 text-glow relative z-10 flex flex-col items-center">
                 <span className="text-[24px] sm:text-5xl md:text-7xl lg:text-[80px] xl:text-[100px] text-white/90">Welcome to</span>
-                <span className="text-[58px] sm:text-5xl md:text-7xl lg:text-[80px] xl:text-[100px] bg-gradient-to-r from-[#B0D4FF] via-[#E8F2FF] to-[#B0D4FF] bg-clip-text text-transparent block md:inline leading-none">Laava</span>
+                <span className="text-[58px] sm:text-5xl md:text-7xl lg:text-[80px] xl:text-[100px] bg-gradient-to-r from-white via-[#E8F2FF] to-[#DDE0E6] bg-clip-text text-transparent block md:inline leading-none italic font-semibold">Laava</span>
             </h1>
 
             <p className="mt-0 md:mt-4 text-[14px] sm:text-[18px] md:text-[22px] lg:text-[28px] text-[#ECEDEE]/60 font-normal sm:font-medium tracking-tight leading-[1.5] mb-10 md:mb-12 max-w-xs sm:max-w-3xl mx-auto relative z-10">
@@ -263,8 +270,10 @@ const AboutSection = () => (
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
                 <div className="relative group order-2 md:order-1 px-4 md:px-0">
-                    <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">About Laava</h2>
-                    <h3 className="text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">Redefining how you discover, analyse, and act on stock market opportunities.</h3>
+                    <h2 className="text-[11px] font-bold text-[#197DFF] tracking-[0.4em] uppercase mb-5 opacity-80">About Laava</h2>
+                    <h3 className="text-[28px] md:text-[32px] lg:text-[44px] font-semibold text-[#ECEDEE] leading-[1.2] tracking-tight mb-8 text-hover-gradient">
+                        Redefining how you discover, <span className="text-gradient-accent italic">analyse</span>, and act on stock market opportunities.
+                    </h3>
                     
                     <div className="space-y-6 text-[16px] text-[#ECEDEE]/70 leading-[1.5] tracking-[-0.011em]">
                         <p>Traditional equity research is often slow, subjective, and constrained by human bandwidth. We believe the future of wealth creation lies in <strong className="text-[#ECEDEE] font-medium">AI-powered intelligence</strong> that operates at the speed of markets.</p>
@@ -354,48 +363,130 @@ const AboutSection = () => (
     </section>
 );
 
-// --- SECTION 6: FEATURES COMPONENT ---
-const FeaturesSection = () => (
-    <section className="py-24 bg-[#151718]/30 border-y border-[#313131]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Future-Ready Insights</h2>
-                <h3 className="text-[26px] md:text-[32px] lg:text-[36px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">Our platform combines the expertise of seasoned analysts with cutting-edge tech.</h3>
+// --- Feature Card Component ---
+const FeatureCard = ({ icon: Icon, title, description, colors }) => {
+    return (
+        <div className="group relative rounded-[2rem] bg-[#111318]/80 backdrop-blur-xl border border-white/5 p-8 transition-all duration-500 hover:translate-y-[-12px] hover:border-white/10 hover:bg-[#111318]/90 overflow-hidden h-full">
+            {/* Border Beam Animation */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                <div className="absolute inset-0 border-beam-active" style={{ '--beam-duration': '3s' }}></div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="bg-[#1E2021] p-8 rounded-[0.75rem] border border-[#313131] shadow-[0_1px_2px_rgba(0,0,0,.04),_0_4px_16px_rgba(0,0,0,.06)] card-hover">
-                    <div className="w-12 h-12 bg-[#4B83D6]/10 text-[#4B83D6] rounded-[0.75rem] flex items-center justify-center text-xl mb-6">
-                        <i className="fa-solid fa-bolt-lightning"></i>
+            {/* Internal Glow */}
+            <div 
+                className="absolute -top-24 -right-24 w-48 h-48 rounded-full blur-[60px] opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"
+                style={{ backgroundColor: colors.icon }}
+            ></div>
+
+            {/* Icon Container */}
+            <div 
+                className="w-12 h-12 rounded-[0.75rem] flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110"
+                style={{ backgroundColor: colors.bg, color: colors.icon }}
+            >
+                <Icon size={24} strokeWidth={2.5} />
+            </div>
+
+            {/* Title */}
+            <h4 className="text-2xl font-bold text-white mb-3 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 group-hover:bg-clip-text group-hover:text-transparent">
+                {title}
+            </h4>
+
+            {/* Description */}
+            <p className="text-[15px] text-[#9ba1ad] leading-relaxed font-normal">
+                {description}
+            </p>
+
+            {/* Bottom Accent */}
+            <div 
+                className="absolute bottom-0 left-8 h-0.5 transition-all duration-500 w-0 group-hover:w-12"
+                style={{ backgroundColor: colors.icon }}
+            ></div>
+        </div>
+    );
+};
+
+// --- SECTION 6: FEATURES COMPONENT ---
+const FeaturesSection = () => {
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.from(".feature-card-anim", {
+                y: 60,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 75%",
+                }
+            });
+        }, sectionRef);
+        return () => ctx.revert();
+    }, []);
+
+    const features = [
+        {
+            icon: Zap,
+            title: "Faster",
+            description: "Real-time analysis of market trends, corporate actions, and global events.",
+            colors: { icon: "#3b82f6", bg: "#1c2b46" }
+        },
+        {
+            icon: Brain,
+            title: "Smarter",
+            description: "AI models trained on years of financial data to identify patterns invisible to the human eye.",
+            colors: { icon: "#d97706", bg: "#2d2418" }
+        },
+        {
+            icon: User,
+            title: "Personalized",
+            description: "Research tailored to individual investor profiles, goals, and risk appetite.",
+            colors: { icon: "#10b981", bg: "#1a2e25" }
+        },
+        {
+            icon: Crosshair,
+            title: "Actionable",
+            description: "Clear, concise, and timely recommendations designed to maximize returns.",
+            colors: { icon: "#ef4444", bg: "#2d1a1a" }
+        }
+    ];
+
+    return (
+        <section ref={sectionRef} className="py-24 relative overflow-hidden bg-[#030911]">
+            {/* Background Texture & Auras */}
+            <div className="absolute inset-0 noise-overlay opacity-3"></div>
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] aura-animate"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-indigo-600/5 rounded-full blur-[120px] aura-animate" style={{ animationDelay: '-5s' }}></div>
+
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+                <div className="text-center max-w-4xl mx-auto mb-20">
+                    {/* Eyebrow Badge */}
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 group">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        <span className="text-[11px] font-bold text-[#3b82f6] tracking-[0.4em] uppercase">FUTURE-READY INSIGHTS</span>
                     </div>
-                    <h4 className="text-[20px] font-semibold text-[#ECEDEE] leading-[1.4] tracking-[-0.015em] mb-3">Faster</h4>
-                    <p className="text-[14px] text-[#ECEDEE]/70 leading-[1.5] tracking-[-0.011em]">Real-time analysis of market trends, corporate actions, and global events.</p>
+
+                    <h3 className="text-[32px] md:text-[44px] lg:text-[48px] font-semibold text-white leading-[1.2] tracking-tight">
+                        Our platform combines the expertise of <span className="bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent italic">seasoned analysts</span> with cutting-edge tech.
+                    </h3>
                 </div>
-                <div className="bg-[#1E2021] p-8 rounded-[0.75rem] border border-[#313131] shadow-[0_1px_2px_rgba(0,0,0,.04),_0_4px_16px_rgba(0,0,0,.06)] card-hover">
-                    <div className="w-12 h-12 bg-[#E8930C]/10 text-[#E8930C] rounded-[0.75rem] flex items-center justify-center text-xl mb-6">
-                        <i className="fa-solid fa-brain"></i>
-                    </div>
-                    <h4 className="text-[20px] font-semibold text-[#ECEDEE] leading-[1.4] tracking-[-0.015em] mb-3">Smarter</h4>
-                    <p className="text-[14px] text-[#ECEDEE]/70 leading-[1.5] tracking-[-0.011em]">AI models trained on years of financial data to identify patterns invisible to the human eye.</p>
-                </div>
-                <div className="bg-[#1E2021] p-8 rounded-[0.75rem] border border-[#313131] shadow-[0_1px_2px_rgba(0,0,0,.04),_0_4px_16px_rgba(0,0,0,.06)] card-hover">
-                    <div className="w-12 h-12 bg-[#22A756]/10 text-[#22A756] rounded-[0.75rem] flex items-center justify-center text-xl mb-6">
-                        <i className="fa-solid fa-user-astronaut"></i>
-                    </div>
-                    <h4 className="text-[20px] font-semibold text-[#ECEDEE] leading-[1.4] tracking-[-0.015em] mb-3">Personalized</h4>
-                    <p className="text-[14px] text-[#ECEDEE]/70 leading-[1.5] tracking-[-0.011em]">Research tailored to individual investor profiles, goals, and risk appetite.</p>
-                </div>
-                <div className="bg-[#1E2021] p-8 rounded-[0.75rem] border border-[#313131] shadow-[0_1px_2px_rgba(0,0,0,.04),_0_4px_16px_rgba(0,0,0,.06)] card-hover">
-                    <div className="w-12 h-12 bg-[#D93636]/10 text-[#D93636] rounded-[0.75rem] flex items-center justify-center text-xl mb-6">
-                        <i className="fa-solid fa-crosshairs"></i>
-                    </div>
-                    <h4 className="text-[20px] font-semibold text-[#ECEDEE] leading-[1.4] tracking-[-0.015em] mb-3">Actionable</h4>
-                    <p className="text-[14px] text-[#ECEDEE]/70 leading-[1.5] tracking-[-0.011em]">Clear, concise, and timely recommendations designed to maximize returns.</p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {features.map((f, i) => (
+                        <div key={i} className="feature-card-anim">
+                            <FeatureCard {...f} />
+                        </div>
+                    ))}
                 </div>
             </div>
-        </div>
-    </section>
-);
+        </section>
+    );
+};
 
 // --- SECTION 7: MISSION & VISION COMPONENT ---
 const MissionVisionSection = () => (
@@ -471,9 +562,11 @@ const WhyChooseUsSection = () => (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row gap-16 items-center">
                 <div className="w-full md:w-1/3">
-                    <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Why Choose Us</h2>
-                    <h3 className="text-[26px] md:text-[32px] lg:text-[36px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">We bring the best of AI & human insight.</h3>
-                    <p className="text-[16px] text-[#ECEDEE]/70 leading-[1.5] tracking-[-0.011em]">Deliver results you can trust. At LAAVA, we don’t just provide research. We provide clarity in complexity, confidence in decisions, and conviction in action.</p>
+                    <h2 className="text-[11px] font-bold text-[#197DFF] tracking-[0.4em] uppercase mb-5 opacity-80">Why Choose Us</h2>
+                    <h3 className="text-[26px] md:text-[32px] lg:text-[40px] font-semibold text-[#ECEDEE] leading-[1.2] tracking-tight mb-6 text-hover-gradient">
+                        We bring the best of <span className="text-gradient-accent italic">AI & human insight</span>.
+                    </h3>
+                    <p className="text-[16px] text-[#ECEDEE]/70 leading-[1.6] tracking-[-0.01em]">Deliver results you can trust. At LAAVA, we don’t just provide research. We provide clarity in complexity, confidence in decisions, and conviction in action.</p>
                 </div>
                 
                 <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -539,8 +632,10 @@ const WhyLaava = () => {
         <section className="py-24 md:py-32 bg-gradient-to-b from-[#030911] to-[#0a1220] border-y border-[#313131] relative overflow-hidden">
             <div className="max-w-5xl mx-auto px-6 lg:px-8 relative">
                 <div className="text-center mb-20">
-                    <h2 className="text-[12px] font-semibold text-[#22A756] tracking-[1px] uppercase mb-3">Why Laava</h2>
-                    <h3 className="text-[32px] md:text-[48px] font-semibold text-white tracking-[-0.025em]">Built on trust, <span className="text-[#ECEDEE]/40">not hype</span></h3>
+                    <h2 className="text-[11px] font-bold text-[#22A756] tracking-[0.4em] uppercase mb-5 opacity-80">Why Laava</h2>
+                    <h3 className="text-[32px] md:text-[48px] font-semibold text-white tracking-tight leading-[1.2] text-hover-gradient">
+                        Built on <span className="text-gradient-accent italic">trust</span>, not hype
+                    </h3>
                 </div>
 
                 <div className="relative">
@@ -619,8 +714,10 @@ const HowItWorksTeaser = () => {
         <section className="py-24 bg-[#151718]/30 border-y border-[#313131]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Get Started</h2>
-                    <h3 className="text-[26px] md:text-[32px] lg:text-[36px] font-semibold text-[#ECEDEE] leading-[1.25] tracking-[-0.025em] mb-6">Three steps to smarter investing.</h3>
+                    <h2 className="text-[11px] font-bold text-[#197DFF] tracking-[0.4em] uppercase mb-5 opacity-80">Get Started</h2>
+                    <h3 className="text-[26px] md:text-[40px] font-semibold text-[#ECEDEE] leading-[1.2] tracking-tight text-hover-gradient">
+                        Three steps to <span className="text-gradient-accent italic">smarter</span> investing.
+                    </h3>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -651,8 +748,10 @@ const TestimonialsSection = () => (
     <section className="py-20 bg-[#0a1220] border-y border-[#313131]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
-                <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Testimonials</h2>
-                <h3 className="text-[26px] md:text-[36px] font-semibold text-white tracking-[-0.025em]">Loved by thousands of investors</h3>
+                <h2 className="text-[11px] font-bold text-[#197DFF] tracking-[0.4em] uppercase mb-5 opacity-80">Testimonials</h2>
+                <h3 className="text-[26px] md:text-[40px] font-semibold text-white tracking-tight leading-[1.2] text-hover-gradient">
+                    Loved by <span className="text-gradient-accent italic">thousands</span> of investors
+                </h3>
             </div>
             <TestimonialCarousel />
         </div>
@@ -663,8 +762,10 @@ const TestimonialsSection = () => (
 const PricingTeaser = () => (
     <section className="py-20 bg-[#0a1220] border-y border-[#313131]">
         <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
-            <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Pricing</h2>
-            <h3 className="text-[26px] md:text-[36px] font-semibold text-white tracking-[-0.025em] mb-4">Basic & Premium plans. <span className="text-[#22A756]">Free trial</span> available.</h3>
+            <h2 className="text-[11px] font-bold text-[#197DFF] tracking-[0.4em] uppercase mb-5 opacity-80">Pricing</h2>
+            <h3 className="text-[26px] md:text-[44px] font-semibold text-white tracking-tight leading-[1.2] mb-4 text-hover-gradient">
+                Basic & <span className="text-gradient-accent italic">Premium</span> plans. <span className="text-[#22A756]">Free trial</span> available.
+            </h3>
             <p className="text-[#ECEDEE]/70 text-[16px] md:text-[18px] mb-10 max-w-2xl mx-auto">Current pricing and offers are shown live inside the app.</p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
                 {['Free Trial', 'Secure PayU Payments', 'Refer & Earn', 'SEBI Compliant'].map((t, i) => (
@@ -691,9 +792,11 @@ const FAQTeaser = () => {
     return (
         <section className="py-20 bg-[#030911]">
             <div className="max-w-4xl mx-auto px-6 lg:px-8">
-                <div className="text-center mb-12">
-                    <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">FAQ</h2>
-                    <h3 className="text-[26px] md:text-[36px] font-semibold text-white tracking-[-0.025em]">Common questions</h3>
+                <div className="text-center mb-16">
+                    <h2 className="text-[11px] font-bold text-[#197DFF] tracking-[0.4em] uppercase mb-5 opacity-80">FAQ</h2>
+                    <h3 className="text-[26px] md:text-[44px] font-semibold text-white tracking-tight leading-[1.2] text-hover-gradient">
+                        Common <span className="text-gradient-accent italic">questions</span>
+                    </h3>
                 </div>
                 <div className="space-y-3">
                     {items.map((f, i) => (
@@ -723,8 +826,10 @@ const DownloadCTA = () => (
         <div className="absolute inset-0 bg-gradient-to-r from-[#121417] to-[#194375] opacity-80"></div>
 
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
-            <h2 className="text-[28px] md:text-[42px] lg:text-[56px] font-bold text-white mb-6 tracking-[-0.035em] leading-[1.1]">Join the Future of Trading</h2>
-            <p className="text-[16px] md:text-[18px] text-white/80 leading-[1.6] tracking-[-0.011em] mb-10">Download the LAAVA app today for smarter decisions and profitable research.</p>
+            <h2 className="text-[32px] md:text-[54px] lg:text-[64px] font-bold text-white mb-8 tracking-tight leading-[1.1] text-hover-gradient">
+                Join the <span className="text-gradient-accent italic">Future</span> of Trading
+            </h2>
+            <p className="text-[18px] md:text-[20px] text-white/80 leading-[1.6] tracking-tight mb-12">Download the LAAVA app today for smarter decisions and profitable research.</p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="https://play.google.com/store/apps/details?id=com.laava.app" target="_blank" rel="noopener noreferrer" className="bg-[#1E2021] hover:bg-[#151718] border border-[#313131] text-[#ECEDEE] px-8 py-3.5 rounded-[0.75rem] flex items-center justify-center gap-4 transition-all shadow-[0_1px_2px_rgba(0,0,0,.04),_0_4px_16px_rgba(0,0,0,.06)]">
@@ -741,51 +846,81 @@ const DownloadCTA = () => (
 
 // --- SECTION 10: FOOTER COMPONENT ---
 const Footer = () => (
-    <footer className="bg-[#030911] border-t border-[#313131] pt-16 md:pt-24 pb-12 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-12 mb-16 md:mb-12">
-                <div className="md:col-span-12 lg:col-span-5 mb-8 lg:mb-0">
-                    <Link to="/" className="block mb-6">
+    <footer className="bg-[#030911] border-t border-white/5 pt-20 md:pt-32 pb-12 relative z-10">
+        {/* Ambient Footer Glow */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-[#197DFF]/[0.02] rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-16 mb-20">
+                <div className="md:col-span-12 lg:col-span-5">
+                    <Link to="/" className="inline-block mb-8 transition-transform hover:scale-[1.02] active:scale-[0.98]">
                         <img src="/assets/images/Lavaa logo white.png" alt="Laava Logo" className="h-[60px] md:h-[80px] object-contain" />
                     </Link>
-                    <p className="text-[14px] text-[#ECEDEE]/70 tracking-[-0.011em] mb-6">Smarter Decisions, Profitable Research</p>
+                    <p className="text-[16px] text-[#ECEDEE]/50 tracking-tight mb-8 font-light max-w-sm">
+                        Building the future of equity research with SEBI-registered intelligence and AI-powered precision.
+                    </p>
                     
-                    <div className="bg-[#1E2021] border border-[#313131] p-4 rounded-[0.75rem] inline-block shadow-sm">
-                        <p className="text-[12px] text-[#ECEDEE]/50 font-medium uppercase tracking-[1px] mb-1">SEBI Registered Research Analyst</p>
-                        <p className="text-[14px] text-[#ECEDEE] font-medium tabular-nums">INH000023171</p>
+                    <div className="bg-[#111318]/80 border border-white/5 p-6 rounded-2xl inline-block shadow-xl backdrop-blur-sm">
+                        <p className="text-[10px] text-[#ECEDEE]/40 font-bold uppercase tracking-[2px] mb-2">SEBI Registered Research Analyst</p>
+                        <p className="text-[18px] text-white font-bold tabular-nums tracking-tight">INH000023171</p>
                     </div>
                 </div>
 
                 <div className="md:col-span-3">
-                    <h4 className="text-[12px] font-semibold text-[#ECEDEE] mb-6 uppercase tracking-[1px]">Policy Links</h4>
-                    <ul className="space-y-3">
-                        <li><a href="/disclaimer" className="text-[14px] text-[#ECEDEE]/70 hover:text-[#197DFF] transition-colors tracking-[-0.011em]">Disclaimer</a></li>
-                        <li><a href="/terms-of-use" className="text-[14px] text-[#ECEDEE]/70 hover:text-[#197DFF] transition-colors tracking-[-0.011em]">Terms of Use</a></li>
-                        <li><a href="/privacy-policy" className="text-[14px] text-[#ECEDEE]/70 hover:text-[#197DFF] transition-colors tracking-[-0.011em]">Privacy Policy</a></li>
-                        <li><a href="/cookies" className="text-[14px] text-[#ECEDEE]/70 hover:text-[#197DFF] transition-colors tracking-[-0.011em]">Cookies Policy</a></li>
+                    <h4 className="text-[11px] font-bold text-[#197DFF] mb-8 uppercase tracking-[3px] opacity-80">Policy Links</h4>
+                    <ul className="space-y-4">
+                        {['Disclaimer', 'Terms of Use', 'Privacy Policy', 'Cookies Policy'].map((item) => (
+                            <li key={item}>
+                                <Link 
+                                    to={`/${item.toLowerCase().replace(/ /g, '-')}`} 
+                                    className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light"
+                                >
+                                    {item}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
                 <div className="md:col-span-4">
-                    <h4 className="text-[12px] font-semibold text-[#ECEDEE] mb-6 uppercase tracking-[1px]">Regulatory Documents</h4>
-                    <ul className="space-y-3 mb-8">
-                        <li><a href="/assets/pdf/InverstorCharter/Investor_Charter_Sep_2025.pdf" target="_blank" rel="noopener noreferrer" className="text-[14px] text-[#ECEDEE]/70 hover:text-[#197DFF] transition-colors tracking-[-0.011em]">Investor Charter</a></li>
-                        <li><a href="/assets/pdf/MITC/MITC_Sep_2025.pdf" target="_blank" rel="noopener noreferrer" className="text-[14px] text-[#ECEDEE]/70 hover:text-[#197DFF] transition-colors tracking-[-0.011em]">MITC</a></li>
-                        <li><a href="/investorgrievance" className="text-[14px] text-[#ECEDEE]/70 hover:text-[#197DFF] transition-colors tracking-[-0.011em]">Investor Grievance</a></li>
+                    <h4 className="text-[11px] font-bold text-[#197DFF] mb-8 uppercase tracking-[3px] opacity-80">Regulatory Documents</h4>
+                    <ul className="space-y-4">
+                        <li>
+                            <a href="/assets/pdf/InverstorCharter/Investor_Charter_Sep_2025.pdf" target="_blank" rel="noopener noreferrer" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
+                                Investor Charter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assets/pdf/MITC/MITC_Sep_2025.pdf" target="_blank" rel="noopener noreferrer" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
+                                MITC
+                            </a>
+                        </li>
+                        <li>
+                            <Link to="/investorgrievance" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
+                                Investor Grievance
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/contact" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
+                                Contact Us
+                            </Link>
+                        </li>
                     </ul>
-
-
                 </div>
             </div>
             
-            <div className="border-t border-[#313131] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p className="text-[12px] text-[#ECEDEE]/50 tracking-[-0.011em]">
-                    Copyright © {new Date().getFullYear()} <Link to="/" className="hover:text-[#197DFF] transition-colors">Laava</Link>. 
-                    <a href="https://greycats.tech/" target="_blank" rel="noopener noreferrer" className="hover:text-[#197DFF] transition-colors ml-1">Powered By Greycats Tech</a>.
+            <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                <p className="text-[13px] text-[#ECEDEE]/30 font-light">
+                    Copyright © {new Date().getFullYear()} <Link to="/" className="hover:text-white transition-colors font-medium">Laava</Link>. 
+                    <a href="https://greycats.tech/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors ml-1">Powered By Greycats Tech</a>.
                 </p>
-                <div className="flex gap-4">
-                    <a href="https://www.facebook.com/share/1At6RJDhK6/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#1E2021] border border-[#313131] flex items-center justify-center text-[#ECEDEE]/70 hover:bg-[#197DFF] hover:text-white hover:border-[#197DFF] transition-all"><i className="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/laava_fintech" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#1E2021] border border-[#313131] flex items-center justify-center text-[#ECEDEE]/70 hover:bg-[#197DFF] hover:text-white hover:border-[#197DFF] transition-all"><i className="fa-brands fa-instagram"></i></a>
+                <div className="flex gap-6">
+                    <a href="https://www.facebook.com/share/1At6RJDhK6/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-[#ECEDEE]/60 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300">
+                        <i className="fa-brands fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="https://www.instagram.com/laava_fintech" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-[#ECEDEE]/60 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300">
+                        <i className="fa-brands fa-instagram text-lg"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -927,7 +1062,26 @@ const LandingPage = () => {
 
     return (
         <>
+            <SEO 
+                title="Laava Fintech – Smart Stock Market Advisory App for India"
+                description="Discover Laava, India’s trusted stock market advisory app and web portal. Get expert insights, compliance‑driven strategies, and smarter investment decisions tailored for Indian investors."
+                schema={{
+                    "@context": "https://schema.org",
+                    "@type": "Organization",
+                    "name": "Laava Fintech",
+                    "url": "https://laavafin.com",
+                    "logo": "https://laavafin.com/assets/images/Lavaa logo white.png",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "email": "care@laavafin.com",
+                        "contactType": "customer service"
+                    }
+                }}
+            />
+
+
             <HeroSection canvasRef={canvasRef} />
+
             <TrustBanner />
             <FeaturesSection />
             <WhyLaava />
@@ -1035,7 +1189,7 @@ export default function App() {
                     <Route path="/pricing" element={<Pricing />} />
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/insights" element={<Insights />} />
-                    {/* <Route path="/contact" element={<Contact />} /> */}
+                    <Route path="/contact" element={<Contact />} />
                 </Routes>
             </div>
             <Footer />

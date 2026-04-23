@@ -170,41 +170,68 @@
     border: 1px solid rgba(49,49,49,0.5);
   }
 
-  /* Keep Old Gradients as Aliases so we don't break everything instantly */
-  .royalwave {
-    background: linear-gradient(to right, #0d1a33, #153b66, #197dff);
+  /* Premium Utilities */
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
   }
-  .midnightRoyal {
-    background: linear-gradient(to right, #010b19, #0b1d3a, #1a3c66);
+
+  /* Border Beam Animation */
+  @keyframes rotate-beam {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
-  .deepMatte {
-    background: linear-gradient(to right, #151718, #0c0908, #030911);   
+
+  .border-beam-active {
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: conic-gradient(from 0deg, transparent 70%, white 90%, transparent 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: rotate-beam var(--beam-duration, 4s) linear infinite;
+    pointer-events: none;
   }
-  .abyssCurrent {
-    background: linear-gradient(to right, #03080F, #0D1A28, #197dff);
+
+  /* Pulsing Auras */
+  @keyframes orb-pulse {
+    0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.05; }
+    33% { transform: scale(1.1) translate(20px, -20px); opacity: 0.07; }
+    66% { transform: scale(0.9) translate(-20px, 20px); opacity: 0.04; }
   }
-  .abyssBlue {
-    background: linear-gradient(135deg, #040A12 0%, #122B44 50%, #197dff 100%);
-    border: 1px solid #197dffff;
+
+  .aura-animate {
+    animation: orb-pulse 10s infinite ease-in-out;
   }
-  .btn {
-    @apply bg-primary text-white border border-transparent hover:bg-primary/90 px-4 py-2 rounded-lg tracking-[0.5px];
+
+  /* Premium Typography Utilities */
+  .text-premium-display {
+    @apply tracking-tight leading-[1.1] md:leading-[1.05];
+  }
+
+  .text-gradient-accent {
+    @apply bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent;
+  }
+
+  .text-hover-gradient {
+    @apply transition-all duration-300 hover:bg-gradient-to-r hover:from-white hover:to-gray-400 hover:bg-clip-text hover:text-transparent;
   }
 }
 
 /* Base Headings Setup so they automatically look better even without classes */
 @layer base {
   h1 {
-    @apply text-[32px] leading-[1.25] font-semibold tracking-[-0.025em];
+    @apply text-[32px] md:text-[64px] lg:text-[80px] font-bold tracking-tight leading-none;
   }
   h2 {
-    @apply text-[24px] leading-[1.33] font-semibold tracking-[-0.02em];
+    @apply text-[24px] md:text-[32px] lg:text-[40px] font-semibold tracking-[-0.02em] leading-tight;
   }
   h3 {
-    @apply text-[20px] leading-[1.4] font-semibold tracking-[-0.015em];
+    @apply text-[20px] md:text-[28px] font-semibold tracking-[-0.015em] leading-snug;
   }
   p {
-    @apply text-[14px] leading-[1.5] font-normal tracking-[-0.011em];
+    @apply text-[14px] md:text-[16px] leading-relaxed font-normal tracking-[-0.011em];
   }
 }
 

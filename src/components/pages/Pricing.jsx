@@ -1,4 +1,6 @@
 import React from 'react';
+import SEO from '../SEO';
+
 
 const plans = [
   {
@@ -28,64 +30,69 @@ const plans = [
 ];
 
 const Pricing = () => (
-  <div className="bg-[#030911] min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+  <div className="bg-[#030911] min-h-screen pt-40 pb-20 px-4 sm:px-6 lg:px-8">
+    <SEO 
+      title="Laava Pricing – Affordable Stock Advisory Plans for India"
+      description="Choose from Laava’s flexible pricing plans. Get expert stock market advisory at transparent rates, designed for Indian investors seeking clarity and value."
+    />
     <div className="max-w-6xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="text-[12px] font-semibold text-[#197DFF] tracking-[1px] uppercase mb-3">Pricing</h2>
-        <h1 className="text-4xl md:text-5xl font-bold text-white tracking-[-0.025em] leading-[1.1] mb-6">
-          Plans for every <span className="bg-gradient-to-r from-[#E8F2FF] to-[#A4CCFF] bg-clip-text text-transparent">investor</span>
+
+      <div className="text-center mb-20">
+        <h2 className="text-[11px] font-bold text-[#197DFF] tracking-[0.4em] uppercase mb-5 opacity-80">Pricing</h2>
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-8 text-hover-gradient">
+          Plans for every <span className="text-gradient-accent italic">investor</span>
         </h1>
-        <p className="text-[#ECEDEE]/70 text-[14px] md:text-[15px] max-w-2xl mx-auto leading-relaxed">
+        <p className="text-[#ECEDEE]/70 text-[16px] md:text-[18px] max-w-2xl mx-auto leading-relaxed font-light">
           Start with a free trial. Current pricing, durations, and discounts are shown live inside the app.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {plans.map((p, i) => (
-          <div key={i} className={`card-hover rounded-2xl p-8 backdrop-blur-sm relative ${p.highlight ? 'bg-gradient-to-b from-[#197DFF]/20 to-[#1E2021]/50 border-2 border-[#197DFF]' : 'bg-[#1E2021]/50 border border-[#313131]'}`}>
-            {p.highlight && <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#197DFF] text-white text-[11px] font-bold tracking-[1px] uppercase px-4 py-1 rounded-full">Most Features</div>}
-            <h3 className="text-2xl font-bold text-white mb-2">{p.name}</h3>
-            <p className="text-[#ECEDEE]/60 text-[14px] mb-6 min-h-[40px]">{p.desc}</p>
-            <ul className="space-y-3 mb-8">
+          <div key={i} className={`group rounded-[2rem] p-10 backdrop-blur-sm relative transition-all duration-500 hover:translate-y-[-8px] ${p.highlight ? 'bg-gradient-to-b from-[#197DFF]/20 to-[#111318]/90 border-2 border-[#197DFF] shadow-[0_0_40px_rgba(25,125,255,0.15)]' : 'bg-[#111318]/80 border border-white/5 hover:border-white/10'}`}>
+            {p.highlight && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#197DFF] text-white text-[10px] font-bold tracking-[2px] uppercase px-6 py-2 rounded-full shadow-lg">Most Featured</div>}
+            <h3 className="text-3xl font-bold text-white mb-3 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 group-hover:bg-clip-text group-hover:text-transparent">{p.name}</h3>
+            <p className="text-[#ECEDEE]/60 text-[15px] mb-8 min-h-[44px] font-light leading-relaxed">{p.desc}</p>
+            <ul className="space-y-4 mb-10">
               {p.features.map((f, j) => (
-                <li key={j} className="flex items-start gap-3 text-[#ECEDEE]/80 text-[14px]">
-                  <i className="fa-solid fa-check text-[#22A756] mt-1"></i>
-                  <span>{f}</span>
+                <li key={j} className="flex items-start gap-4 text-[#ECEDEE]/80 text-[15px]">
+                  <i className="fa-solid fa-check text-[#22A756] mt-1 text-lg"></i>
+                  <span className="font-light">{f}</span>
                 </li>
               ))}
             </ul>
-            <a href="https://play.google.com/store/apps/details?id=com.laava.app" target="_blank" rel="noopener noreferrer" className={`block text-center py-3 rounded-xl font-bold transition-all ${p.highlight ? 'bg-white text-black hover:bg-gray-200' : 'bg-[#1E2021] text-white border border-[#313131] hover:bg-[#2a2d2e]'}`}>
+            <a href="https://play.google.com/store/apps/details?id=com.laava.app" target="_blank" rel="noopener noreferrer" className={`block text-center py-4 rounded-2xl font-bold text-[16px] transition-all tracking-tight ${p.highlight ? 'bg-white text-black hover:bg-gray-100 shadow-xl' : 'bg-[#1E2021] text-white border border-white/5 hover:bg-[#2a2d2e]'}`}>
               View in App
             </a>
           </div>
         ))}
       </div>
 
-      <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-        <div className="bg-[#1E2021]/40 border border-[#313131] rounded-xl p-5 flex items-start gap-3">
-          <i className="fa-solid fa-gift text-[#22A756] text-xl mt-1"></i>
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="bg-[#111318]/50 border border-white/5 rounded-2xl p-6 flex items-start gap-4 transition-all hover:border-white/10 group">
+          <i className="fa-solid fa-gift text-[#22A756] text-2xl mt-1 group-hover:scale-110 transition-transform"></i>
           <div>
-            <h4 className="text-white font-semibold mb-1">Free Trial</h4>
-            <p className="text-[13px] text-[#ECEDEE]/70">Try Laava free before you subscribe.</p>
+            <h4 className="text-white font-semibold mb-1 text-lg">Free Trial</h4>
+            <p className="text-[14px] text-[#ECEDEE]/60 font-light">Try Laava free before you subscribe.</p>
           </div>
         </div>
-        <div className="bg-[#1E2021]/40 border border-[#313131] rounded-xl p-5 flex items-start gap-3">
-          <i className="fa-solid fa-users text-[#197DFF] text-xl mt-1"></i>
+        <div className="bg-[#111318]/50 border border-white/5 rounded-2xl p-6 flex items-start gap-4 transition-all hover:border-white/10 group">
+          <i className="fa-solid fa-users text-[#197DFF] text-2xl mt-1 group-hover:scale-110 transition-transform"></i>
           <div>
-            <h4 className="text-white font-semibold mb-1">Refer & Earn</h4>
-            <p className="text-[13px] text-[#ECEDEE]/70">Earn ₹250 per successful referral.</p>
+            <h4 className="text-white font-semibold mb-1 text-lg">Refer & Earn</h4>
+            <p className="text-[14px] text-[#ECEDEE]/60 font-light">Earn ₹250 per successful referral.</p>
           </div>
         </div>
-        <div className="bg-[#1E2021]/40 border border-[#313131] rounded-xl p-5 flex items-start gap-3">
-          <i className="fa-solid fa-shield-halved text-[#F5A623] text-xl mt-1"></i>
+        <div className="bg-[#111318]/50 border border-white/5 rounded-2xl p-6 flex items-start gap-4 transition-all hover:border-white/10 group">
+          <i className="fa-solid fa-shield-halved text-[#F5A623] text-2xl mt-1 group-hover:scale-110 transition-transform"></i>
           <div>
-            <h4 className="text-white font-semibold mb-1">Secure Payments</h4>
-            <p className="text-[13px] text-[#ECEDEE]/70">Payments processed securely via PayU.</p>
+            <h4 className="text-white font-semibold mb-1 text-lg">Secure Payments</h4>
+            <p className="text-[14px] text-[#ECEDEE]/60 font-light">Payments processed securely via PayU.</p>
           </div>
         </div>
       </div>
 
-      <p className="text-center text-[#ECEDEE]/50 text-sm mt-12 max-w-2xl mx-auto">
+      <p className="text-center text-[#ECEDEE]/40 text-sm mt-16 max-w-2xl mx-auto font-light leading-relaxed">
         Plan prices, durations, and offers are managed in-app and governed by SEBI guidelines. Download the Laava app to see current pricing and subscribe.
       </p>
     </div>
