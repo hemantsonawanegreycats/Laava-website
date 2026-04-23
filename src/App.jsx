@@ -91,6 +91,17 @@ const GlobalStyles = () => (
 // --- SECTION 2: NAVBAR COMPONENT ---
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { pathname } = useLocation();
+
+    const navLinks = [
+        { name: 'Features', path: '/features' },
+        { name: 'How it Works', path: '/how-it-works' },
+        { name: 'Pricing', path: '/pricing' },
+        { name: 'About', path: '/about' },
+        { name: 'FAQ', path: '/faq' }
+    ];
+
+    const isActive = (path) => pathname === path;
 
     return (
         <nav className="fixed w-full top-0 z-[100] glass-nav transition-all duration-300">
@@ -103,13 +114,18 @@ const Navbar = () => {
                     
                     {/* Desktop Nav & CTA */}
                     <div className="hidden md:flex items-center gap-6">
-                        <div className="hidden xl:flex items-center gap-5 text-[14px] text-[#ECEDEE]/70 font-medium">
-                            <Link to="/features" className="hover:text-white transition-colors">Features</Link>
-                            <Link to="/how-it-works" className="hover:text-white transition-colors">How it Works</Link>
-                            <Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link>
-                            <Link to="/about" className="hover:text-white transition-colors">About</Link>
-                            <Link to="/faq" className="hover:text-white transition-colors">FAQ</Link>
-                            {/* <Link to="/contact" className="hover:text-white transition-colors">Contact</Link> */}
+                        <div className="hidden xl:flex items-center gap-5 text-[14px] font-medium">
+                            {navLinks.map((link) => (
+                                <Link 
+                                    key={link.path}
+                                    to={link.path} 
+                                    className={`${isActive(link.path) ? 'text-white' : 'text-[#ECEDEE]/70'} hover:text-white transition-all duration-300 relative py-1 group`}
+                                >
+                                    {link.name}
+                                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#197DFF] rounded-full transition-all duration-300 ease-out ${isActive(link.path) ? 'w-full opacity-100' : 'w-0 opacity-0 group-hover:w-1/2 group-hover:opacity-50'}`}></span>
+                                </Link>
+
+                            ))}
                         </div>
                         <div className="hidden lg:flex xl:hidden items-center gap-2 px-3 py-1.5 bg-[#151718] rounded-full text-[12px] font-medium text-[#ECEDEE]/70 border border-[#313131]">
                             <i className="fa-solid fa-shield-halved text-[#22A756]"></i>
@@ -151,12 +167,16 @@ const Navbar = () => {
                     </div>
                     
                     <div className="pt-4 border-t border-white/5 grid grid-cols-2 gap-4">
-                        <Link to="/features" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Features</Link>
-                        <Link to="/how-it-works" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">How it Works</Link>
-                        <Link to="/pricing" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Pricing</Link>
-                        <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">About</Link>
-                        <Link to="/faq" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">FAQ</Link>
-                        {/* <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Contact</Link> */}
+                        {navLinks.map((link) => (
+                            <Link 
+                                key={link.path}
+                                to={link.path} 
+                                onClick={() => setIsMenuOpen(false)} 
+                                className={`text-[14px] ${isActive(link.path) ? 'text-white font-bold' : 'text-white/70'} hover:text-white py-2`}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
                         <Link to="/disclaimer" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Disclaimer</Link>
                         <Link to="/privacy-policy" onClick={() => setIsMenuOpen(false)} className="text-[14px] text-white/70 hover:text-white py-2">Privacy</Link>
                     </div>
@@ -165,6 +185,7 @@ const Navbar = () => {
         </nav>
     );
 };
+
 
 // --- SECTION 3: HERO COMPONENT (Includes 3D Canvas) ---
 const HeroSection = ({ canvasRef }) => (
