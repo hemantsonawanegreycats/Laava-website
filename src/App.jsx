@@ -1086,14 +1086,15 @@ const LandingPage = () => {
     return (
         <>
             <SEO 
-                title="Laava Fintech – Smart Stock Market Advisory App for India"
+                title="Laava Fintech (Laavafin) – Smart Stock Market Advisory App for India"
                 description="Discover Laava, India’s trusted stock market advisory app and web portal. Get expert insights, compliance‑driven strategies, and smarter investment decisions tailored for Indian investors."
                 schema={{
                     "@context": "https://schema.org",
                     "@type": "Organization",
-                    "name": "Laava Fintech",
+                    "name": "Laavafin (Laava Fintech)",
                     "url": "https://laavafin.com",
                     "logo": "https://laavafin.com/assets/images/Lavaa logo white.png",
+                    "alternateName": "Laavafin",
                     "contactPoint": {
                         "@type": "ContactPoint",
                         "email": "care@laavafin.com",
@@ -1101,6 +1102,7 @@ const LandingPage = () => {
                     }
                 }}
             />
+
 
 
             <HeroSection canvasRef={canvasRef} />
