@@ -16,6 +16,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
+const analytics = (typeof window !== 'undefined' && !import.meta.env.DEV) ? getAnalytics(app) : null;
+
+if (import.meta.env.DEV) {
+    console.log("🛠️ [Firebase] Analytics is DISABLED in Development mode.");
+} else if (analytics) {
+    console.log("✅ [Firebase] Analytics Initialized.");
+}
+
 
 export { app, analytics, logEvent };

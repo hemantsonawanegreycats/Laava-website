@@ -27,3 +27,5 @@ laava-app
 *.njsproj
 *.sln
 *.sw?
+
+.env
