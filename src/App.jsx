@@ -665,16 +665,26 @@ const WhyLaava = () => {
                     {/* Mobile vertical line (left) */}
                     <div className="md:hidden absolute left-[23px] top-2 bottom-2 w-px bg-[#313131]"></div>
                     <div
-                        className="md:hidden absolute left-[23px] top-2 w-px bg-gradient-to-b from-[#197DFF] to-[#22A756] transition-all duration-500 ease-out"
+                        className="md:hidden absolute left-[23px] top-2 w-[2px] bg-gradient-to-b from-[#197DFF] to-[#22A756] transition-all duration-500 ease-out z-10"
                         style={{ height: `${((activeIdx + 1) / pillars.length) * 100}%` }}
-                    ></div>
+                    >
+                        {/* Dynamic Pointer Arrow */}
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-[#22A756] drop-shadow-[0_0_8px_rgba(34,167,86,0.8)]">
+                            <i className="fa-solid fa-caret-down text-[16px]"></i>
+                        </div>
+                    </div>
 
                     {/* Desktop center line */}
                     <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 bottom-2 w-px bg-[#313131]"></div>
                     <div
-                        className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 w-px bg-gradient-to-b from-[#197DFF] to-[#22A756] transition-all duration-500 ease-out"
+                        className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 w-[2px] bg-gradient-to-b from-[#197DFF] to-[#22A756] transition-all duration-500 ease-out z-10"
                         style={{ height: `${((activeIdx + 1) / pillars.length) * 100}%` }}
-                    ></div>
+                    >
+                        {/* Dynamic Pointer Arrow */}
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-[#22A756] drop-shadow-[0_0_8px_rgba(34,167,86,0.8)]">
+                            <i className="fa-solid fa-caret-down text-[16px]"></i>
+                        </div>
+                    </div>
 
                     <div className="space-y-16 md:space-y-28">
                         {pillars.map((p, i) => {
@@ -743,15 +753,26 @@ const HowItWorksTeaser = () => {
                     </h3>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {steps.map((s, i) => (
-                        <div key={i} className="bg-[#1E2021] p-8 rounded-[0.75rem] border border-[#313131] shadow-[0_1px_2px_rgba(0,0,0,.04),_0_4px_16px_rgba(0,0,0,.06)] card-hover relative">
-                            <div className="w-12 h-12 bg-[#197DFF]/10 text-[#197DFF] rounded-[0.75rem] flex items-center justify-center text-xl mb-6">
-                                <i className={`fa-solid ${s.icon}`}></i>
+                        <div key={i} className="group relative bg-[#111318]/80 border border-white/5 rounded-[2rem] p-8 md:p-10 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:translate-y-[-8px] hover:border-white/10 hover:bg-[#111318]/95 shadow-xl">
+                            {/* Giant Watermark Number */}
+                            <div className="absolute top-6 right-8 text-[80px] font-bold text-white/[0.03] leading-none select-none transition-all duration-500 group-hover:text-white/[0.06] group-hover:translate-x-2">
+                                0{s.num}
                             </div>
-                            <span className="absolute top-6 right-6 text-[14px] font-bold text-[#197DFF]/40">0{s.num}</span>
-                            <h4 className="text-[20px] font-semibold text-[#ECEDEE] leading-[1.4] tracking-[-0.015em] mb-3">{s.title}</h4>
-                            <p className="text-[14px] text-[#ECEDEE]/70 leading-[1.5] tracking-[-0.011em]">{s.desc}</p>
+                            
+                            {/* Icon Box */}
+                            <div className="w-14 h-14 rounded-2xl bg-[#197DFF]/10 flex items-center justify-center mb-6 relative transition-all duration-500 group-hover:scale-110 group-hover:bg-[#197DFF]/20 group-hover:shadow-[0_0_20px_rgba(25,125,255,0.3)]">
+                                <i className={`fa-solid ${s.icon} text-2xl text-[#197DFF] transition-colors duration-500 group-hover:text-white`}></i>
+                            </div>
+                            
+                            {/* Content */}
+                            <h4 className="text-[22px] font-bold text-white mb-3 relative transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 group-hover:bg-clip-text group-hover:text-transparent">
+                                {s.title}
+                            </h4>
+                            <p className="text-[#ECEDEE]/70 text-[15px] leading-relaxed relative font-light group-hover:text-[#ECEDEE]/90 transition-colors duration-300">
+                                {s.desc}
+                            </p>
                         </div>
                     ))}
                 </div>
