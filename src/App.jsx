@@ -1034,60 +1034,124 @@ const LandingPage = () => {
             }
 
             ctx.clearRect(0, 0, width, height);
-            time += 2;
+            time += 1.5; // Slightly slower for more elegance
 
-            waves.forEach(wave => {
+            const pointerPositions = waves.map(wave => ({
+                x: (time * 1.5 + wave.offset * 0.2) % (width + 400) - 200,
+                y: 0,
+                color: wave.color
+            }));
+
+            // 1. Draw Global Horizontal "Price Level" Grid (Static)
+            ctx.save();
+            const gridSize = 80;
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+            ctx.lineWidth = 0.5;
+            for (let y = 0; y <= height; y += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(width, y);
+                ctx.stroke();
+            }
+            ctx.restore();
+
+            waves.forEach((wave, index) => {
+                const pointerX = pointerPositions[index].x;
+                const pointerY = getY(pointerX, wave, time);
+                pointerPositions[index].y = pointerY;
+
                 let firstY = getY(0, wave, time);
 
-                // Fill
-                ctx.beginPath();
-                ctx.moveTo(0, height);
-                ctx.lineTo(0, firstY);
-                for(let x = 0; x <= width; x += 5) { ctx.lineTo(x, getY(x, wave, time)); }
-                ctx.lineTo(width, height);
-                ctx.closePath();
+                // Create Wave Path for Clipping and Filling
+                const wavePath = new Path2D();
+                wavePath.moveTo(0, height);
+                wavePath.lineTo(0, firstY);
+                for(let x = 0; x <= width; x += 4) { 
+                    wavePath.lineTo(x, getY(x, wave, time)); 
+                }
+                wavePath.lineTo(width, height);
+                wavePath.closePath();
 
+                // 1. Fill Wave
                 let gradient = ctx.createLinearGradient(0, (height * wave.baseY) - wave.amplitude, 0, height);
                 gradient.addColorStop(0, wave.fillTop);
                 gradient.addColorStop(1, wave.fillBottom);
                 ctx.fillStyle = gradient;
-                ctx.fill();
+                ctx.fill(wavePath);
 
-                // Glow Edge
+                // 2. Draw Clipped Grid for this wave
+                ctx.save();
+                ctx.clip(wavePath);
+                
+                const gridSize = 80;
+                for (let x = -gridSize; x <= width + gridSize; x += gridSize) {
+                    const scrollOffset = (time * 0.5) % gridSize;
+                    const drawX = x - scrollOffset;
+                    
+                    const dist = Math.abs(drawX - pointerX);
+                    const alpha = Math.max(0, 0.15 - dist / 400);
+
+                    if (alpha > 0) {
+                        ctx.beginPath();
+                        ctx.moveTo(drawX, 0);
+                        ctx.lineTo(drawX, height);
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+                ctx.restore();
+
+                // 3. Draw Main Wave Line (Glow)
                 ctx.beginPath();
                 ctx.moveTo(0, firstY);
-                for(let x = 0; x <= width; x += 5) { ctx.lineTo(x, getY(x, wave, time)); }
+                for(let x = 0; x <= width; x += 4) { 
+                    ctx.lineTo(x, getY(x, wave, time)); 
+                }
                 ctx.strokeStyle = wave.color;
-                ctx.lineWidth = 4;
-                ctx.shadowBlur = 25;
+                ctx.lineWidth = 2.5;
+                ctx.shadowBlur = 20;
                 ctx.shadowColor = wave.color;
                 ctx.stroke();
-
-                ctx.lineWidth = 1;
-                ctx.shadowBlur = 10;
-                ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+                
+                // Technical "Thin" line overlay
+                ctx.lineWidth = 0.8;
+                ctx.shadowBlur = 0;
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
                 ctx.stroke();
-                ctx.shadowBlur = 0; 
 
-                // Pointer
-                let pointerX = (time * 1.5 + wave.offset * 0.2) % (width + 200) - 100;
-                if (pointerX > -20 && pointerX < width + 20) {
-                    let pointerY = getY(pointerX, wave, time);
+                // 4. Draw Interactive Pointer (The "Trading Dot")
+                if (pointerX > -50 && pointerX < width + 50) {
+                    // Outer Glow
                     ctx.beginPath();
-                    ctx.arc(pointerX, pointerY, 8, 0, Math.PI * 2);
-                    ctx.strokeStyle = wave.color;
+                    ctx.arc(pointerX, pointerY, 12, 0, Math.PI * 2);
+                    ctx.fillStyle = `${wave.color.replace('0.4', '0.1').replace('0.7', '0.1').replace('1)', '0.1)')}`;
+                    ctx.fill();
+
+                    // Inner Dot
+                    ctx.beginPath();
+                    ctx.arc(pointerX, pointerY, 5, 0, Math.PI * 2);
+                    ctx.strokeStyle = '#ffffff';
                     ctx.lineWidth = 2;
-                    ctx.shadowBlur = 25;
-                    ctx.shadowColor = wave.color;
                     ctx.stroke();
-
+                    
                     ctx.beginPath();
-                    ctx.arc(pointerX, pointerY, 4, 0, Math.PI * 2);
+                    ctx.arc(pointerX, pointerY, 2, 0, Math.PI * 2);
                     ctx.fillStyle = '#ffffff';
                     ctx.shadowBlur = 15;
                     ctx.shadowColor = '#ffffff';
                     ctx.fill();
-                    ctx.shadowBlur = 0; 
+                    ctx.shadowBlur = 0;
+
+                    // Vertical "Price Line" (Only inside wave)
+                    ctx.beginPath();
+                    ctx.setLineDash([5, 5]);
+                    ctx.moveTo(pointerX, pointerY);
+                    ctx.lineTo(pointerX, height);
+                    ctx.strokeStyle = `rgba(255, 255, 255, 0.2)`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                    ctx.setLineDash([]);
                 }
             });
 
