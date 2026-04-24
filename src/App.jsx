@@ -1045,7 +1045,7 @@ const LandingPage = () => {
             // 1. Draw Global Horizontal "Price Level" Grid (Static)
             ctx.save();
             const gridSize = 80;
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.09)';
             ctx.lineWidth = 0.5;
             for (let y = 0; y <= height; y += gridSize) {
                 ctx.beginPath();
