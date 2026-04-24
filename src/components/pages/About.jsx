@@ -88,7 +88,7 @@ const AboutUs = () => {
 
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-8">
             Reimagining <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-[#197DFF] via-[#DB3333] to-[#22A756] bg-clip-text text-transparent italic">stock market research</span>
+            <span className="text-gradient-accent italic">stock market research</span>
           </h1>
           
           <p className="text-[#ECEDEE]/70 text-[16px] md:text-[18px] max-w-2xl mx-auto leading-relaxed font-light">
@@ -153,7 +153,7 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-[11px] font-bold text-[#197DFF] tracking-[0.4em] uppercase mb-4 opacity-80">What we stand for</h2>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.2]">Values that <span className="bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent italic">shape</span> our work</h3>
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.2]">Values that <span className="text-gradient-accent italic">shape</span> our work</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
