@@ -812,7 +812,7 @@ const PricingTeaser = () => (
             </h3>
             <p className="text-[#ECEDEE]/70 text-[16px] md:text-[18px] mb-10 max-w-2xl mx-auto">Current pricing and offers are shown live inside the app.</p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
-                {['Free Trial', 'Secure PayU Payments', 'Refer & Earn', 'SEBI Compliant'].map((t, i) => (
+                {['Free Trial', 'Secure PayU Payments', 'SEBI Compliant'].map((t, i) => (
                     <span key={i} className="px-5 py-2 bg-[#1E2021] border border-[#313131] rounded-full text-[13px] text-[#ECEDEE]/90 flex items-center gap-2">
                         <i className="fa-solid fa-check text-[#22A756]"></i>{t}
                     </span>
