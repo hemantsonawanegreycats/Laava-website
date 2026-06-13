@@ -122,10 +122,9 @@ const Pricing = () => (
       </div>
 
       {/* Benefits Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {[
           { icon: 'fa-gift', color: '#6CBB44', title: 'Free Trial', desc: 'Try Laava free before you subscribe.' },
-          { icon: 'fa-users', color: '#197DFF', title: 'Refer & Earn', desc: 'Earn ₹250 per successful referral.' },
           { icon: 'fa-shield-halved', color: '#F5A623', title: 'Secure Payments', desc: 'Payments processed securely via PayU.' },
         ].map((item, i) => (
           <div key={i} className="group relative bg-[#111318]/50 border border-white/5 rounded-3xl p-8 backdrop-blur-sm transition-all duration-500 hover:bg-[#111318]/80 hover:border-white/10 overflow-hidden">

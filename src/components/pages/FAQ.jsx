@@ -11,7 +11,6 @@ const faqs = [
   { q: 'How are payments processed?', a: 'Payments are processed securely via PayU, a SEBI/RBI-regulated payment gateway supporting UPI, cards, netbanking, and wallets.' },
   { q: 'What is Risk Profiling?', a: 'A short in-app questionnaire that assesses your risk appetite. Your risk score helps us present the most suitable recommendations for your profile.' },
   { q: 'How do I receive the calls?', a: 'All recommendations are delivered inside the Laava app with real-time push notifications for entry, target, and exit alerts.' },
-  { q: 'Can I earn by referring friends?', a: 'Yes. Refer friends via your unique code and earn ₹250 for each Basic subscription and ₹1,000 for each Premium subscription. Rewards can be withdrawn to your bank account.' },
   { q: 'Is my data safe?', a: 'Yes. We use industry-standard encryption and follow SEBI and IT Act data-protection norms. Your KYC and personal data are never shared with third parties.' },
   { q: 'Which platforms is Laava available on?', a: 'Laava is currently available on Android via the Google Play Store.' },
   { q: 'How do I raise a complaint?', a: 'Visit our Investor Grievance page or email care@laavafin.com. Complaints are addressed per SEBI’s investor redressal framework.' },
