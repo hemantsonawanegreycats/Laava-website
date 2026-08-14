@@ -1,8 +1,10 @@
 import React from "react";
+import SEO from "../SEO";
 
 const Disclaimer = () => {
     return (
         <div className="bg-black text-white py-12 px-6 md:px-16 lg:px-32">
+            <SEO title="Disclaimer - Laava Fintech" description="Laava Financial Technologies Private Limited Disclaimer & SEBI Registered Research Analyst Compliance Information." />
             <div className="max-w-5xl mx-auto">
                 <h1 className="text-3xl md:text-4xl font-bold mb-6">Disclaimer</h1>
 

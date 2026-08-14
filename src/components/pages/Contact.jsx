@@ -1,7 +1,9 @@
 import React from 'react';
+import SEO from '../SEO';
 
 const Contact = () => (
   <div className="bg-[#030911] min-h-screen pt-40 pb-20 px-4 sm:px-6 lg:px-8">
+    <SEO title="Contact Us - Laava Fintech" description="Get in touch with Laava Financial Technologies Private Limited support and advisory team." />
     <div className="max-w-5xl mx-auto">
       <div className="text-center mb-20">
         <h2 className="text-[11px] font-bold text-[#197DFF] tracking-[0.4em] uppercase mb-5 opacity-80">Contact</h2>

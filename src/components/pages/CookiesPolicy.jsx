@@ -1,8 +1,10 @@
 import React from "react";
+import SEO from "../SEO";
 
 const CookiesPolicy = () => {
     return (
         <div className="bg-black text-white py-12 px-6 md:px-16 lg:px-32">
+            <SEO title="Cookies Policy - Laava Fintech" description="Laava Financial Technologies Private Limited Cookies Policy and Usage Guidelines." />
             <div className="max-w-5xl mx-auto">
                 {/* Header */}
                 <h1 className="text-3xl md:text-4xl font-bold mb-6">

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SEO from "../SEO";
 
 const docsData = {
   "Investor Grievance": [
@@ -18,6 +19,7 @@ const Investordocs = () => {
 
   return (
     <section className="py-16 bg-black text-white">
+      <SEO title="Investor Grievance - Laava Fintech" description="Investor Grievance & Compliance details for Laava Financial Technologies." />
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-10">
           Investor Grievance Data

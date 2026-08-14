@@ -24,4 +24,32 @@
     <loc>https://laavafin.com/faq</loc>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://laavafin.com/contact</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://laavafin.com/insights</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://laavafin.com/disclaimer</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://laavafin.com/terms-of-use</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://laavafin.com/privacy-policy</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://laavafin.com/cookies</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://laavafin.com/investorgrievance</loc>
+    <priority>0.4</priority>
+  </url>
 </urlset>

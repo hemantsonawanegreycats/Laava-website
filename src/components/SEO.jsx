@@ -3,7 +3,9 @@ import { useLocation } from 'react-router-dom';
 
 const SEO = ({ title, description, image = '/assets/images/Herobanner.png', schema }) => {
   const { pathname } = useLocation();
-  const url = `https://laavafin.com${pathname}`;
+  // Normalize pathname: remove trailing slash for subpages so canonical URLs remain clean and consistent
+  const cleanPath = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+  const url = `https://laavafin.com${cleanPath}`;
 
   return (
     <Helmet>

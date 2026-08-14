@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import SEO from "../SEO";
 
 const TermsOfUse = () => {
 
   return (
     <div className="bg-black text-white py-12 px-6 md:px-16 lg:px-32">
-            <div className="max-w-5xl mx-auto">
+      <SEO title="Terms of Use - Laava Fintech" description="Laava Financial Technologies Private Limited Terms of Use for website and mobile application." />
+      <div className="max-w-5xl mx-auto">
                 {/* Header */}
                 <h1 className="text-3xl md:text-4xl font-bold mb-6">
           Terms of Use

@@ -1,8 +1,10 @@
 import React from "react";
+import SEO from "../SEO";
 
 const PrivacyPolicy = () => {
     return (
         <div className="bg-black text-white py-12 px-6 md:px-16 lg:px-32">
+            <SEO title="Privacy Policy - Laava Fintech" description="Laava Financial Technologies Private Limited Privacy Policy & Data Security details." />
             <div className="max-w-5xl mx-auto">
                 {/* Header */}
                 <h1 className="text-3xl md:text-4xl font-bold mb-6">

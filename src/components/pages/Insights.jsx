@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../SEO';
 
 const blogs = [
   { slug: 'sensex-surged-672-points', title: 'Sensex Surged 672 Points | Nifty50 Soar 0.87%', image: '/images/sensex.jpg', date: '2025-06-08', tag: 'Markets' },
@@ -12,6 +13,7 @@ const blogs = [
 
 const Insights = () => (
   <div className="bg-[#030911] min-h-screen pt-40 pb-20 px-4 sm:px-6 lg:px-8">
+    <SEO title="Market Insights & Research - Laava Fintech" description="Stock market insights, IPO reviews, and economic analysis by Laava SEBI Registered Research Analyst." />
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-20">
         <h2 className="text-[11px] font-bold text-[#197DFF] tracking-[0.4em] uppercase mb-5 opacity-80">Insights</h2>
