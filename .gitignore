@@ -12,10 +12,8 @@ dist
 dist-ssr
 *.local
 
-laava-web
-
-laava-app
-
+laava-web/
+Laava-app/
 
 # Editor directories and files
 .vscode/*
