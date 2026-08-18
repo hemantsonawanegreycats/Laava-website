@@ -940,9 +940,9 @@ const Footer = () => (
                             </a>
                         </li>
                         <li>
-                            <Link to="/investorgrievance" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
+                            <a href="/assets/pdf/InvestorGrievance/Investor_Complaints_Data_Jul_2026.docx" target="_blank" rel="noopener noreferrer" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
                                 Investor Grievance
-                            </Link>
+                            </a>
                         </li>
                         <li>
                             <Link to="/contact" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">

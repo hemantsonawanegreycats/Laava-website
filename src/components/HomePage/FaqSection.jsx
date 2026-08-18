@@ -21,7 +21,7 @@ const faqData = {
     {
       title: "Investor Grievance",
       files: [
-        { name: "September 2025", link: "#" },
+        { name: "July 2026", link: "assets/pdf/InvestorGrievance/Investor_Complaints_Data_Jul_2026.docx" },
       ],
     },
   ],
