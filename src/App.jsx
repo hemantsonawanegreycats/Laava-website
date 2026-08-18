@@ -5,6 +5,7 @@ import TermsOfUse from './components/pages/TermsOfUse';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import CookiesPolicy from './components/pages/CookiesPolicy';
 import Investordocs from './components/pages/Investor-grievance';
+import RegulatoryInformation from './components/pages/RegulatoryInformation';
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
 import Insights from './components/pages/Insights';
@@ -390,6 +391,7 @@ const AboutSection = () => (
 );
 
 // --- Feature Card Component ---
+// eslint-disable-next-line no-unused-vars
 const FeatureCard = ({ icon: Icon, title, description, colors }) => {
     return (
         <div className="group relative rounded-[2rem] bg-[#111318]/80 backdrop-blur-xl border border-white/5 p-8 transition-all duration-500 hover:translate-y-[-12px] hover:border-white/10 hover:bg-[#111318]/90 overflow-hidden h-full">
@@ -916,7 +918,7 @@ const Footer = () => (
                 <div className="md:col-span-3">
                     <h4 className="text-[11px] font-bold text-[#197DFF] mb-8 uppercase tracking-[3px] opacity-80">Policy Links</h4>
                     <ul className="space-y-4">
-                        {['Disclaimer', 'Terms of Use', 'Privacy Policy', 'Cookies Policy'].map((item) => (
+                        {['Disclaimer', 'Privacy Policy', 'Cookies Policy'].map((item) => (
                             <li key={item}>
                                 <Link 
                                     to={`/${item.toLowerCase().replace(/ /g, '-')}`} 
@@ -930,22 +932,22 @@ const Footer = () => (
                 </div>
 
                 <div className="md:col-span-4">
-                    <h4 className="text-[11px] font-bold text-[#197DFF] mb-8 uppercase tracking-[3px] opacity-80">Regulatory Documents</h4>
+                    <h4 className="text-[11px] font-bold text-[#197DFF] mb-8 uppercase tracking-[3px] opacity-80">Regulatory Information</h4>
                     <ul className="space-y-4">
                         <li>
-                            <a href="/assets/pdf/InverstorCharter/Investor_Charter_Sep_2025.pdf" target="_blank" rel="noopener noreferrer" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
-                                Investor Charter
-                            </a>
+                            <Link to="/regulatory-information?tab=terms" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
+                                Terms of Use
+                            </Link>
                         </li>
                         <li>
-                            <a href="/assets/pdf/MITC/MITC_Sep_2025.pdf" target="_blank" rel="noopener noreferrer" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
+                            <Link to="/regulatory-information?tab=mitc" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
                                 MITC
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="/assets/pdf/InvestorGrievance/Investor_Complaints_Data_Jul_2026.pdf" target="_blank" rel="noopener noreferrer" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
-                                Investor Grievance
-                            </a>
+                            <Link to="/regulatory-information?tab=investor-charter" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
+                                Investor Charter
+                            </Link>
                         </li>
                         <li>
                             <Link to="/contact" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
@@ -1304,6 +1306,7 @@ export default function App() {
                     <Route path="/privacy-policy" element={<div className="pt-24"><PrivacyPolicy /></div>} />
                     <Route path="/cookies" element={<div className="pt-24"><CookiesPolicy /></div>} />
                     <Route path="/investorgrievance" element={<div className="pt-24"><Investordocs /></div>} />
+                    <Route path="/regulatory-information" element={<div className="pt-24"><RegulatoryInformation /></div>} />
                     <Route path="/about" element={<About />} />
                     <Route path="/features" element={<Features />} />
                     <Route path="/how-it-works" element={<HowItWorks />} />

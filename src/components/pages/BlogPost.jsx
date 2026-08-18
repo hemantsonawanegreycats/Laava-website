@@ -62,12 +62,14 @@ const BlogPost = () => {
             if (relResult.status && relResult.data && relResult.data.blogs) {
               setRelatedBlogs(relResult.data.blogs.filter(b => b.slug !== slug).slice(0, 3));
             }
-          } catch(e) {}
+          // eslint-disable-next-line no-unused-vars, no-empty
+          } catch(_e) {}
           
         } else {
           setError(result.mesg || 'Failed to fetch blog post');
         }
-      } catch (err) {
+      // eslint-disable-next-line no-unused-vars
+      } catch (_err) {
         setError('An error occurred while fetching the blog post.');
       } finally {
         setLoading(false);

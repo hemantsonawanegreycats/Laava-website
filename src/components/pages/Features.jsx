@@ -23,7 +23,7 @@ const FeatureIllustration = ({ title, color }) => {
 
   const renderIllustration = () => {
     switch (title) {
-      case 'Stock Calls':
+      case 'Stock Calls': {
         const heights = [35, 50, 40, 70, 100];
         return (
           <div className="flex items-end gap-3 sm:gap-4 z-10 h-28 translate-y-6 group-hover:-translate-y-1 transition-transform duration-700 ease-out">
@@ -53,7 +53,7 @@ const FeatureIllustration = ({ title, color }) => {
             ))}
           </div>
         );
-        
+      }
       case 'Top Picks':
         return (
           <div className="flex items-center justify-center gap-4 z-10 h-32 group-hover:scale-110 transition-transform duration-700 ease-out">

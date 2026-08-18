@@ -8,7 +8,7 @@ const Contact = () => (
       <div className="text-center mb-20">
         <h2 className="text-[11px] font-bold text-[#197DFF] tracking-[0.4em] uppercase mb-5 opacity-80">Contact</h2>
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-8 text-hover-gradient">
-          Get in <span className="text-gradient-accent italic">touch</span>
+          Get in <span className="text-gradient-accent italic">Touch</span>
         </h1>
         <p className="text-[#ECEDEE]/70 text-[16px] md:text-[18px] max-w-2xl mx-auto leading-relaxed font-light">
           Have questions about Laava? We’d love to hear from you.
@@ -28,7 +28,7 @@ const Contact = () => (
             <i className="fa-solid fa-location-dot text-3xl text-[#22A756]"></i>
           </div>
           <h3 className="text-2xl font-bold text-white mb-2 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 group-hover:bg-clip-text group-hover:text-transparent">Office</h3>
-          <p className="text-[#ECEDEE]/60 font-light text-lg">Andheri West, Mumbai - 400053, India</p>
+          <p className="text-[#ECEDEE]/60 font-light text-lg">Innov8 Rcity, Rcity Offices, 4th Floor, LBS Marg, Ghatkopar (West), Mumbai, Maharashtra - 400089, India</p>
         </div>
       </div>
 

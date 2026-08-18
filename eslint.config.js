@@ -4,7 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'laava-web/**', 'Laava-app/**', 'tailwind.config.js', 'laava-web/tailwind.config.js'] },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {

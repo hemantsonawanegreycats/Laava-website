@@ -29,35 +29,18 @@ export default function Footer() {
           <h5 className="text-md align-middle font-semibold text-white mb-5">Policy Links</h5>
           <ul className="space-y-5 text-sm text-gray">
             <li><Link to="/disclaimer">Disclaimer</Link></li>
-            <li><Link to="/terms-of-use">Terms of Use</Link></li>
             <li><Link to="/privacy-policy">Privacy Policy</Link></li>
             <li><Link to="/cookies">Cookies Policy</Link></li>
+            <li><Link to="/investorgrievance">Investor Grievance</Link></li>
           </ul>
         </div>
 
         <div className="flex-1 justify-items-center">
-          <h5 className="text-md align-middle font-semibold text-white mb-5">Regulatory Documents</h5>
+          <h5 className="text-md align-middle font-semibold text-white mb-5">Regulatory Information</h5>
           <ul className="space-y-5 text-sm text-gray">
-
-            <li>
-              <a
-                href="/assets/pdf/InverstorCharter/Investor_Charter_Sep_2025.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Investor Charter
-              </a>
-            </li>
-            <li>
-              <a
-                href="assets/pdf/MITC/MITC_Sep_2025.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                MITC
-              </a>
-            </li>
-            <li><Link to="/investorgrievance">Investor Grievance</Link></li>
+            <li><Link to="/regulatory-information?tab=terms">Terms of Use</Link></li>
+            <li><Link to="/regulatory-information?tab=mitc">MITC</Link></li>
+            <li><Link to="/regulatory-information?tab=investor-charter">Investor Charter</Link></li>
           </ul>
         </div>
 

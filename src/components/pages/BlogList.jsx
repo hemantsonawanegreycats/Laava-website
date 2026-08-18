@@ -27,7 +27,8 @@ const BlogList = () => {
         } else {
           setError(result.mesg || 'Failed to fetch blogs');
         }
-      } catch (err) {
+      // eslint-disable-next-line no-unused-vars
+      } catch (_err) {
         setError('An error occurred while fetching blogs.');
       } finally {
         setLoading(false);

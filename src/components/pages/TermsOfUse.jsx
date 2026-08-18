@@ -1,4 +1,4 @@
-import { useState } from "react";
+/* eslint-disable no-irregular-whitespace */
 import { ChevronDown } from "lucide-react";
 import SEO from "../SEO";
 
