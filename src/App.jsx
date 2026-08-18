@@ -940,7 +940,7 @@ const Footer = () => (
                             </a>
                         </li>
                         <li>
-                            <a href="/assets/pdf/InvestorGrievance/Investor_Complaints_Data_Jul_2026.docx" target="_blank" rel="noopener noreferrer" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
+                            <a href="/assets/pdf/InvestorGrievance/Investor_Complaints_Data_Jul_2026.pdf" target="_blank" rel="noopener noreferrer" className="text-[15px] text-[#ECEDEE]/60 hover:text-white transition-colors font-light block">
                                 Investor Grievance
                             </a>
                         </li>

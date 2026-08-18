@@ -21,7 +21,8 @@ const faqData = {
     {
       title: "Investor Grievance",
       files: [
-        { name: "July 2026", link: "assets/pdf/InvestorGrievance/Investor_Complaints_Data_Jul_2026.docx" },
+        { name: "July 2026 (View PDF)", link: "assets/pdf/InvestorGrievance/Investor_Complaints_Data_Jul_2026.pdf" },
+        { name: "July 2026 (Download DOCX)", link: "assets/pdf/InvestorGrievance/Investor_Complaints_Data_Jul_2026.docx" },
       ],
     },
   ],
