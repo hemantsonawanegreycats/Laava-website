@@ -12,6 +12,8 @@ import Features from './components/pages/Features';
 import HowItWorks from './components/pages/HowItWorks';
 import Pricing from './components/pages/Pricing';
 import FAQ from './components/pages/FAQ';
+import BlogList from './components/pages/BlogList';
+import BlogPost from './components/pages/BlogPost';
 import TestimonialCarousel from './components/HomePage/TestimonialCarousel';
 import { Zap, Brain, User, Crosshair } from 'lucide-react';
 import { gsap } from 'gsap';
@@ -100,6 +102,7 @@ const Navbar = () => {
         { name: 'How it Works', path: '/how-it-works' },
         { name: 'Pricing', path: '/pricing' },
         { name: 'About', path: '/about' },
+        { name: 'Blog', path: '/blog' },
         { name: 'FAQ', path: '/faq' }
     ];
 
@@ -1306,6 +1309,8 @@ export default function App() {
                     <Route path="/how-it-works" element={<HowItWorks />} />
                     <Route path="/pricing" element={<Pricing />} />
                     <Route path="/faq" element={<FAQ />} />
+                    <Route path="/blog" element={<BlogList />} />
+                    <Route path="/blog/:slug" element={<BlogPost />} />
                     <Route path="/insights" element={<Insights />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
