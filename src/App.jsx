@@ -1231,6 +1231,13 @@ export default function App() {
                 page_path: pathname,
             });
         }
+
+        // Log page view to standard Google Analytics (GA4)
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+            window.gtag('config', 'G-YWTF6BC16W', {
+                page_path: pathname,
+            });
+        }
     }, [pathname]);
 
 
