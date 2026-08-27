@@ -302,9 +302,28 @@ const BlogPost = () => {
           />
           
           {/* Footer Divider */}
-          <div className="mt-20 pt-8 border-t border-white/10 flex justify-center items-center">
-            <p className="text-[#A1A1AA] text-[16px] italic">Thank you for reading.</p>
-          </div>
+            <div className="max-w-4xl mx-auto mt-16 pt-8 border-t border-white/10">
+              <p className="text-white/50 text-[14px] italic text-center mb-8">Thank you for reading.</p>
+
+              {/* Mobile Share Widget */}
+              <div className="lg:hidden flex flex-col items-center justify-center mb-4">
+                <h5 className="text-[#A1A1AA] text-[12px] uppercase tracking-widest font-bold mb-4">Share & Follow</h5>
+                <div className="flex gap-4">
+                  <a href="https://t.me/laavaresearch" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#0088cc] hover:border-[#0088cc] transition-all">
+                    <i className="fa-brands fa-telegram text-lg"></i>
+                  </a>
+                  <button onClick={() => navigator.clipboard.writeText(window.location.href)} className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#197DFF] hover:border-[#197DFF] transition-all">
+                    <i className="fa-solid fa-link text-lg"></i>
+                  </button>
+                  <a href="https://www.facebook.com/share/1DRDxrvGJY/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all">
+                    <i className="fa-brands fa-facebook-f text-lg"></i>
+                  </a>
+                  <a href="https://www.instagram.com/laava_fintech?igsi=MXNnOG4xcHBvbjhiZw==" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#E1306C] hover:border-[#E1306C] transition-all">
+                    <i className="fa-brands fa-instagram text-lg"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
           
           {/* Related Articles */}
           {relatedBlogs.length > 0 && (
