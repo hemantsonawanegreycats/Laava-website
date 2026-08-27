@@ -102,8 +102,10 @@ const BlogPost = () => {
   return (
     <div className="bg-[#030911] min-h-screen pb-24">
       <SEO 
-        title={`${blog.title} - Laava Fintech`} 
-        description={blog.title} 
+        title={blog.meta_title || blog.title} 
+        description={blog.meta_description || blog.custom_summary || blog.title} 
+        keywords={blog.meta_keywords}
+        schema={blog.schema_markup}
         image={blog.cover_image ? getImageUrl(blog.cover_image) : null}
       />
       
@@ -124,36 +126,43 @@ const BlogPost = () => {
         <div className="absolute inset-0 bg-black/30"></div>
 
         {/* Hero Content (Title & Meta) */}
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 lg:px-8 pb-16 md:pb-24">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8 text-[14px] font-medium uppercase tracking-widest">
-            <i className="fa-solid fa-arrow-left text-[12px]"></i> Back to all articles
-          </Link>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pb-16 md:pb-24 flex flex-col lg:flex-row gap-12">
+          {/* Spacer to align with TOC sidebar on desktop */}
+          <div className="hidden lg:block w-72 shrink-0"></div>
           
-          {blog.tags && blog.tags.length > 0 && (
-            <div className="flex flex-wrap gap-3 mb-6">
-              {blog.tags.map((tag, idx) => (
-                <span key={idx} className="bg-[#197DFF] text-white text-[11px] font-bold tracking-[2px] uppercase px-4 py-1.5 rounded-sm">
-                  {tag}
-                </span>
-              ))}
+          <div className="flex-1 flex flex-col max-w-4xl mx-auto w-full items-center text-center lg:items-start lg:text-left">
+            <div className="w-full flex justify-center lg:justify-start">
+              <Link to="/blog" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8 text-[14px] font-medium uppercase tracking-widest">
+                <i className="fa-solid fa-arrow-left text-[12px]"></i> Back to all articles
+              </Link>
             </div>
-          )}
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-8 max-w-4xl">
-            {blog.title}
-          </h1>
-          
-          <div className="flex flex-wrap items-center gap-6 text-[14px] text-white/80 font-light border-t border-white/10 pt-6">
-            <span className="flex items-center gap-2">
-              <i className="fa-solid fa-calendar-days text-[#197DFF]"></i>
-              {blog.published_at 
-                ? new Date(blog.published_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })
-                : 'Recently'}
-            </span>
-            <span className="flex items-center gap-2">
-              <i className="fa-solid fa-clock text-[#197DFF]"></i>
-              {readTime}
-            </span>
+            
+            {blog.tags && blog.tags.length > 0 && (
+              <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6 w-full">
+                {blog.tags.map((tag, idx) => (
+                  <span key={idx} className="bg-[#197DFF] text-white text-[11px] font-bold tracking-[2px] uppercase px-4 py-1.5 rounded-sm">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-8 w-full">
+              {blog.title}
+            </h1>
+            
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-[14px] text-white/80 font-light border-t border-white/10 pt-6 w-full">
+              <span className="flex items-center gap-2">
+                <i className="fa-solid fa-calendar-days text-[#197DFF]"></i>
+                {blog.published_at 
+                  ? new Date(blog.published_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })
+                  : 'Recently'}
+              </span>
+              <span className="flex items-center gap-2">
+                <i className="fa-solid fa-clock text-[#197DFF]"></i>
+                {readTime}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -211,6 +220,9 @@ const BlogPost = () => {
         <div className="flex-1 bg-[#030911] shadow-[0_-20px_40px_rgba(3,9,17,1)] rounded-t-[3rem] -mx-6 lg:mx-0 px-6 lg:px-0">
           {/* Custom Styles for HTML Content since Tailwind Typography plugin is not installed */}
           <style dangerouslySetInnerHTML={{__html: `
+            .blog-content h1 {
+              display: none;
+            }
             .blog-content h2 {
               font-size: 2.25rem;
               font-weight: 700;

@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 
-const SEO = ({ title, description, image = '/assets/images/Herobanner.png', schema }) => {
+const SEO = ({ title, description, keywords, image = '/assets/images/Herobanner.png', schema }) => {
   const { pathname } = useLocation();
   // Normalize pathname: remove trailing slash for subpages so canonical URLs remain clean and consistent
   const cleanPath = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
@@ -12,6 +12,7 @@ const SEO = ({ title, description, image = '/assets/images/Herobanner.png', sche
       {/* Basic Meta Tags */}
       {title && <title>{title}</title>}
       {description && <meta name="description" content={description} />}
+      {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={url} />
 
       {/* Favicon & Branding */}
@@ -35,9 +36,7 @@ const SEO = ({ title, description, image = '/assets/images/Herobanner.png', sche
 
       {/* Structured Data (JSON-LD) */}
       {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: typeof schema === 'string' ? schema : JSON.stringify(schema) }} />
       )}
     </Helmet>
   );

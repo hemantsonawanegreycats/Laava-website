@@ -7,6 +7,10 @@ const BlogList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [activeTag, setActiveTag] = useState('All');
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [uniqueTags, setUniqueTags] = useState(['All']);
+  const limit = 9;
 
   const getImageUrl = (imageName) => {
     if (!imageName) return '/images/sensex.jpg';
@@ -18,12 +22,19 @@ const BlogList = () => {
 
   useEffect(() => {
     const fetchBlogs = async () => {
+      setLoading(true);
       try {
         const baseUrl = import.meta.env.VITE_API_BASE_URL || 'https://api.laavafin.com/api';
-        const response = await fetch(`${baseUrl}/blog/public`);
+        let url = `${baseUrl}/blog/public?page=${page}&limit=${limit}`;
+        if (activeTag !== 'All') {
+          url += `&tag=${encodeURIComponent(activeTag)}`;
+        }
+        const response = await fetch(url);
         const result = await response.json();
-        if (result.status) {
+        if (result.status && result.data) {
           setBlogs(result.data.blogs || []);
+          const total = result.data.total || 0;
+          setTotalPages(Math.ceil(total / limit) || 1);
         } else {
           setError(result.mesg || 'Failed to fetch blogs');
         }
@@ -36,15 +47,21 @@ const BlogList = () => {
     };
 
     fetchBlogs();
-  }, []);
+  }, [page, activeTag]);
 
-  // Extract unique tags
-  const uniqueTags = ['All', ...new Set(blogs.flatMap(blog => blog.tags || []))];
-  
-  // Filter blogs based on active tag
-  const filteredBlogs = activeTag === 'All' 
-    ? blogs 
-    : blogs.filter(blog => blog.tags?.includes(activeTag));
+  // Accumulate unique tags from loaded blogs
+  useEffect(() => {
+    if (blogs.length > 0) {
+      setUniqueTags(prev => {
+        const newTags = new Set(prev);
+        blogs.flatMap(blog => blog.tags || []).forEach(tag => newTags.add(tag));
+        return Array.from(newTags);
+      });
+    }
+  }, [blogs]);
+
+  // No client-side filtering needed since backend handles it
+  const filteredBlogs = blogs;
 
   return (
     <div className="bg-[#030911] min-h-screen pt-40 pb-24 px-4 sm:px-6 lg:px-8">
@@ -64,7 +81,7 @@ const BlogList = () => {
             {uniqueTags.map(tag => (
               <button
                 key={tag}
-                onClick={() => setActiveTag(tag)}
+                onClick={() => { setActiveTag(tag); setPage(1); }}
                 className={`px-5 py-2 rounded-full text-[13px] font-medium transition-all ${
                   activeTag === tag 
                     ? 'bg-[#197DFF] text-white shadow-[0_0_15px_rgba(25,125,255,0.4)]' 
@@ -92,7 +109,7 @@ const BlogList = () => {
         ) : filteredBlogs.length === 0 ? (
           <div className="text-center text-[#A1A1AA] py-20 bg-[#0A0D14] border border-white/5 rounded-3xl">
             <p className="text-lg">No articles found for "{activeTag}".</p>
-            <button onClick={() => setActiveTag('All')} className="mt-4 text-[#197DFF] hover:underline">View all articles</button>
+            <button onClick={() => { setActiveTag('All'); setPage(1); }} className="mt-4 text-[#197DFF] hover:underline">View all articles</button>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -108,7 +125,7 @@ const BlogList = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D14] via-transparent to-transparent opacity-80"></div>
                   {blog.tags && blog.tags.length > 0 && (
                     <div className="absolute top-5 left-5 bg-[#197DFF] text-white text-[10px] font-bold tracking-[1.5px] uppercase px-3 py-1.5 rounded-full shadow-lg">
-                      {blog.tags[0]}
+                      {activeTag !== 'All' && blog.tags.includes(activeTag) ? activeTag : blog.tags[0]}
                     </div>
                   )}
                 </div>
@@ -130,6 +147,43 @@ const BlogList = () => {
                 </div>
               </Link>
             ))}
+          </div>
+        )}
+
+        {/* Pagination Controls */}
+        {!loading && !error && totalPages > 1 && (
+          <div className="flex justify-center items-center mt-16 gap-4">
+            <button
+              onClick={() => setPage(p => Math.max(1, p - 1))}
+              disabled={page === 1}
+              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10 transition-all"
+            >
+              <i className="fa-solid fa-chevron-left"></i>
+            </button>
+            
+            <div className="flex items-center gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
+                <button
+                  key={p}
+                  onClick={() => setPage(p)}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center text-[14px] font-medium transition-all ${
+                    page === p
+                      ? 'bg-[#197DFF] text-white shadow-[0_0_15px_rgba(25,125,255,0.4)]'
+                      : 'bg-white/5 text-[#A1A1AA] hover:bg-white/10 hover:text-white border border-white/5'
+                  }`}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+              disabled={page === totalPages}
+              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10 transition-all"
+            >
+              <i className="fa-solid fa-chevron-right"></i>
+            </button>
           </div>
         )}
       </div>
