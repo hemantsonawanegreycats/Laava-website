@@ -110,7 +110,7 @@ const BlogPost = () => {
       />
       
       {/* Cinematic Hero Section */}
-      <div className="relative w-full h-[60vh] min-h-[500px] flex items-end">
+      <div className="relative w-full min-h-[60vh] lg:min-h-[500px] flex items-end pt-32 lg:pt-40">
         {blog.cover_image ? (
           <img 
             src={getImageUrl(blog.cover_image)} 
@@ -224,41 +224,43 @@ const BlogPost = () => {
               display: none;
             }
             .blog-content h2 {
-              font-size: 2.25rem;
+              font-size: clamp(1.75rem, 4vw, 2.25rem);
               font-weight: 700;
               color: white;
-              margin-top: 4rem;
-              margin-bottom: 1.5rem;
+              margin-top: clamp(2.5rem, 6vw, 4rem);
+              margin-bottom: clamp(1rem, 3vw, 1.5rem);
               letter-spacing: -0.02em;
+              line-height: 1.3;
             }
             .blog-content h3 {
-              font-size: 1.5rem;
+              font-size: clamp(1.25rem, 3vw, 1.5rem);
               font-weight: 700;
               color: white;
-              margin-top: 3rem;
-              margin-bottom: 1.25rem;
+              margin-top: clamp(2rem, 5vw, 3rem);
+              margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
+              line-height: 1.4;
             }
             .blog-content p {
               color: #D1D5DB;
-              line-height: 1.9;
-              font-size: 1.125rem;
-              margin-bottom: 1.75rem;
+              line-height: 1.8;
+              font-size: clamp(1.0625rem, 2vw, 1.125rem);
+              margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
               font-weight: 300;
             }
             .blog-content ul {
               list-style-type: disc;
-              margin-left: 1.5rem;
-              margin-bottom: 2rem;
+              margin-left: clamp(1rem, 3vw, 1.5rem);
+              margin-bottom: clamp(1.5rem, 4vw, 2rem);
             }
             .blog-content ol {
               list-style-type: decimal;
-              margin-left: 1.5rem;
-              margin-bottom: 2rem;
+              margin-left: clamp(1rem, 3vw, 1.5rem);
+              margin-bottom: clamp(1.5rem, 4vw, 2rem);
             }
             .blog-content li {
               color: #D1D5DB;
               line-height: 1.8;
-              font-size: 1.125rem;
+              font-size: clamp(1.0625rem, 2vw, 1.125rem);
               margin-bottom: 0.75rem;
               font-weight: 300;
             }
