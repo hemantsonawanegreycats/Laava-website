@@ -138,9 +138,9 @@ const BlogPost = () => {
             </div>
             
             {blog.tags && blog.tags.length > 0 && (
-              <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6 w-full">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2 lg:gap-3 mb-6 w-full">
                 {blog.tags.map((tag, idx) => (
-                  <span key={idx} className="bg-[#197DFF] text-white text-[11px] font-bold tracking-[2px] uppercase px-4 py-1.5 rounded-sm">
+                  <span key={idx} className="bg-[#197DFF] text-white text-[9px] lg:text-[11px] font-bold tracking-[1px] lg:tracking-[2px] uppercase px-2.5 py-1 lg:px-4 lg:py-1.5 rounded-sm">
                     {tag}
                   </span>
                 ))}
@@ -199,14 +199,8 @@ const BlogPost = () => {
             <div className="mt-10 pt-6 border-t border-white/10">
               <h5 className="text-[#A1A1AA] text-[12px] uppercase tracking-widest font-bold mb-4">Share</h5>
               <div className="flex gap-3">
-                <a href={`https://api.whatsapp.com/send?text=${encodeURIComponent(blog.title + ' ' + window.location.href)}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#25D366] hover:border-[#25D366] transition-all">
-                  <i className="fa-brands fa-whatsapp"></i>
-                </a>
                 <a href={`https://t.me/share/url?url=${window.location.href}&text=${encodeURIComponent(blog.title)}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#0088cc] hover:border-[#0088cc] transition-all">
                   <i className="fa-brands fa-telegram"></i>
-                </a>
-                <a href={`https://twitter.com/intent/tweet?url=${window.location.href}&text=${encodeURIComponent(blog.title)}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#1DA1F2] hover:border-[#1DA1F2] transition-all">
-                  <i className="fa-brands fa-twitter"></i>
                 </a>
                 <button onClick={() => navigator.clipboard.writeText(window.location.href)} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#197DFF] hover:border-[#197DFF] transition-all">
                   <i className="fa-solid fa-link"></i>
