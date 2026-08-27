@@ -197,14 +197,20 @@ const BlogPost = () => {
             
             {/* Share Widget inside TOC Sidebar */}
             <div className="mt-10 pt-6 border-t border-white/10">
-              <h5 className="text-[#A1A1AA] text-[12px] uppercase tracking-widest font-bold mb-4">Share</h5>
+              <h5 className="text-[#A1A1AA] text-[12px] uppercase tracking-widest font-bold mb-4">Share & Follow</h5>
               <div className="flex gap-3">
-                <a href={`https://t.me/share/url?url=${window.location.href}&text=${encodeURIComponent(blog.title)}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#0088cc] hover:border-[#0088cc] transition-all">
+                <a href="https://t.me/laavaresearch" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#0088cc] hover:border-[#0088cc] transition-all">
                   <i className="fa-brands fa-telegram"></i>
                 </a>
                 <button onClick={() => navigator.clipboard.writeText(window.location.href)} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#197DFF] hover:border-[#197DFF] transition-all">
                   <i className="fa-solid fa-link"></i>
                 </button>
+                <a href="https://www.facebook.com/share/1DRDxrvGJY/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all">
+                  <i className="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/laava_fintech?igsi=MXNnOG4xcHBvbjhiZw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#E1306C] hover:border-[#E1306C] transition-all">
+                  <i className="fa-brands fa-instagram"></i>
+                </a>
               </div>
             </div>
           </div>
